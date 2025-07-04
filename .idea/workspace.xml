@@ -4,13 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="93ec5c9a-3820-4625-8185-2e1f0d75d993" name="Changes" comment="Add receipt File">
-      <change beforePath="$PROJECT_DIR$/src/ReceiptFiles.form" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ReceiptFiles.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/receiptData.form" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/receiptData.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test.java" beforeDir="false" />
-    </list>
+    <list default="true" id="93ec5c9a-3820-4625-8185-2e1f0d75d993" name="Changes" comment="Add new feature to ZooSystem" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -75,7 +69,7 @@
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "UI_DESIGNER_EDITOR_MODE.PaletteManager.WIDTH": "4",
     "UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH": "7",
-    "git-widget-placeholder": "main",
+    "git-widget-placeholder": "Syera",
     "kotlin-language-version-configured": "true",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -148,7 +142,17 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Add new feature to ZooSystem" />
-    <MESSAGE value="Add receipt File" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add receipt File" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add new feature to ZooSystem" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test.java</url>
+          <line>4</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
