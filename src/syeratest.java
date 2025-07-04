@@ -7,6 +7,8 @@ public class syeratest {
         System.out.printf("HAI INI SYERATEST\n!");
 
         System.out.printf("HAI INI DINI\n!");
+        System.out.printf("HAI INI DINI\n!");
+
 
         System.out.println("INI MARYAMMM");
 
