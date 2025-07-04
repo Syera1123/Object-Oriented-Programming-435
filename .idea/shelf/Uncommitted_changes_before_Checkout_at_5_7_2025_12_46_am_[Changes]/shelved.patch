@@ -1,0 +1,23 @@
+Index: src/test.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>public class test {\r\n    public static void main(String[] args) {\r\n\r\n        System.out.println(\"SYERA BESAQQQQQQQ NII\");\r\n        System.out.println(\"HATI HATI DI JALAN RAYA\");\r\n\r\n    }\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/test.java b/src/test.java
+--- a/src/test.java	(revision e7d8e82a31c2c884575611e1f64f6c08c42eaab6)
++++ b/src/test.java	(date 1751647482388)
+@@ -1,8 +1,9 @@
+ public class test {
+-    public static void main(String[] args) {
++    public static void main(String[] args){
++        System.out.println("Hello");
++        System.out.println("HELLO INI MARYAM NAFISAHH BARUU" );
+ 
+-        System.out.println("SYERA BESAQQQQQQQ NII");
+-        System.out.println("HATI HATI DI JALAN RAYA");
+ 
++        System.out.println("Hello HII");
+     }
+ }
