@@ -9,6 +9,7 @@ public class git fetch origin
 
         System.out.printf("HAI INI DINI\n!");
         System.out.printf("HAI INI DINI\n!");
+ System.out.printf("HAI INI DINI\n!");
 
 
         System.out.println("INI MARYAMMM");
