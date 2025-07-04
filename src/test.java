@@ -1,12 +1,8 @@
 public class test {
-    public static void main(String[] args){
-<<<<<<< HEAD
-        System.out.println("Hello");
-        System.out.println("HELLO INI MARYAM NAFISAHH BARUU" );
-=======
+    public static void main(String[] args) {
 
+        System.out.println("MAKAN BESO");
+        System.out.println("HAHAHAAH LETIH NAA DAH NAK KUL 1");
 
-        System.out.println("Hello HII DINI HAH");
->>>>>>> 6c8d1e26718b8e6555a8ad6d4a55475c95282cda
     }
 }
