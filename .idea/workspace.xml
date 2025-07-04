@@ -4,15 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-<<<<<<< HEAD
-    <list default="true" id="93ec5c9a-3820-4625-8185-2e1f0d75d993" name="Changes" comment="Add new feature to ZooSystem">
-      <change afterPath="$PROJECT_DIR$/src/ReceiptFiles.form" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ReceiptFiles.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-=======
-    <list default="true" id="93ec5c9a-3820-4625-8185-2e1f0d75d993" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/src/test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test.java" afterDir="false" />
->>>>>>> 6c8d1e26718b8e6555a8ad6d4a55475c95282cda
+    <list default="true" id="93ec5c9a-3820-4625-8185-2e1f0d75d993" name="Changes" comment="Add receipt File">
+      <change beforePath="$PROJECT_DIR$/src/ReceiptFiles.form" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ReceiptFiles.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/receiptData.form" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/receiptData.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,8 +24,25 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <excluded-from-favorite>
+      <branch-storage>
+        <map>
+          <entry type="LOCAL">
+            <value>
+              <list>
+                <branch-info repo="$PROJECT_DIR$" source="main" />
+              </list>
+            </value>
+          </entry>
+        </map>
+      </branch-storage>
+    </excluded-from-favorite>
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="main" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
   &quot;lastFilter&quot;: {
@@ -39,21 +53,7 @@
   <component name="GithubPullRequestsUISettings">{
   &quot;selectedUrlAndAccountId&quot;: {
     &quot;url&quot;: &quot;https://github.com/Syera1123/Object-Oriented-Programming-435.git&quot;,
-<<<<<<< HEAD
     &quot;accountId&quot;: &quot;8a2dd38c-b24a-4073-a898-89ec4490a0bf&quot;
-  },
-  &quot;recentNewPullRequestHead&quot;: {
-    &quot;server&quot;: {
-      &quot;useHttp&quot;: false,
-      &quot;host&quot;: &quot;github.com&quot;,
-      &quot;port&quot;: null,
-      &quot;suffix&quot;: null
-    },
-    &quot;owner&quot;: &quot;Syera1123&quot;,
-    &quot;repository&quot;: &quot;Object-Oriented-Programming-435&quot;
-=======
-    &quot;accountId&quot;: &quot;205bed24-a849-41e8-87ba-d26e075475c3&quot;
->>>>>>> 6c8d1e26718b8e6555a8ad6d4a55475c95282cda
   }
 }</component>
   <component name="ProjectColorInfo">{
@@ -75,11 +75,7 @@
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "UI_DESIGNER_EDITOR_MODE.PaletteManager.WIDTH": "4",
     "UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH": "7",
-<<<<<<< HEAD
     "git-widget-placeholder": "main",
-=======
-    "git-widget-placeholder": "DINI",
->>>>>>> 6c8d1e26718b8e6555a8ad6d4a55475c95282cda
     "kotlin-language-version-configured": "true",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -98,6 +94,14 @@
       <recent name="C:\Users\User\IdeaProjects\Main\out\production\Main\com\intellij\uiDesigner\core" />
     </key>
   </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9823dce3aa75-a94e463ab2e7-intellij.indexing.shared.core-IU-243.26053.27" />
+        <option value="bundled-js-predefined-d6986cc7102b-1632447f56bf-JavaScript-IU-243.26053.27" />
+      </set>
+    </attachedChunks>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -109,7 +113,6 @@
       <workItem from="1751614067427" duration="416000" />
       <workItem from="1751614499668" duration="12918000" />
     </task>
-<<<<<<< HEAD
     <task id="LOCAL-00001" summary="Add new feature to ZooSystem">
       <option name="closed" value="true" />
       <created>1751645418319</created>
@@ -126,28 +129,26 @@
       <option name="project" value="LOCAL" />
       <updated>1751645667762</updated>
     </task>
-    <task id="LOCAL-00003" summary="Add new feature to ZooSystem">
-      <option name="closed" value="true" />
-      <created>1751645757747</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1751645757747</updated>
-    </task>
-    <task id="LOCAL-00004" summary="Add new feature to ZooSystem">
-      <option name="closed" value="true" />
-      <created>1751645820994</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1751645820994</updated>
-    </task>
-    <option name="localTasksCounter" value="5" />
-=======
->>>>>>> 6c8d1e26718b8e6555a8ad6d4a55475c95282cda
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Add new feature to ZooSystem" />
+    <MESSAGE value="Add receipt File" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add receipt File" />
   </component>
 </project>
