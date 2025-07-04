@@ -9,7 +9,7 @@ public class git fetch origin
 
         System.out.printf("HAI INI DINI\n!");
         System.out.printf("HAI INI DINI\n!");
- System.out.printf("HAI INI DINI\n!");
+ System.out.printf("HAI KITA BAIKI BALIK I\n!");
 
 
         System.out.println("INI MARYAMMM");
