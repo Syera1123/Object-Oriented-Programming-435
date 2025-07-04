@@ -37,6 +37,7 @@
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
   &quot;lastFilter&quot;: {
@@ -48,6 +49,16 @@
   "selectedUrlAndAccountId": {
     "url": "https://github.com/Syera1123/Object-Oriented-Programming-435.git",
     "accountId": "8a2dd38c-b24a-4073-a898-89ec4490a0bf"
+  },
+  "recentNewPullRequestHead": {
+    "server": {
+      "useHttp": false,
+      "host": "github.com",
+      "port": null,
+      "suffix": null
+    },
+    "owner": "Syera1123",
+    "repository": "Object-Oriented-Programming-435"
   }
 }]]></component>
   <component name="ProjectColorInfo">{
@@ -115,7 +126,23 @@
       <option name="project" value="LOCAL" />
       <updated>1751645667762</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Add new feature to ZooSystem">
+      <option name="closed" value="true" />
+      <created>1751645757747</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1751645757747</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Add new feature to ZooSystem">
+      <option name="closed" value="true" />
+      <created>1751645820994</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1751645820994</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
