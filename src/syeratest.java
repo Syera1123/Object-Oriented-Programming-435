@@ -6,6 +6,8 @@ public class syeratest {
         // to see how IntelliJ IDEA suggests fixing it.
         System.out.printf("HAI INI SYERATEST\n!");
 
+        System.out.printf("HAI INI DINI\n!");
+
         System.out.println("INI MARYAMMM");
 
 
