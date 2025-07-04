@@ -1,0 +1,21 @@
+Index: src/test.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>public class test {\r\n    public static void main(String[] args){\r\n        System.out.println(\"Hello\");\r\n        System.out.println(\"HELLO INI MARYAM NAFISAHH BARUU\" );\r\n\r\n\r\n        System.out.println(\"Hello HII\");\r\n    }\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/test.java b/src/test.java
+--- a/src/test.java	(revision 48f2e95f9fb1a6024564013437d05d955244375f)
++++ b/src/test.java	(date 1751647427160)
+@@ -1,9 +1,7 @@
+ public class test {
+     public static void main(String[] args){
+-        System.out.println("Hello");
+-        System.out.println("HELLO INI MARYAM NAFISAHH BARUU" );
+ 
+ 
+-        System.out.println("Hello HII");
++        System.out.println("Hello DIMANA");
+     }
+ }
