@@ -5,16 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="93ec5c9a-3820-4625-8185-2e1f0d75d993" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/CheckoutTotalPrice.form" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/CheckoutTotalPrice.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Zoo/LogInWindow.form" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Zoo/LogInWindow.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Zoo/SignUpWindow.form" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Zoo/SignUpWindow.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Zoo/WelcomePage.form" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Zoo/WelcomePage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Zoo/Zoo.jfif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/syeratest.form" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/syeratest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CheckoutTotalPrice.form" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CheckoutTotalPrice.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Price.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Price.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,6 +53,7 @@
     "Application.Checkout.executor": "Run",
     "Application.LogInWindow.executor": "Run",
     "Application.Price.executor": "Run",
+    "Application.WelcomePage.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
@@ -75,8 +72,8 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\User\IdeaProjects\Main\src\Zoo" />
       <recent name="C:\Users\User\IdeaProjects\Main\src" />
+      <recent name="C:\Users\User\IdeaProjects\Main\src\Zoo" />
       <recent name="C:\Users\User\IdeaProjects\Main\out\production\Main\com\intellij\uiDesigner\core" />
     </key>
   </component>
@@ -97,7 +94,7 @@
       <option name="presentableId" value="Default" />
       <updated>1751614066229</updated>
       <workItem from="1751614067427" duration="416000" />
-      <workItem from="1751614499668" duration="6713000" />
+      <workItem from="1751614499668" duration="12918000" />
     </task>
     <servers />
   </component>
