@@ -18,6 +18,16 @@ public abstract class SignUpWindow extends JFrame implements ActionListener, Mou
     public SignUpWindow(){
         super.setTitle("Sign Up"); // title
         super.setSize(700,500);
+        // === Background Image ===
+        setContentPane(new JLabel(new ImageIcon(
+                new ImageIcon(getClass().getResource("/Untitled design.png"))
+                        .getImage().getScaledInstance(700, 500, Image.SCALE_SMOOTH))));
+        setLayout(null); // Manual layout
+
+        pnlSignUp.setOpaque(false);
+        pnlSignUp.setBounds(0, 0, 700, 500);
+        add(pnlSignUp); // Add sign-up panel on top of background
+
 
         pPassword.setEchoChar((char)0); // Make text visible initially
         pPassword.setText("Password");
@@ -35,11 +45,6 @@ public abstract class SignUpWindow extends JFrame implements ActionListener, Mou
         pPassword.addActionListener(this);
         pReconfirmPass.addFocusListener(this);
         pReconfirmPass.addActionListener(this);
-
-        //add designed to Content Pane
-        Container cp = super.getContentPane();
-        cp.add(pnlSignUp);
-
 
 
         ImageIcon image = new ImageIcon("Zoo.jfif");

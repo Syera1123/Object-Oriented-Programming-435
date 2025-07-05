@@ -6,11 +6,11 @@ import java.awt.*;
 import java.awt.event.*;
 
 public abstract class WelcomePage extends JFrame implements ActionListener,MouseListener{
-    public JPanel pnlMain;
     public JButton btnSignUp;
     public JLabel lblTitle;
     public JLabel lblaccount;
     public JLabel lblLogIn;
+    public JPanel pnlMain;
 
     public WelcomePage() {
 
@@ -18,13 +18,25 @@ public abstract class WelcomePage extends JFrame implements ActionListener,Mouse
         super.setSize(700,500);
         super.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
+        // === Background Image ===
+        JLabel background = new JLabel(new ImageIcon(
+                new ImageIcon(getClass().getResource("/Untitled design.png"))
+                        .getImage().getScaledInstance(700, 500, Image.SCALE_SMOOTH)
+        ));
+        background.setLayout(null); // Untuk absolute positioning
+        setContentPane(background);
+
+        pnlMain.setOpaque(false);
+        pnlMain.setBounds(0, 0, 700, 500);
+        background.add(pnlMain);
+
+
+
         //action Listener
         btnSignUp.addActionListener(this);
         lblLogIn.addMouseListener((MouseListener) this);
 
-        //add designed to Content Pane
-        Container cp = super.getContentPane();
-        cp.add(pnlMain);
+
 
         ImageIcon image = new ImageIcon("Zoo.jfif");
         super.setIconImage(image.getImage());
