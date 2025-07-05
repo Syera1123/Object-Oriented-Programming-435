@@ -14,7 +14,7 @@ public abstract class WelcomePage extends JFrame implements ActionListener,Mouse
     private JPanel welpanel;
 =======
     public JPanel pnlMain;
->>>>>>> origin/main
+>>>>>>> b1a0db0eae7e6173c4bff11504d70433ddb886c9
 
     public WelcomePage() {
 
@@ -23,7 +23,7 @@ public abstract class WelcomePage extends JFrame implements ActionListener,Mouse
         super.setSize(700, 500);
 =======
         super.setSize(700,500);
->>>>>>> origin/main
+>>>>>>> b1a0db0eae7e6173c4bff11504d70433ddb886c9
         super.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         // === Background Image ===
