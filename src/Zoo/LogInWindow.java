@@ -17,7 +17,7 @@ public abstract class LogInWindow extends JFrame implements ActionListener {
 
     public LogInWindow() {
         super.setTitle("Zoo Booking");
-        super.setSize(400, 300);
+        super.setSize(700, 500);
 
         // Listener
         btnSubmit.addActionListener(this);

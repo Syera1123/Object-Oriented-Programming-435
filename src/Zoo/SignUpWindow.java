@@ -18,7 +18,7 @@ public abstract class SignUpWindow extends JFrame implements ActionListener, Mou
 
     public SignUpWindow(){
         super.setTitle("Sign Up"); // title
-        super.setSize(400,250);
+        super.setSize(700,500);
 
         pPassword.setEchoChar((char)0); // Make text visible initially
         pPassword.setText("Password");

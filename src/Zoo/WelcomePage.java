@@ -15,7 +15,7 @@ public abstract class WelcomePage extends JFrame implements ActionListener,Mouse
     public WelcomePage() {
 
         super.setTitle("Zoo Booking"); // title
-        super.setSize(400,300);
+        super.setSize(700,500);
         super.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         //action Listener
