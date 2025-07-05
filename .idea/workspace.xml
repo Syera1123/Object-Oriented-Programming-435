@@ -4,6 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
+<<<<<<< HEAD
     <list default="true" id="93ec5c9a-3820-4625-8185-2e1f0d75d993" name="Changes" comment="Merge remote-tracking branch 'origin/main'&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml">
       <change afterPath="$PROJECT_DIR$/src/Untitled design.jpg" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/Untitled design.png" afterDir="false" />
@@ -14,6 +15,9 @@
       <change beforePath="$PROJECT_DIR$/src/ReceiveData.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/ReceiveData.form" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ReceiveData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ReceiveData.java" afterDir="false" />
     </list>
+=======
+    <list default="true" id="93ec5c9a-3820-4625-8185-2e1f0d75d993" name="Changes" comment="Merge remote-tracking branch 'origin/main'&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml" />
+>>>>>>> 92abc7475221d2877613daa782a93470e25ba658
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -150,5 +154,16 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>
