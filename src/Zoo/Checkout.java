@@ -58,6 +58,40 @@ public class Checkout extends JFrame implements ActionListener {
         btnCheckout.addActionListener(this);
     }
 
+    // New constructor to prefill data when coming back from ReceiveData
+    public Checkout(String ticketType, int kid, int kidPrice, int adult, int adultPrice, int oku, int okuPrice,
+                    boolean safari, boolean photobooth, int animalFood, int animalFoodPrice,
+                    int birdShow, int birdShowPrice, int total) {
+        this();
+
+        // Set ticket type
+        if ("Weekday".equals(ticketType)) {
+            rbWeekday.setSelected(true);
+        } else if ("Weekend".equals(ticketType)) {
+            rbWeekend.setSelected(true);
+        }
+
+        // Set spinners
+        spKid.setValue(kid);
+        spAdult.setValue(adult);
+        spOKU.setValue(oku);
+        spAnimalFood.setValue(animalFood);
+        spBirdShow.setValue(birdShow);
+
+        // Set Safari and Photobooth options
+        if (safari) {
+            rbSafariYes.setSelected(true);
+        } else {
+            rbSafariNo.setSelected(true);
+        }
+
+        if (photobooth) {
+            rbPhotoboothYes.setSelected(true);
+        } else {
+            rbPhotoboothNo.setSelected(true);
+        }
+    }
+
     @Override
     public void actionPerformed(ActionEvent e) {
         int noKid = (Integer) spKid.getValue();
@@ -87,7 +121,6 @@ public class Checkout extends JFrame implements ActionListener {
             return;
         }
 
-        // Validasi opsyen Safari dan Photobooth
         if (!rbSafariYes.isSelected() && !rbSafariNo.isSelected()) {
             JOptionPane.showMessageDialog(this, "Please select Safari Ride option.");
             return;
@@ -105,7 +138,6 @@ public class Checkout extends JFrame implements ActionListener {
         int total = (noKid * kidPrice) + (noAdult * adultPrice) + (noOKU * okuPrice)
                 + safariPrice + photoPrice + (noAnimalFood * animalFoodPrice) + (noBirdShow * birdShowPrice);
 
-        // Papar resit guna ReceiveData (pass semua data)
         new ReceiveData(ticketType, noKid, kidPrice, noAdult, adultPrice, noOKU, okuPrice,
                 safari, photobooth, noAnimalFood, animalFoodPrice, noBirdShow, birdShowPrice, total);
     }

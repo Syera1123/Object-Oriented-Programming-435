@@ -8,8 +8,6 @@ import java.io.IOException;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
-
-
 public class ReceiveData extends JFrame {
     private JPanel mainReceive;
     private JLabel lblTicketType;
@@ -22,18 +20,60 @@ public class ReceiveData extends JFrame {
     private JLabel lblBirdShow;
     private JLabel lblTotal;
     private JButton btnPay;
+    private JButton btnEdit;  // Make sure this matches the one in .form
+
+    // Declare variables to pass back
+    private String ticketType;
+    private int kid, kidPrice, adult, adultPrice, oku, okuPrice;
+    private boolean safari, photobooth;
+    private int animalFood, animalFoodPrice, birdShow, birdShowPrice, total;
 
     public ReceiveData(String ticketType, int kid, int kidPrice, int adult, int adultPrice, int oku, int okuPrice,
                        boolean safari, boolean photobooth, int animalFood, int animalFoodPrice,
                        int birdShow, int birdShowPrice, int total) {
 
+        this.ticketType = ticketType;
+        this.kid = kid;
+        this.kidPrice = kidPrice;
+        this.adult = adult;
+        this.adultPrice = adultPrice;
+        this.oku = oku;
+        this.okuPrice = okuPrice;
+        this.safari = safari;
+        this.photobooth = photobooth;
+        this.animalFood = animalFood;
+        this.animalFoodPrice = animalFoodPrice;
+        this.birdShow = birdShow;
+        this.birdShowPrice = birdShowPrice;
+        this.total = total;
+
         setTitle("Zoo Ticket Summary");
         setSize(700, 500);
         setDefaultCloseOperation(DISPOSE_ON_CLOSE);
-        setContentPane(mainReceive); // ← dari GUI form anda
         setLocationRelativeTo(null);
 
-        // Isi maklumat label
+        // === Background ===
+        JLabel backgroundLabel = new JLabel();
+        ImageIcon bgIcon = new ImageIcon(getClass().getResource("/Untitled design.png"));
+        backgroundLabel.setIcon(new ImageIcon(bgIcon.getImage().getScaledInstance(700, 500, Image.SCALE_SMOOTH)));
+        backgroundLabel.setBounds(0, 0, 700, 500);
+
+        mainReceive.setOpaque(false);
+
+        // === Buttons Styling ===
+        btnPay.setBackground(new Color(156, 102, 61));
+        btnPay.setForeground(Color.WHITE);
+        btnPay.setFont(new Font("Arial", Font.BOLD, 16));
+        btnPay.setFocusPainted(false);
+        btnPay.setBorder(BorderFactory.createEmptyBorder(10, 20, 10, 20));
+
+        btnEdit.setBackground(new Color(126, 170, 255)); // Cornflower Blue
+        btnEdit.setForeground(Color.WHITE);
+        btnEdit.setFont(new Font("Arial", Font.BOLD, 16));
+        btnEdit.setFocusPainted(false);
+        btnEdit.setBorder(BorderFactory.createEmptyBorder(10, 20, 10, 20));
+
+        // === Set Labels ===
         lblTicketType.setText("Ticket Type: " + ticketType);
         lblKid.setText("   - Kid     x " + kid + " = RM " + (kid * kidPrice));
         lblAdult.setText("   - Adult x " + adult + " = RM " + (adult * adultPrice));
@@ -42,8 +82,9 @@ public class ReceiveData extends JFrame {
         lblPhotobooth.setText("   - Photobooth: " + (photobooth ? "Yes (RM30)" : "No"));
         lblAnimalFood.setText("   - Animal Food x " + animalFood + " = RM " + (animalFood * animalFoodPrice));
         lblBirdShow.setText("   - Bird Show     x " + birdShow + " = RM " + (birdShow * birdShowPrice));
-        lblTotal.setText("TOTAL: RM " + total);
+        lblTotal.setText(" Total: RM " + total);
 
+        // === Pay Button Action ===
         btnPay.addActionListener(e -> {
             int confirm = JOptionPane.showConfirmDialog(this, "Confirm payment?", "Confirm", JOptionPane.YES_NO_OPTION);
             if (confirm == JOptionPane.YES_OPTION) {
@@ -57,11 +98,31 @@ public class ReceiveData extends JFrame {
                             options[method].toString());
 
                     JOptionPane.showMessageDialog(this, "Payment successful via " + options[method] + "!");
-
                 }
             }
         });
 
+        // === Edit Button Action ===
+        btnEdit.addActionListener(e -> {
+            this.dispose();  // Close current window
+
+            // Open Checkout screen again — Update with your actual Checkout class name
+            new Checkout(ticketType, kid, kidPrice, adult, adultPrice, oku, okuPrice,
+                    safari, photobooth, animalFood, animalFoodPrice, birdShow, birdShowPrice, total);
+        });
+
+        // === Layering ===
+        JLayeredPane layeredPane = new JLayeredPane();
+        layeredPane.setPreferredSize(new Dimension(700, 500));
+
+        backgroundLabel.setBounds(0, 0, 700, 500);
+        mainReceive.setBounds(0, 0, 700, 500);
+
+        layeredPane.add(backgroundLabel, Integer.valueOf(0));
+        layeredPane.add(mainReceive, Integer.valueOf(1));
+
+        setContentPane(layeredPane);
+        pack();
         setVisible(true);
     }
 
@@ -94,16 +155,13 @@ public class ReceiveData extends JFrame {
             writer.write("TOTAL           : RM " + total + "\n");
             writer.write("======================================\n");
 
-            // Auto open the receipt file
             File file = new File("receipt.txt");
             if (file.exists()) {
-                Desktop desktop = Desktop.getDesktop();
-                desktop.open(file);
+                Desktop.getDesktop().open(file);
             }
 
         } catch (IOException ex) {
             JOptionPane.showMessageDialog(this, "Failed to save or open receipt.");
         }
     }
-
 }
