@@ -1,6 +1,7 @@
 package Zoo;
 
 import javax.swing.*;
+import java.awt.*;
 import java.awt.event.*;
 
 public class Checkout extends JFrame implements ActionListener {
@@ -32,6 +33,29 @@ public class Checkout extends JFrame implements ActionListener {
         setSize(700, 500);
         setContentPane(pnlCheckout);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
+
+
+        // === Background ===
+        JLabel backgroundLabel = new JLabel();
+        ImageIcon bgIcon = new ImageIcon(getClass().getResource("/World.png"));
+        backgroundLabel.setIcon(new ImageIcon(bgIcon.getImage().getScaledInstance(700, 500, Image.SCALE_SMOOTH)));
+        backgroundLabel.setBounds(0, 0, 700, 500);
+
+        pnlCheckout.setOpaque(false);
+
+        // === Layering ===
+        JLayeredPane layeredPane = new JLayeredPane();
+        layeredPane.setPreferredSize(new Dimension(700, 500));
+
+        backgroundLabel.setBounds(0, 0, 700, 500);
+        pnlCheckout.setBounds(0, 0, 700, 500);
+
+        layeredPane.add(backgroundLabel, Integer.valueOf(0));
+        layeredPane.add(pnlCheckout, Integer.valueOf(1));
+
+        setContentPane(layeredPane);
+        pack();
+
         setVisible(true);
 
         // Group radio buttons

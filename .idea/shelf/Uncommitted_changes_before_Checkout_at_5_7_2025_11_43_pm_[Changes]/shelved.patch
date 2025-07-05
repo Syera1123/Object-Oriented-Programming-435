@@ -1,0 +1,75 @@
+Index: password.txt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>Email: dini@gmail.com\r\nPassword: Farzana\r\n------------------------\r\nEmail: rana@gmail.com\r\nPassword: dada\r\n------------------------\r\nEmail: ss@gmail.com\r\nPassword: GG\r\n------------------------\r\nEmail: dini@gmail.com\r\nPassword: dddd\r\n------------------------\r\n
+===================================================================
+diff --git a/password.txt b/password.txt
+--- a/password.txt	(revision 92db8e13f5956833759476a48aa1ec17b1bb5eb0)
++++ b/password.txt	(date 1751724426045)
+@@ -10,3 +10,9 @@
+ Email: dini@gmail.com
+ Password: dddd
+ ------------------------
++Email: ft@gmail.com
++Password: S@hira123
++------------------------
++Email: ainulsyera31@gmail.com
++Password: S@hira123
++------------------------
+Index: src/ReceiveData.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>import javax.swing.*;\r\nimport java.awt.*;\r\nimport java.io.File;\r\nimport java.io.FileWriter;\r\nimport java.io.IOException;\r\nimport java.time.LocalDateTime;\r\nimport java.time.format.DateTimeFormatter;\r\n\r\npublic class ReceiveData extends JFrame {\r\n    private JPanel mainReceive;\r\n    private JLabel lblTicketType;\r\n    private JLabel lblKid;\r\n    private JLabel lblAdult;\r\n    private JLabel lblOKU;\r\n    private JLabel lblSafari;\r\n    private JLabel lblPhotobooth;\r\n    private JLabel lblAnimalFood;\r\n    private JLabel lblBirdShow;\r\n    private JLabel lblTotal;\r\n    private JButton btnPay;\r\n    private JButton btnEdit;  // Make sure this matches the one in .form\r\n\r\n    // Declare variables to pass back\r\n    private String ticketType;\r\n    private int kid, kidPrice, adult, adultPrice, oku, okuPrice;\r\n    private boolean safari, photobooth;\r\n    private int animalFood, animalFoodPrice, birdShow, birdShowPrice, total;\r\n\r\n    public ReceiveData(String ticketType, int kid, int kidPrice, int adult, int adultPrice, int oku, int okuPrice,\r\n                       boolean safari, boolean photobooth, int animalFood, int animalFoodPrice,\r\n                       int birdShow, int birdShowPrice, int total) {\r\n\r\n        this.ticketType = ticketType;\r\n        this.kid = kid;\r\n        this.kidPrice = kidPrice;\r\n        this.adult = adult;\r\n        this.adultPrice = adultPrice;\r\n        this.oku = oku;\r\n        this.okuPrice = okuPrice;\r\n        this.safari = safari;\r\n        this.photobooth = photobooth;\r\n        this.animalFood = animalFood;\r\n        this.animalFoodPrice = animalFoodPrice;\r\n        this.birdShow = birdShow;\r\n        this.birdShowPrice = birdShowPrice;\r\n        this.total = total;\r\n\r\n        setTitle(\"Zoo Ticket Summary\");\r\n        setSize(700, 500);\r\n        setDefaultCloseOperation(DISPOSE_ON_CLOSE);\r\n        setLocationRelativeTo(null);\r\n\r\n        // === Background ===\r\n        JLabel backgroundLabel = new JLabel();\r\n        ImageIcon bgIcon = new ImageIcon(getClass().getResource(\"/Untitled design.png\"));\r\n        backgroundLabel.setIcon(new ImageIcon(bgIcon.getImage().getScaledInstance(700, 500, Image.SCALE_SMOOTH)));\r\n        backgroundLabel.setBounds(0, 0, 700, 500);\r\n\r\n        mainReceive.setOpaque(false);\r\n\r\n        // === Buttons Styling ===\r\n        btnPay.setBackground(new Color(156, 102, 61));\r\n        btnPay.setForeground(Color.WHITE);\r\n        btnPay.setFont(new Font(\"Arial\", Font.BOLD, 16));\r\n        btnPay.setFocusPainted(false);\r\n        btnPay.setBorder(BorderFactory.createEmptyBorder(10, 20, 10, 20));\r\n\r\n        btnEdit.setBackground(new Color(126, 170, 255)); // Cornflower Blue\r\n        btnEdit.setForeground(Color.WHITE);\r\n        btnEdit.setFont(new Font(\"Arial\", Font.BOLD, 16));\r\n        btnEdit.setFocusPainted(false);\r\n        btnEdit.setBorder(BorderFactory.createEmptyBorder(10, 20, 10, 20));\r\n\r\n        // === Set Labels ===\r\n        lblTicketType.setText(\"Ticket Type: \" + ticketType);\r\n        lblKid.setText(\"   - Kid     x \" + kid + \" = RM \" + (kid * kidPrice));\r\n        lblAdult.setText(\"   - Adult x \" + adult + \" = RM \" + (adult * adultPrice));\r\n        lblOKU.setText(\"   - OKU  x \" + oku + \" = RM \" + (oku * okuPrice));\r\n        lblSafari.setText(\"   - Safari Ride: \" + (safari ? \"Yes (RM30)\" : \"No\"));\r\n        lblPhotobooth.setText(\"   - Photobooth: \" + (photobooth ? \"Yes (RM30)\" : \"No\"));\r\n        lblAnimalFood.setText(\"   - Animal Food x \" + animalFood + \" = RM \" + (animalFood * animalFoodPrice));\r\n        lblBirdShow.setText(\"   - Bird Show     x \" + birdShow + \" = RM \" + (birdShow * birdShowPrice));\r\n        lblTotal.setText(\" Total: RM \" + total);\r\n\r\n        // === Pay Button Action ===\r\n        btnPay.addActionListener(e -> {\r\n            int confirm = JOptionPane.showConfirmDialog(this, \"Confirm payment?\", \"Confirm\", JOptionPane.YES_NO_OPTION);\r\n            if (confirm == JOptionPane.YES_OPTION) {\r\n                Object[] options = {\"Cash\", \"Card\", \"Online Transfer\"};\r\n                int method = JOptionPane.showOptionDialog(this, \"Select payment method:\", \"Payment\",\r\n                        JOptionPane.DEFAULT_OPTION, JOptionPane.INFORMATION_MESSAGE, null, options, options[0]);\r\n\r\n                if (method != JOptionPane.CLOSED_OPTION) {\r\n                    saveReceiptToFile(ticketType, kid, kidPrice, adult, adultPrice, oku, okuPrice,\r\n                            safari, photobooth, animalFood, animalFoodPrice, birdShow, birdShowPrice, total,\r\n                            options[method].toString());\r\n\r\n                    JOptionPane.showMessageDialog(this, \"Payment successful via \" + options[method] + \"!\");\r\n                }\r\n            }\r\n        });\r\n\r\n        // === Edit Button Action ===\r\n        btnEdit.addActionListener(e -> {\r\n            this.dispose();  // Close current window\r\n\r\n            // Open Checkout screen again — Update with your actual Checkout class name\r\n            new Checkout(ticketType, kid, kidPrice, adult, adultPrice, oku, okuPrice,\r\n                    safari, photobooth, animalFood, animalFoodPrice, birdShow, birdShowPrice, total);\r\n        });\r\n\r\n        // === Layering ===\r\n        JLayeredPane layeredPane = new JLayeredPane();\r\n        layeredPane.setPreferredSize(new Dimension(700, 500));\r\n\r\n        backgroundLabel.setBounds(0, 0, 700, 500);\r\n        mainReceive.setBounds(0, 0, 700, 500);\r\n\r\n        layeredPane.add(backgroundLabel, Integer.valueOf(0));\r\n        layeredPane.add(mainReceive, Integer.valueOf(1));\r\n\r\n        setContentPane(layeredPane);\r\n        pack();\r\n        setVisible(true);\r\n    }\r\n\r\n    private void saveReceiptToFile(String ticketType, int kid, int kidPrice, int adult, int adultPrice, int oku, int okuPrice,\r\n                                   boolean safari, boolean photobooth, int animalFood, int animalFoodPrice,\r\n                                   int birdShow, int birdShowPrice, int total, String method) {\r\n        try (FileWriter writer = new FileWriter(\"receipt.txt\")) {\r\n            LocalDateTime now = LocalDateTime.now();\r\n            DateTimeFormatter formatter = DateTimeFormatter.ofPattern(\"dd/MM/yyyy HH:mm:ss\");\r\n            String formattedDateTime = now.format(formatter);\r\n\r\n            writer.write(\"\\n\");\r\n            writer.write(\"======================================\\n\");\r\n            writer.write(\"           FINAL RECEIPT              \\n\");\r\n            writer.write(\"======================================\\n\");\r\n            writer.write(\"Date & Time     : \" + formattedDateTime + \"\\n\");\r\n            writer.write(\"Ticket Type     : \" + ticketType + \"\\n\");\r\n            writer.write(\"--------------------------------------\\n\");\r\n            writer.write(\"Kid             x \" + kid + \" = RM \" + (kid * kidPrice) + \"\\n\");\r\n            writer.write(\"Adult           x \" + adult + \" = RM \" + (adult * adultPrice) + \"\\n\");\r\n            writer.write(\"OKU             x \" + oku + \" = RM \" + (oku * okuPrice) + \"\\n\");\r\n            writer.write(\"--------------------------------------\\n\");\r\n            writer.write(\"Safari Ride     : \" + (safari ? \"Yes (RM30)\" : \"No\") + \"\\n\");\r\n            writer.write(\"Photobooth      : \" + (photobooth ? \"Yes (RM30)\" : \"No\") + \"\\n\");\r\n            writer.write(\"--------------------------------------\\n\");\r\n            writer.write(\"Animal Food     x \" + animalFood + \" = RM \" + (animalFood * animalFoodPrice) + \"\\n\");\r\n            writer.write(\"Bird Show       x \" + birdShow + \" = RM \" + (birdShow * birdShowPrice) + \"\\n\");\r\n            writer.write(\"======================================\\n\");\r\n            writer.write(\"Payment Method  : \" + method + \"\\n\");\r\n            writer.write(\"TOTAL           : RM \" + total + \"\\n\");\r\n            writer.write(\"======================================\\n\");\r\n\r\n            File file = new File(\"receipt.txt\");\r\n            if (file.exists()) {\r\n                Desktop.getDesktop().open(file);\r\n            }\r\n\r\n        } catch (IOException ex) {\r\n            JOptionPane.showMessageDialog(this, \"Failed to save or open receipt.\");\r\n        }\r\n    }\r\n}\r\n
+===================================================================
+diff --git a/src/ReceiveData.java b/src/ReceiveData.java
+--- a/src/ReceiveData.java	(revision 92db8e13f5956833759476a48aa1ec17b1bb5eb0)
++++ b/src/ReceiveData.java	(date 1751714647274)
+@@ -111,10 +111,10 @@
+ 
+         // === Layering ===
+         JLayeredPane layeredPane = new JLayeredPane();
+-        layeredPane.setPreferredSize(new Dimension(700, 500));
++        layeredPane.setPreferredSize(new Dimension(600, 500));
+ 
+-        backgroundLabel.setBounds(0, 0, 700, 500);
+-        mainReceive.setBounds(0, 0, 700, 500);
++        backgroundLabel.setBounds(0, 0, 600, 500);
++        mainReceive.setBounds(0, 0, 600, 500);
+ 
+         layeredPane.add(backgroundLabel, Integer.valueOf(0));
+         layeredPane.add(mainReceive, Integer.valueOf(1));
+Index: receipt.txt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>\r\n======================================\r\n           FINAL RECEIPT              \r\n======================================\r\nDate & Time     : 05/07/2025 18:54:48\r\nTicket Type     : Weekday\r\n--------------------------------------\r\nKid             x 5 = RM 50\r\nAdult           x 1 = RM 12\r\nOKU             x 0 = RM 0\r\n--------------------------------------\r\nSafari Ride     : Yes (RM30)\r\nPhotobooth      : Yes (RM30)\r\n--------------------------------------\r\nAnimal Food     x 1 = RM 10\r\nBird Show       x 3 = RM 45\r\n======================================\r\nPayment Method  : Online Transfer\r\nTOTAL           : RM 177\r\n======================================\r\n
+===================================================================
+diff --git a/receipt.txt b/receipt.txt
+--- a/receipt.txt	(revision 92db8e13f5956833759476a48aa1ec17b1bb5eb0)
++++ b/receipt.txt	(date 1751724811094)
+@@ -2,19 +2,19 @@
+ ======================================
+            FINAL RECEIPT              
+ ======================================
+-Date & Time     : 05/07/2025 18:54:48
+-Ticket Type     : Weekday
++Date & Time     : 05/07/2025 22:13:30
++Ticket Type     : Weekend
+ --------------------------------------
+-Kid             x 5 = RM 50
+-Adult           x 1 = RM 12
++Kid             x 0 = RM 0
++Adult           x 1 = RM 15
+ OKU             x 0 = RM 0
+ --------------------------------------
+ Safari Ride     : Yes (RM30)
+ Photobooth      : Yes (RM30)
+ --------------------------------------
+-Animal Food     x 1 = RM 10
+-Bird Show       x 3 = RM 45
++Animal Food     x 0 = RM 0
++Bird Show       x 0 = RM 0
+ ======================================
+ Payment Method  : Online Transfer
+-TOTAL           : RM 177
++TOTAL           : RM 75
+ ======================================

@@ -1,0 +1,253 @@
+Index: src/Zoo/LogInWindow.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package Zoo;\r\n\r\nimport javax.swing.*;\r\nimport java.awt.*;\r\nimport java.awt.event.ActionEvent;\r\nimport java.awt.event.ActionListener;\r\n\r\npublic abstract class LogInWindow extends JFrame implements ActionListener {\r\n    protected JPanel panel1;\r\n    protected JFormattedTextField fEmail;\r\n    protected JPasswordField jPassword;\r\n    protected JCheckBox jcbRememberMe;\r\n    protected JButton btnSubmit;\r\n    protected JLabel lblLogIn;\r\n    protected JLabel lblPassword;\r\n    protected JLabel lblForgotPass;\r\n\r\n    public LogInWindow(){\r\n        super.setTitle(\"Zoo Booking\"); // title\r\n        super.setSize(400,300);\r\n\r\n        //action listener\r\n        fEmail.addActionListener(this);\r\n        //add designed to Content Pane\r\n        Container cp = super.getContentPane();\r\n        cp.add(panel1);\r\n\r\n\r\n        super.setVisible(true);\r\n    }\r\n\r\n    public static void main(String[] args) {\r\n        new LogInWindow() {\r\n            @Override\r\n            public void actionPerformed(ActionEvent e) {\r\n\r\n\r\n            }\r\n        };\r\n    }\r\n\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/Zoo/LogInWindow.java b/src/Zoo/LogInWindow.java
+--- a/src/Zoo/LogInWindow.java	(revision 92db8e13f5956833759476a48aa1ec17b1bb5eb0)
++++ b/src/Zoo/LogInWindow.java	(date 1751724376492)
+@@ -2,8 +2,8 @@
+ 
+ import javax.swing.*;
+ import java.awt.*;
+-import java.awt.event.ActionEvent;
+-import java.awt.event.ActionListener;
++import java.awt.event.*;
++import java.io.*;
+ 
+ public abstract class LogInWindow extends JFrame implements ActionListener {
+     protected JPanel panel1;
+@@ -15,17 +15,19 @@
+     protected JLabel lblPassword;
+     protected JLabel lblForgotPass;
+ 
+-    public LogInWindow(){
+-        super.setTitle("Zoo Booking"); // title
+-        super.setSize(400,300);
++    public LogInWindow() {
++        super.setTitle("Zoo Booking");
++        super.setSize(400, 300);
+ 
+-        //action listener
++        // Listener
++        btnSubmit.addActionListener(this);
+         fEmail.addActionListener(this);
+-        //add designed to Content Pane
++        jPassword.addActionListener(this);
++
++        // Add GUI panel
+         Container cp = super.getContentPane();
+         cp.add(panel1);
+ 
+-
+         super.setVisible(true);
+     }
+ 
+@@ -33,10 +35,58 @@
+         new LogInWindow() {
+             @Override
+             public void actionPerformed(ActionEvent e) {
++                String email = fEmail.getText();
++                String password = String.valueOf(jPassword.getPassword());
++
++                if (email.isEmpty()) {
++                    JOptionPane.showMessageDialog(this, "Please enter your email");
++                    return;
++                }
+ 
++                if (password.isEmpty()) {
++                    JOptionPane.showMessageDialog(this, "Please enter your password");
++                    return;
++                }
+ 
++                // ✅ Check email-password match
++                if (isLoginValid(email, password)) {
++                    JOptionPane.showMessageDialog(this, "Login successful!");
++                    // TODO: Proceed to next screen (e.g., homepage / main menu)
++                } else {
++                    JOptionPane.showMessageDialog(this, "Invalid email or password");
++                }
+             }
+-        };
+-    }
++
++            private boolean isLoginValid(String email, String password) {
++                try {
++                    File file = new File("password.txt");
++                    if (!file.exists())
++                        return false;
++
++                    BufferedReader reader = new BufferedReader(new FileReader(file));
++                    String line;
++                    boolean emailFound = false;
++
++                    while ((line = reader.readLine()) != null) {
++                        if (line.equals("Email: " + email)) {
++                            emailFound = true;
++                            String nextLine = reader.readLine(); // should be password
++                            if (nextLine != null && nextLine.equals("Password: " + password)) {
++                                reader.close();
++                                return true; // Match found
++                            } else {
++                                reader.close();
++                                return false; // Password mismatch
++                            }
++                        }
++                    }
+ 
++                    reader.close();
++                } catch (IOException ex) {
++                    JOptionPane.showMessageDialog(this, "Error reading file: " + ex.getMessage());
++                }
++                return false;
++            }
++        };
++    }
+ }
+Index: src/Checkout.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>import javax.swing.*;\r\nimport java.awt.event.*;\r\n\r\npublic class Checkout extends JFrame implements ActionListener {\r\n    private JPanel pnlCheckout;\r\n    private JRadioButton rbWeekday;\r\n    private JRadioButton rbWeekend;\r\n    private JSpinner spKid;\r\n    private JSpinner spAdult;\r\n    private JSpinner spOKU;\r\n    private JSpinner spAnimalFood;\r\n    private JSpinner spBirdShow;\r\n    private JRadioButton rbSafariYes;\r\n    private JRadioButton rbSafariNo;\r\n    private JRadioButton rbPhotoboothYes;\r\n    private JRadioButton rbPhotoboothNo;\r\n    private JButton btnCheckout;\r\n    private JLabel lblKid;\r\n    private JLabel lblAdult;\r\n    private JLabel lblOKU;\r\n    private JLabel lblSafariRide;\r\n    private JLabel lblPhotobooth;\r\n    private JLabel lblAnimalFood;\r\n    private JLabel lblBirdShow;\r\n\r\n    private ButtonGroup bgWeek, bgSafariRide, bgPhotobooth;\r\n\r\n    public Checkout() {\r\n        setTitle(\"Zoo Ticket System\");\r\n        setSize(700, 500);\r\n        setContentPane(pnlCheckout);\r\n        setDefaultCloseOperation(EXIT_ON_CLOSE);\r\n        setVisible(true);\r\n\r\n        // Group radio buttons\r\n        bgWeek = new ButtonGroup();\r\n        bgWeek.add(rbWeekday);\r\n        bgWeek.add(rbWeekend);\r\n\r\n        bgSafariRide = new ButtonGroup();\r\n        bgSafariRide.add(rbSafariYes);\r\n        bgSafariRide.add(rbSafariNo);\r\n\r\n        bgPhotobooth = new ButtonGroup();\r\n        bgPhotobooth.add(rbPhotoboothYes);\r\n        bgPhotobooth.add(rbPhotoboothNo);\r\n\r\n        // Spinner model\r\n        spKid.setModel(new SpinnerNumberModel(0, 0, 1000, 1));\r\n        spAdult.setModel(new SpinnerNumberModel(1, 1, 1000, 1));\r\n        spOKU.setModel(new SpinnerNumberModel(0, 0, 1000, 1));\r\n        spAnimalFood.setModel(new SpinnerNumberModel(0, 0, 1000, 1));\r\n        spBirdShow.setModel(new SpinnerNumberModel(0, 0, 1000, 1));\r\n\r\n        // Button Action\r\n        btnCheckout.addActionListener(this);\r\n    }\r\n\r\n    // New constructor to prefill data when coming back from ReceiveData\r\n    public Checkout(String ticketType, int kid, int kidPrice, int adult, int adultPrice, int oku, int okuPrice,\r\n                    boolean safari, boolean photobooth, int animalFood, int animalFoodPrice,\r\n                    int birdShow, int birdShowPrice, int total) {\r\n        this();\r\n\r\n        // Set ticket type\r\n        if (\"Weekday\".equals(ticketType)) {\r\n            rbWeekday.setSelected(true);\r\n        } else if (\"Weekend\".equals(ticketType)) {\r\n            rbWeekend.setSelected(true);\r\n        }\r\n\r\n        // Set spinners\r\n        spKid.setValue(kid);\r\n        spAdult.setValue(adult);\r\n        spOKU.setValue(oku);\r\n        spAnimalFood.setValue(animalFood);\r\n        spBirdShow.setValue(birdShow);\r\n\r\n        // Set Safari and Photobooth options\r\n        if (safari) {\r\n            rbSafariYes.setSelected(true);\r\n        } else {\r\n            rbSafariNo.setSelected(true);\r\n        }\r\n\r\n        if (photobooth) {\r\n            rbPhotoboothYes.setSelected(true);\r\n        } else {\r\n            rbPhotoboothNo.setSelected(true);\r\n        }\r\n    }\r\n\r\n    @Override\r\n    public void actionPerformed(ActionEvent e) {\r\n        int noKid = (Integer) spKid.getValue();\r\n        int noAdult = (Integer) spAdult.getValue();\r\n        int noOKU = (Integer) spOKU.getValue();\r\n        int noAnimalFood = (Integer) spAnimalFood.getValue();\r\n        int noBirdShow = (Integer) spBirdShow.getValue();\r\n\r\n        boolean safari = rbSafariYes.isSelected();\r\n        boolean photobooth = rbPhotoboothYes.isSelected();\r\n\r\n        String ticketType;\r\n        int kidPrice, adultPrice, okuPrice;\r\n\r\n        if (rbWeekday.isSelected()) {\r\n            ticketType = \"Weekday\";\r\n            kidPrice = 10;\r\n            adultPrice = 12;\r\n            okuPrice = 7;\r\n        } else if (rbWeekend.isSelected()) {\r\n            ticketType = \"Weekend\";\r\n            kidPrice = 13;\r\n            adultPrice = 15;\r\n            okuPrice = 9;\r\n        } else {\r\n            JOptionPane.showMessageDialog(this, \"Please select day (Weekday/Weekend).\");\r\n            return;\r\n        }\r\n\r\n        if (!rbSafariYes.isSelected() && !rbSafariNo.isSelected()) {\r\n            JOptionPane.showMessageDialog(this, \"Please select Safari Ride option.\");\r\n            return;\r\n        }\r\n        if (!rbPhotoboothYes.isSelected() && !rbPhotoboothNo.isSelected()) {\r\n            JOptionPane.showMessageDialog(this, \"Please select Photobooth option.\");\r\n            return;\r\n        }\r\n\r\n        int safariPrice = safari ? 30 : 0;\r\n        int photoPrice = photobooth ? 30 : 0;\r\n        int animalFoodPrice = 10;\r\n        int birdShowPrice = 15;\r\n\r\n        int total = (noKid * kidPrice) + (noAdult * adultPrice) + (noOKU * okuPrice)\r\n                + safariPrice + photoPrice + (noAnimalFood * animalFoodPrice) + (noBirdShow * birdShowPrice);\r\n\r\n        new ReceiveData(ticketType, noKid, kidPrice, noAdult, adultPrice, noOKU, okuPrice,\r\n                safari, photobooth, noAnimalFood, animalFoodPrice, noBirdShow, birdShowPrice, total);\r\n    }\r\n\r\n    public static void main(String[] args) {\r\n        new Checkout();\r\n    }\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/Checkout.java b/src/Checkout.java
+--- a/src/Checkout.java	(revision 92db8e13f5956833759476a48aa1ec17b1bb5eb0)
++++ b/src/Checkout.java	(date 1751715479407)
+@@ -27,7 +27,7 @@
+ 
+     public Checkout() {
+         setTitle("Zoo Ticket System");
+-        setSize(700, 500);
++        setSize(600, 500);
+         setContentPane(pnlCheckout);
+         setDefaultCloseOperation(EXIT_ON_CLOSE);
+         setVisible(true);
+Index: src/Price.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>import javax.swing.*;\r\nimport java.awt.*;\r\nimport java.awt.event.ActionEvent;\r\nimport java.awt.event.ActionListener;\r\n\r\npublic class Price extends JFrame implements ActionListener {\r\n    private JPanel pnlPrice;\r\n    private JButton btnContinueOrder;\r\n    private JList list1;\r\n    private JList list2;\r\n    private JLabel lblWeekday;\r\n    private JLabel lblWeekend;\r\n\r\n\r\n    public Price(){\r\n        super.setSize(500,250);\r\n        super.setDefaultCloseOperation(DISPOSE_ON_CLOSE);\r\n\r\n        //add action Listener\r\n        btnContinueOrder.addActionListener(this);\r\n\r\n        Container cp = super.getContentPane();\r\n        cp.add(pnlPrice);\r\n\r\n        super.setVisible(true);\r\n\r\n    }\r\n\r\n\r\n    public static void main(String[] args){\r\n        new Price();\r\n    }\r\n\r\n\r\n    @Override\r\n    public void actionPerformed(ActionEvent e) {\r\n        if(e.getSource()==btnContinueOrder){\r\n            Checkout cp = new Checkout();\r\n            dispose();\r\n        }\r\n    }\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/Price.java b/src/Price.java
+--- a/src/Price.java	(revision 92db8e13f5956833759476a48aa1ec17b1bb5eb0)
++++ b/src/Price.java	(date 1751714050320)
+@@ -13,7 +13,7 @@
+ 
+ 
+     public Price(){
+-        super.setSize(500,250);
++        super.setSize(700,500);
+         super.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
+ 
+         //add action Listener
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"f9ddea68-19e7-4856-b0cd-168aa1918d1e\" name=\"Changes\" comment=\"\">\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/Checkout.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/Checkout.java\" afterDir=\"false\" />\r\n    </list>\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n  </component>\r\n  <component name=\"GitHubPullRequestSearchHistory\"><![CDATA[{\r\n  \"lastFilter\": {\r\n    \"state\": \"OPEN\",\r\n    \"assignee\": \"Syera1123\"\r\n  }\r\n}]]></component>\r\n  <component name=\"GithubPullRequestsUISettings\"><![CDATA[{\r\n  \"selectedUrlAndAccountId\": {\r\n    \"url\": \"https://github.com/Syera1123/Object-Oriented-Programming-435.git\",\r\n    \"accountId\": \"2c07c89b-8f34-470d-a656-212026ddbbfe\"\r\n  }\r\n}]]></component>\r\n  <component name=\"ProjectColorInfo\"><![CDATA[{\r\n  \"associatedIndex\": 0\r\n}]]></component>\r\n  <component name=\"ProjectId\" id=\"2zS9Guun1aWc316Z4MENEOmqm3r\" />\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\"><![CDATA[{\r\n  \"keyToString\": {\r\n    \"Application.Checkout.executor\": \"Run\",\r\n    \"RunOnceActivity.ShowReadmeOnStart\": \"true\",\r\n    \"RunOnceActivity.git.unshallow\": \"true\",\r\n    \"git-widget-placeholder\": \"main\",\r\n    \"kotlin-language-version-configured\": \"true\",\r\n    \"nodejs_package_manager_path\": \"npm\",\r\n    \"vue.rearranger.settings.migration\": \"true\"\r\n  }\r\n}]]></component>\r\n  <component name=\"SharedIndexes\">\r\n    <attachedChunks>\r\n      <set>\r\n        <option value=\"bundled-jdk-9823dce3aa75-a94e463ab2e7-intellij.indexing.shared.core-IU-243.26574.91\" />\r\n        <option value=\"bundled-js-predefined-d6986cc7102b-1632447f56bf-JavaScript-IU-243.26574.91\" />\r\n      </set>\r\n    </attachedChunks>\r\n  </component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"f9ddea68-19e7-4856-b0cd-168aa1918d1e\" name=\"Changes\" comment=\"\" />\r\n      <created>1751713517139</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1751713517139</updated>\r\n      <workItem from=\"1751713519209\" duration=\"285000\" />\r\n    </task>\r\n    <servers />\r\n  </component>\r\n  <component name=\"TypeScriptGeneratedFilesManager\">\r\n    <option name=\"version\" value=\"3\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision 92db8e13f5956833759476a48aa1ec17b1bb5eb0)
++++ b/.idea/workspace.xml	(date 1751729791780)
+@@ -1,9 +1,17 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <project version="4">
++  <component name="AutoImportSettings">
++    <option name="autoReloadType" value="SELECTIVE" />
++  </component>
+   <component name="ChangeListManager">
+     <list default="true" id="f9ddea68-19e7-4856-b0cd-168aa1918d1e" name="Changes" comment="">
+-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/password.txt" beforeDir="false" afterPath="$PROJECT_DIR$/password.txt" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/receipt.txt" beforeDir="false" afterPath="$PROJECT_DIR$/receipt.txt" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/src/Checkout.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Checkout.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/Price.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Price.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/ReceiveData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ReceiveData.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/Zoo/LogInWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Zoo/LogInWindow.java" afterDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+@@ -13,37 +21,44 @@
+   <component name="Git.Settings">
+     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+   </component>
+-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+-  "lastFilter": {
+-    "state": "OPEN",
+-    "assignee": "Syera1123"
++  <component name="GitHubPullRequestSearchHistory">{
++  &quot;lastFilter&quot;: {
++    &quot;state&quot;: &quot;OPEN&quot;,
++    &quot;assignee&quot;: &quot;Syera1123&quot;
+   }
+-}]]></component>
+-  <component name="GithubPullRequestsUISettings"><![CDATA[{
+-  "selectedUrlAndAccountId": {
+-    "url": "https://github.com/Syera1123/Object-Oriented-Programming-435.git",
+-    "accountId": "2c07c89b-8f34-470d-a656-212026ddbbfe"
++}</component>
++  <component name="GithubPullRequestsUISettings">{
++  &quot;selectedUrlAndAccountId&quot;: {
++    &quot;url&quot;: &quot;https://github.com/Syera1123/Object-Oriented-Programming-435.git&quot;,
++    &quot;accountId&quot;: &quot;2c07c89b-8f34-470d-a656-212026ddbbfe&quot;
+   }
+-}]]></component>
+-  <component name="ProjectColorInfo"><![CDATA[{
+-  "associatedIndex": 0
+-}]]></component>
++}</component>
++  <component name="ProjectColorInfo">{
++  &quot;associatedIndex&quot;: 0
++}</component>
+   <component name="ProjectId" id="2zS9Guun1aWc316Z4MENEOmqm3r" />
+   <component name="ProjectViewState">
+     <option name="hideEmptyMiddlePackages" value="true" />
+     <option name="showLibraryContents" value="true" />
+   </component>
+-  <component name="PropertiesComponent"><![CDATA[{
+-  "keyToString": {
+-    "Application.Checkout.executor": "Run",
+-    "RunOnceActivity.ShowReadmeOnStart": "true",
+-    "RunOnceActivity.git.unshallow": "true",
+-    "git-widget-placeholder": "main",
+-    "kotlin-language-version-configured": "true",
+-    "nodejs_package_manager_path": "npm",
+-    "vue.rearranger.settings.migration": "true"
++  <component name="PropertiesComponent">{
++  &quot;keyToString&quot;: {
++    &quot;Application.Checkout.executor&quot;: &quot;Run&quot;,
++    &quot;Application.LogInWindow.executor&quot;: &quot;Run&quot;,
++    &quot;Application.Price.executor&quot;: &quot;Run&quot;,
++    &quot;Application.SignUpWindow.executor&quot;: &quot;Run&quot;,
++    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
++    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
++    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
++    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
++    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
++    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
++    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
++    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
++    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
++    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+   }
+-}]]></component>
++}</component>
+   <component name="SharedIndexes">
+     <attachedChunks>
+       <set>
+@@ -61,6 +76,9 @@
+       <option name="presentableId" value="Default" />
+       <updated>1751713517139</updated>
+       <workItem from="1751713519209" duration="285000" />
++      <workItem from="1751713816230" duration="304000" />
++      <workItem from="1751714244408" duration="4628000" />
++      <workItem from="1751729078275" duration="706000" />
+     </task>
+     <servers />
+   </component>

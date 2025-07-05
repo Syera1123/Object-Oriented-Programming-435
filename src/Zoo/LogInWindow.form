@@ -1,32 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="Zoo.LogInWindow">
-  <grid id="27dc6" binding="panel1" default-binding="true" layout-manager="GridLayoutManager" row-count="2" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+  <grid id="27dc6" binding="panel1" default-binding="true" layout-manager="GridLayoutManager" row-count="4" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
     <margin top="0" left="0" bottom="0" right="0"/>
     <constraints>
-      <xy x="20" y="20" width="500" height="400"/>
+      <xy x="20" y="20" width="552" height="412"/>
     </constraints>
-    <properties/>
+    <properties>
+      <opaque value="false"/>
+      <verifyInputWhenFocusTarget value="true"/>
+      <visible value="true"/>
+    </properties>
     <border type="none"/>
     <children>
-      <grid id="9a5ad" layout-manager="GridLayoutManager" row-count="6" column-count="2" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+      <grid id="9a5ad" binding="fullpanel" layout-manager="GridLayoutManager" row-count="6" column-count="3" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
         <margin top="0" left="0" bottom="0" right="0"/>
         <constraints>
-          <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+          <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
-        <properties/>
+        <properties>
+          <opaque value="false"/>
+        </properties>
         <border type="none"/>
         <children>
           <component id="31a52" class="javax.swing.JLabel" binding="lblLogIn">
             <constraints>
-              <grid row="0" column="0" row-span="1" col-span="2" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+              <grid row="0" column="0" row-span="1" col-span="3" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
             </constraints>
             <properties>
+              <font name="Juice ITC" size="26" style="1"/>
               <text value="Log In"/>
             </properties>
           </component>
           <component id="faa68" class="javax.swing.JLabel">
             <constraints>
-              <grid row="1" column="0" row-span="1" col-span="2" vsize-policy="0" hsize-policy="0" anchor="2" fill="0" indent="0" use-parent-layout="false"/>
+              <grid row="1" column="0" row-span="1" col-span="3" vsize-policy="0" hsize-policy="0" anchor="2" fill="0" indent="0" use-parent-layout="false"/>
             </constraints>
             <properties>
               <text value="Email:"/>
@@ -34,54 +41,78 @@
           </component>
           <component id="ae742" class="javax.swing.JFormattedTextField" binding="fEmail">
             <constraints>
-              <grid row="2" column="0" row-span="1" col-span="2" vsize-policy="0" hsize-policy="6" anchor="1" fill="0" indent="0" use-parent-layout="false">
-                <preferred-size width="150" height="-1"/>
+              <grid row="2" column="0" row-span="1" col-span="3" vsize-policy="0" hsize-policy="6" anchor="1" fill="0" indent="0" use-parent-layout="false">
+                <preferred-size width="170" height="-1"/>
               </grid>
             </constraints>
-            <properties/>
-          </component>
-          <component id="119d1" class="javax.swing.JLabel" binding="lblPassword">
-            <constraints>
-              <grid row="3" column="0" row-span="1" col-span="2" vsize-policy="0" hsize-policy="0" anchor="2" fill="0" indent="0" use-parent-layout="false"/>
-            </constraints>
             <properties>
-              <text value="Password:"/>
+              <margin top="2" left="9" bottom="2" right="6"/>
+              <text value=""/>
             </properties>
           </component>
           <component id="4bc4e" class="javax.swing.JPasswordField" binding="jPassword">
             <constraints>
-              <grid row="4" column="0" row-span="1" col-span="2" vsize-policy="0" hsize-policy="6" anchor="1" fill="0" indent="0" use-parent-layout="false">
-                <preferred-size width="150" height="-1"/>
+              <grid row="4" column="0" row-span="1" col-span="3" vsize-policy="0" hsize-policy="6" anchor="1" fill="0" indent="0" use-parent-layout="false">
+                <preferred-size width="170" height="-1"/>
               </grid>
             </constraints>
-            <properties/>
+            <properties>
+              <margin top="2" left="9" bottom="2" right="6"/>
+              <selectionColor color="-16119295"/>
+            </properties>
           </component>
           <component id="53126" class="javax.swing.JCheckBox" binding="jcbRememberMe">
             <constraints>
               <grid row="5" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="1" fill="0" indent="0" use-parent-layout="false"/>
             </constraints>
             <properties>
+              <opaque value="false"/>
               <text value="Remember Me"/>
             </properties>
           </component>
           <component id="a0287" class="javax.swing.JLabel" binding="lblForgotPass">
             <constraints>
-              <grid row="5" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="1" fill="1" indent="0" use-parent-layout="false"/>
+              <grid row="5" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="1" fill="1" indent="0" use-parent-layout="false"/>
             </constraints>
             <properties>
               <text value="Forgot Your Password?"/>
+            </properties>
+          </component>
+          <component id="119d1" class="javax.swing.JLabel" binding="lblPassword">
+            <constraints>
+              <grid row="3" column="0" row-span="1" col-span="3" vsize-policy="0" hsize-policy="0" anchor="2" fill="0" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <alignmentY value="0.2"/>
+              <text value="Password:"/>
             </properties>
           </component>
         </children>
       </grid>
       <component id="1d64b" class="javax.swing.JButton" binding="btnSubmit">
         <constraints>
-          <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+          <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="2" indent="0" use-parent-layout="false">
+            <preferred-size width="80" height="-1"/>
+          </grid>
         </constraints>
         <properties>
+          <background color="-6519740"/>
+          <doubleBuffered value="false"/>
+          <hideActionText value="false"/>
+          <inheritsPopupMenu value="false"/>
           <text value="Submit"/>
         </properties>
       </component>
+      <vspacer id="4b8ad">
+        <constraints>
+          <grid row="3" column="0" row-span="1" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
+        </constraints>
+      </vspacer>
+      <vspacer id="fc6b0">
+        <constraints>
+          <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
+        </constraints>
+      </vspacer>
     </children>
   </grid>
 </form>
