@@ -1,21 +1,19 @@
 import javax.swing.*;
-import javax.swing.event.ChangeListener;
-import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.awt.im.InputContext;
+import java.awt.event.*;
 
 public class Checkout extends JFrame implements ActionListener {
+    private JPanel pnlCheckout;
     private JRadioButton rbWeekday;
     private JRadioButton rbWeekend;
     private JSpinner spKid;
     private JSpinner spAdult;
     private JSpinner spOKU;
+    private JSpinner spAnimalFood;
+    private JSpinner spBirdShow;
     private JRadioButton rbSafariYes;
     private JRadioButton rbSafariNo;
     private JRadioButton rbPhotoboothYes;
     private JRadioButton rbPhotoboothNo;
-    private JSpinner spBirdShow;
     private JButton btnCheckout;
     private JLabel lblKid;
     private JLabel lblAdult;
@@ -24,184 +22,93 @@ public class Checkout extends JFrame implements ActionListener {
     private JLabel lblPhotobooth;
     private JLabel lblAnimalFood;
     private JLabel lblBirdShow;
-    private JPanel pnlCheckout;
-    private JSpinner spAnimalFood;
-    //button group
-    private ButtonGroup bgWeek;
-    private ButtonGroup bgSafariRide;
-    private ButtonGroup bgPhotobooth;
 
+    private ButtonGroup bgWeek, bgSafariRide, bgPhotobooth;
 
+    public Checkout() {
+        setTitle("Zoo Ticket System");
+        setSize(700, 500);
+        setContentPane(pnlCheckout);
+        setDefaultCloseOperation(EXIT_ON_CLOSE);
+        setVisible(true);
 
-
-    public Checkout(){
-        super.setSize(700,500);
-        super.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
-
-        //button checkout add ActionListener
-        btnCheckout.addActionListener(this);
-
-
-        //group membership radio button
+        // Group radio buttons
         bgWeek = new ButtonGroup();
         bgWeek.add(rbWeekday);
         bgWeek.add(rbWeekend);
+
         bgSafariRide = new ButtonGroup();
         bgSafariRide.add(rbSafariYes);
         bgSafariRide.add(rbSafariNo);
+
         bgPhotobooth = new ButtonGroup();
         bgPhotobooth.add(rbPhotoboothYes);
         bgPhotobooth.add(rbPhotoboothNo);
 
-        //group spinner
-        spKid.setModel(new SpinnerNumberModel(0,0,1000,1));
-        spAdult.setModel(new SpinnerNumberModel(1,1,1000,1));
-        spOKU.setModel(new SpinnerNumberModel(0,0,1000,1));
-        spAnimalFood.setModel(new SpinnerNumberModel(0,0,1000,1));
-        spBirdShow.setModel(new SpinnerNumberModel(0,0,1000,1));
+        // Spinner model
+        spKid.setModel(new SpinnerNumberModel(0, 0, 1000, 1));
+        spAdult.setModel(new SpinnerNumberModel(1, 1, 1000, 1));
+        spOKU.setModel(new SpinnerNumberModel(0, 0, 1000, 1));
+        spAnimalFood.setModel(new SpinnerNumberModel(0, 0, 1000, 1));
+        spBirdShow.setModel(new SpinnerNumberModel(0, 0, 1000, 1));
 
-
-
-
-        //add to panel
-        Container cp = super.getContentPane();
-        cp.add(pnlCheckout);
-
-
-
-
-
-        super.setVisible(true);
-
+        // Button Action
+        btnCheckout.addActionListener(this);
     }
-
-    public static void main(String[] args){
-        new Checkout();
-    }
-
 
     @Override
     public void actionPerformed(ActionEvent e) {
+        int noKid = (Integer) spKid.getValue();
+        int noAdult = (Integer) spAdult.getValue();
+        int noOKU = (Integer) spOKU.getValue();
+        int noAnimalFood = (Integer) spAnimalFood.getValue();
+        int noBirdShow = (Integer) spBirdShow.getValue();
 
-        //change JSpinner from String to Integer
-        int noKid = Integer.parseInt(String.valueOf(spKid.getValue()));
-        int noAdult = Integer.parseInt(String.valueOf(spAdult.getValue()));
-        int noOKU = Integer.parseInt(String.valueOf(spOKU.getValue()));
-        int noAnimalFood = Integer.parseInt(String.valueOf(spAnimalFood.getValue()));
-        int noBirdShow = Integer.parseInt(String.valueOf(spBirdShow.getValue()));
+        boolean safari = rbSafariYes.isSelected();
+        boolean photobooth = rbPhotoboothYes.isSelected();
 
+        String ticketType;
+        int kidPrice, adultPrice, okuPrice;
 
-        if(e.getSource()==btnCheckout) {        //if  user click checkout button
-
-            //initialize
-            double priceKid = 0.0;
-            double priceAdult = 0.0;
-            double priceOKU = 0.0;
-            double priceAnimalFood = 0.0;
-            double priceBirdShow = 0.0;
-            double sum = 0.0;
-
-
-            if(rbWeekday.isSelected()){
-
-                priceKid = 10 * (double)noKid;
-                priceAdult = 12 * (double)noAdult;
-                priceOKU = 7 * (double)noOKU;
-
-                //Calculate sum for kid, adult and OKU
-                sum = priceKid + priceAdult + priceOKU;
-
-                //optional : Safari Ride
-                if(rbSafariYes.isSelected())
-                    sum += 30;
-                else if(rbSafariNo.isSelected())
-                    sum = sum;
-                else {
-                    JOptionPane.showMessageDialog(null, "Please select whether you would like to include the Safari Ride.");
-                    return;
-                }
-
-                //optional : Photobooth
-                if(rbPhotoboothYes.isSelected())
-                    sum += 30;
-                else if(rbPhotoboothNo.isSelected())
-                    sum = sum;
-                else {
-                    JOptionPane.showMessageDialog(null, "Please select whether you would like to include the Photobooth service.");
-                    return;
-                }
-
-                priceAnimalFood = 10 * (double)noAnimalFood;
-                priceBirdShow = 15 * (double)noBirdShow;
-
-                sum = sum + priceAnimalFood + priceBirdShow;
-
-                //PRINT RECEIPT
-                JOptionPane.showMessageDialog(this,
-                        "\nno of kid = " + noKid +
-                                "\nprice kid = " + priceKid +
-                                "\nno of adult = " + noAdult +
-                                "\nprice adult = " + priceAdult +
-                                "\nno OKU = " + noOKU +
-                                "\nprice OKU = " + priceOKU +
-                                "\nno of animal food = " + noAnimalFood +
-                                "\nprice animal food = " + priceAnimalFood +
-                                "\n\nSUM = RM " + sum);
-
-
-
-            }
-            else if (rbWeekend.isSelected()){
-                priceKid = 13 * (double)noKid;
-                priceAdult = 15 * (double)noAdult;
-                priceOKU = 9 * (double)noOKU;
-
-                //Calculate sum for kid, adult and OKU
-                sum = priceKid + priceAdult + priceOKU;
-
-                //optional : Safari Ride
-                if(rbSafariYes.isSelected())
-                    sum += 30;
-                else if(rbSafariNo.isSelected())
-                    sum = sum;
-                else {
-                    JOptionPane.showMessageDialog(null, "Please select whether you would like to include the Safari Ride.");
-                    return;
-                }
-
-                //optional : Photobooth
-                if(rbPhotoboothYes.isSelected())
-                    sum += 30;
-                else if(rbPhotoboothNo.isSelected())
-                    sum = sum;
-                else {
-                    JOptionPane.showMessageDialog(null, "Please select whether you would like to include the Photobooth service.");
-                    return;
-                }
-
-                priceAnimalFood = 10 * (double)noAnimalFood;
-                priceBirdShow = 15 * (double)noBirdShow;
-
-                sum = sum + priceAnimalFood + priceBirdShow;
-
-                //PRINT RECEIPT
-                JOptionPane.showMessageDialog(this,
-                        "\nno of kid = " + noKid +
-                                "\nprice kid = " + priceKid +
-                                "\nno of adult = " + noAdult +
-                                "\nprice adult = " + priceAdult +
-                                "\nno OKU = " + noOKU +
-                                "\nprice OKU = " + priceOKU +
-                                "\nno of animal food = " + noAnimalFood +
-                                "\nprice animal food = " + priceAnimalFood +
-                                "\n\nSUM = RM " + sum);
-            }
-            else {
-                JOptionPane.showMessageDialog(null,"Please select a visit day (Weekday or Weekend) before proceeding.");
-            }
-
-
-
+        if (rbWeekday.isSelected()) {
+            ticketType = "Weekday";
+            kidPrice = 10;
+            adultPrice = 12;
+            okuPrice = 7;
+        } else if (rbWeekend.isSelected()) {
+            ticketType = "Weekend";
+            kidPrice = 13;
+            adultPrice = 15;
+            okuPrice = 9;
+        } else {
+            JOptionPane.showMessageDialog(this, "Please select day (Weekday/Weekend).");
+            return;
         }
+
+        // Validasi opsyen Safari dan Photobooth
+        if (!rbSafariYes.isSelected() && !rbSafariNo.isSelected()) {
+            JOptionPane.showMessageDialog(this, "Please select Safari Ride option.");
+            return;
+        }
+        if (!rbPhotoboothYes.isSelected() && !rbPhotoboothNo.isSelected()) {
+            JOptionPane.showMessageDialog(this, "Please select Photobooth option.");
+            return;
+        }
+
+        int safariPrice = safari ? 30 : 0;
+        int photoPrice = photobooth ? 30 : 0;
+        int animalFoodPrice = 10;
+        int birdShowPrice = 15;
+
+        int total = (noKid * kidPrice) + (noAdult * adultPrice) + (noOKU * okuPrice)
+                + safariPrice + photoPrice + (noAnimalFood * animalFoodPrice) + (noBirdShow * birdShowPrice);
+
+        // Papar resit guna ReceiveData (pass semua data)
+        new ReceiveData(ticketType, noKid, kidPrice, noAdult, adultPrice, noOKU, okuPrice,
+                safari, photobooth, noAnimalFood, animalFoodPrice, noBirdShow, birdShowPrice, total);
+    }
+
+    public static void main(String[] args) {
+        new Checkout();
     }
 }
