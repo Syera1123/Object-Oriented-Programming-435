@@ -1,6 +1,9 @@
 import javax.swing.*;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+
 
 
 public class ReceiveData extends JFrame {
@@ -62,18 +65,33 @@ public class ReceiveData extends JFrame {
                                    boolean safari, boolean photobooth, int animalFood, int animalFoodPrice,
                                    int birdShow, int birdShowPrice, int total, String method) {
         try (FileWriter writer = new FileWriter("receipt.txt")) {
-            writer.write("Ticket Type: " + ticketType + "\n");
-            writer.write("Kid x " + kid + " = RM " + (kid * kidPrice) + "\n");
-            writer.write("Adult x " + adult + " = RM " + (adult * adultPrice) + "\n");
-            writer.write("OKU x " + oku + " = RM " + (oku * okuPrice) + "\n");
-            writer.write("Safari Ride: " + (safari ? "Yes (RM30)" : "No") + "\n");
-            writer.write("Photobooth: " + (photobooth ? "Yes (RM30)" : "No") + "\n");
-            writer.write("Animal Food x " + animalFood + " = RM " + (animalFood * animalFoodPrice) + "\n");
-            writer.write("Bird Show x " + birdShow + " = RM " + (birdShow * birdShowPrice) + "\n");
-            writer.write("TOTAL: RM " + total + "\n");
-            writer.write("Payment Method: " + method + "\n");
+            LocalDateTime now = LocalDateTime.now();
+            DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss");
+            String formattedDateTime = now.format(formatter);
+
+            writer.write("\n");
+            writer.write("======================================\n");
+            writer.write("           FINAL RECEIPT          \n");
+            writer.write("======================================\n");
+            writer.write("Date & Time     : " + formattedDateTime + "\n");
+            writer.write("Ticket Type     : " + ticketType + "\n");
+            writer.write("-------------------------------------\n");
+            writer.write("Kid             x " + kid + " = RM " + (kid * kidPrice) + "\n");
+            writer.write("Adult           x " + adult + " = RM " + (adult * adultPrice) + "\n");
+            writer.write("OKU             x " + oku + " = RM " + (oku * okuPrice) + "\n");
+            writer.write("-------------------------------------\n");
+            writer.write("Safari Ride     : " + (safari ? "Yes (RM30)" : "No") + "\n");
+            writer.write("Photobooth      : " + (photobooth ? "Yes (RM30)" : "No") + "\n");
+            writer.write("-------------------------------------\n");
+            writer.write("Animal Food     x " + animalFood + " = RM " + (animalFood * animalFoodPrice) + "\n");
+            writer.write("Bird Show       x " + birdShow + " = RM " + (birdShow * birdShowPrice) + "\n");
+            writer.write("======================================\n");
+            writer.write("Payment Method  : " + method + "\n");
+            writer.write("TOTAL           : RM " + total + "\n");
+            writer.write("======================================\n");
         } catch (IOException ex) {
             JOptionPane.showMessageDialog(this, "Failed to save receipt.");
         }
     }
 }
+
