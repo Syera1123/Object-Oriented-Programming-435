@@ -160,7 +160,12 @@ public abstract class SignUpWindow extends JFrame implements ActionListener, Mou
 
                     if (e.getSource() == bSubmit) {
                         // All good
-                        JOptionPane.showMessageDialog(this, "Sign-up successful!");
+                       new LogInWindow() {
+                           @Override
+                           public void actionPerformed(ActionEvent e) {
+
+                           }
+                       };
                         // Proceed to next screen or save data
                         try {
                             FileWriter fw = new FileWriter("password.txt", true); // true = append

@@ -1,0 +1,399 @@
+Index: .idea/misc.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"ProjectRootManager\" version=\"2\" languageLevel=\"JDK_24\" default=\"true\" project-jdk-name=\"11\" project-jdk-type=\"JavaSDK\">\r\n    <output url=\"file://$PROJECT_DIR$/out\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/misc.xml b/.idea/misc.xml
+--- a/.idea/misc.xml	(revision 71bb4cd43c06ef37e2d3a70d88ae200c5f1228b0)
++++ b/.idea/misc.xml	(date 1751699429984)
+@@ -1,6 +1,6 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <project version="4">
+-  <component name="ProjectRootManager" version="2" languageLevel="JDK_24" default="true" project-jdk-name="11" project-jdk-type="JavaSDK">
++  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="11" project-jdk-type="JavaSDK">
+     <output url="file://$PROJECT_DIR$/out" />
+   </component>
+ </project>
+\ No newline at end of file
+Index: src/Zoo/SignUpWindow.form
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<form xmlns=\"http://www.intellij.com/uidesigner/form/\" version=\"1\" bind-to-class=\"Zoo.SignUpWindow\">\r\n  <grid id=\"27dc6\" binding=\"pnlSignUp\" layout-manager=\"GridLayoutManager\" row-count=\"9\" column-count=\"2\" same-size-horizontally=\"false\" same-size-vertically=\"false\" hgap=\"-1\" vgap=\"-1\">\r\n    <margin top=\"0\" left=\"0\" bottom=\"0\" right=\"0\"/>\r\n    <constraints>\r\n      <xy x=\"20\" y=\"20\" width=\"500\" height=\"294\"/>\r\n    </constraints>\r\n    <properties/>\r\n    <border type=\"none\"/>\r\n    <children>\r\n      <component id=\"1dd64\" class=\"javax.swing.JLabel\" binding=\"lblBack\">\r\n        <constraints>\r\n          <grid row=\"0\" column=\"0\" row-span=\"1\" col-span=\"1\" vsize-policy=\"0\" hsize-policy=\"0\" anchor=\"8\" fill=\"0\" indent=\"0\" use-parent-layout=\"false\"/>\r\n        </constraints>\r\n        <properties>\r\n          <text value=\"&lt;--\"/>\r\n        </properties>\r\n      </component>\r\n      <hspacer id=\"2a143\">\r\n        <constraints>\r\n          <grid row=\"0\" column=\"1\" row-span=\"1\" col-span=\"1\" vsize-policy=\"1\" hsize-policy=\"6\" anchor=\"0\" fill=\"1\" indent=\"0\" use-parent-layout=\"false\"/>\r\n        </constraints>\r\n      </hspacer>\r\n      <vspacer id=\"a5787\">\r\n        <constraints>\r\n          <grid row=\"8\" column=\"0\" row-span=\"1\" col-span=\"1\" vsize-policy=\"6\" hsize-policy=\"1\" anchor=\"0\" fill=\"2\" indent=\"0\" use-parent-layout=\"false\"/>\r\n        </constraints>\r\n      </vspacer>\r\n      <component id=\"d2e0f\" class=\"javax.swing.JLabel\" binding=\"lblSignUp\">\r\n        <constraints>\r\n          <grid row=\"1\" column=\"1\" row-span=\"1\" col-span=\"1\" vsize-policy=\"0\" hsize-policy=\"0\" anchor=\"0\" fill=\"0\" indent=\"0\" use-parent-layout=\"false\"/>\r\n        </constraints>\r\n        <properties>\r\n          <text value=\"Sign Up\"/>\r\n        </properties>\r\n      </component>\r\n      <component id=\"74006\" class=\"javax.swing.JFormattedTextField\" binding=\"fName\">\r\n        <constraints>\r\n          <grid row=\"2\" column=\"1\" row-span=\"1\" col-span=\"1\" vsize-policy=\"0\" hsize-policy=\"6\" anchor=\"0\" fill=\"0\" indent=\"0\" use-parent-layout=\"false\">\r\n            <preferred-size width=\"150\" height=\"-1\"/>\r\n          </grid>\r\n        </constraints>\r\n        <properties>\r\n          <text value=\"Name\"/>\r\n        </properties>\r\n      </component>\r\n      <component id=\"576ee\" class=\"javax.swing.JFormattedTextField\" binding=\"fEmail\">\r\n        <constraints>\r\n          <grid row=\"3\" column=\"1\" row-span=\"1\" col-span=\"1\" vsize-policy=\"0\" hsize-policy=\"6\" anchor=\"0\" fill=\"0\" indent=\"0\" use-parent-layout=\"false\">\r\n            <preferred-size width=\"150\" height=\"-1\"/>\r\n          </grid>\r\n        </constraints>\r\n        <properties>\r\n          <text value=\"Email\"/>\r\n        </properties>\r\n      </component>\r\n      <component id=\"a1c1d\" class=\"javax.swing.JPasswordField\" binding=\"pPassword\">\r\n        <constraints>\r\n          <grid row=\"4\" column=\"1\" row-span=\"1\" col-span=\"1\" vsize-policy=\"0\" hsize-policy=\"6\" anchor=\"0\" fill=\"0\" indent=\"0\" use-parent-layout=\"false\">\r\n            <preferred-size width=\"150\" height=\"-1\"/>\r\n          </grid>\r\n        </constraints>\r\n        <properties>\r\n          <text value=\"Password\"/>\r\n        </properties>\r\n      </component>\r\n      <component id=\"97699\" class=\"javax.swing.JPasswordField\" binding=\"pReconfirmPass\">\r\n        <constraints>\r\n          <grid row=\"5\" column=\"1\" row-span=\"1\" col-span=\"1\" vsize-policy=\"0\" hsize-policy=\"6\" anchor=\"0\" fill=\"0\" indent=\"0\" use-parent-layout=\"false\">\r\n            <preferred-size width=\"150\" height=\"-1\"/>\r\n          </grid>\r\n        </constraints>\r\n        <properties>\r\n          <text value=\"Password\"/>\r\n        </properties>\r\n      </component>\r\n      <component id=\"22a1f\" class=\"javax.swing.JCheckBox\" binding=\"cbRememberMe\">\r\n        <constraints>\r\n          <grid row=\"6\" column=\"1\" row-span=\"1\" col-span=\"1\" vsize-policy=\"0\" hsize-policy=\"3\" anchor=\"0\" fill=\"0\" indent=\"0\" use-parent-layout=\"false\"/>\r\n        </constraints>\r\n        <properties>\r\n          <text value=\"Remember Me\"/>\r\n        </properties>\r\n      </component>\r\n      <component id=\"71788\" class=\"javax.swing.JButton\" binding=\"bSubmit\">\r\n        <constraints>\r\n          <grid row=\"7\" column=\"1\" row-span=\"1\" col-span=\"1\" vsize-policy=\"0\" hsize-policy=\"3\" anchor=\"0\" fill=\"0\" indent=\"0\" use-parent-layout=\"false\"/>\r\n        </constraints>\r\n        <properties>\r\n          <text value=\"SUBMIT\"/>\r\n        </properties>\r\n      </component>\r\n    </children>\r\n  </grid>\r\n</form>\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/Zoo/SignUpWindow.form b/src/Zoo/SignUpWindow.form
+--- a/src/Zoo/SignUpWindow.form	(revision 71bb4cd43c06ef37e2d3a70d88ae200c5f1228b0)
++++ b/src/Zoo/SignUpWindow.form	(date 1751705312771)
+@@ -1,9 +1,9 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="Zoo.SignUpWindow">
+-  <grid id="27dc6" binding="pnlSignUp" layout-manager="GridLayoutManager" row-count="9" column-count="2" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
++  <grid id="27dc6" binding="pnlSignUp" layout-manager="GridLayoutManager" row-count="8" column-count="2" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+     <margin top="0" left="0" bottom="0" right="0"/>
+     <constraints>
+-      <xy x="20" y="20" width="500" height="294"/>
++      <xy x="20" y="20" width="500" height="264"/>
+     </constraints>
+     <properties/>
+     <border type="none"/>
+@@ -23,7 +23,7 @@
+       </hspacer>
+       <vspacer id="a5787">
+         <constraints>
+-          <grid row="8" column="0" row-span="1" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
++          <grid row="7" column="0" row-span="1" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
+         </constraints>
+       </vspacer>
+       <component id="d2e0f" class="javax.swing.JLabel" binding="lblSignUp">
+@@ -71,20 +71,12 @@
+           </grid>
+         </constraints>
+         <properties>
+-          <text value="Password"/>
+-        </properties>
+-      </component>
+-      <component id="22a1f" class="javax.swing.JCheckBox" binding="cbRememberMe">
+-        <constraints>
+-          <grid row="6" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+-        </constraints>
+-        <properties>
+-          <text value="Remember Me"/>
++          <text value=""/>
+         </properties>
+       </component>
+       <component id="71788" class="javax.swing.JButton" binding="bSubmit">
+         <constraints>
+-          <grid row="7" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
++          <grid row="6" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+         </constraints>
+         <properties>
+           <text value="SUBMIT"/>
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"AutoImportSettings\">\r\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\r\n  </component>\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"93ec5c9a-3820-4625-8185-2e1f0d75d993\" name=\"Changes\" comment=\"Merge branch 'Syera'&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml\">\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/receipt.txt\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/receipt.txt\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/Checkout.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/Checkout.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/Price.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/Price.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/ReceiveData.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/ReceiveData.java\" afterDir=\"false\" />\r\n    </list>\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"FileTemplateManagerImpl\">\r\n    <option name=\"RECENT_TEMPLATES\">\r\n      <list>\r\n        <option value=\"Class\" />\r\n      </list>\r\n    </option>\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <excluded-from-favorite>\r\n      <branch-storage>\r\n        <map>\r\n          <entry type=\"LOCAL\">\r\n            <value>\r\n              <list>\r\n                <branch-info repo=\"$PROJECT_DIR$\" source=\"main\" />\r\n              </list>\r\n            </value>\r\n          </entry>\r\n        </map>\r\n      </branch-storage>\r\n    </excluded-from-favorite>\r\n    <option name=\"RECENT_BRANCH_BY_REPOSITORY\">\r\n      <map>\r\n        <entry key=\"$PROJECT_DIR$\" value=\"main\" />\r\n      </map>\r\n    </option>\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n  </component>\r\n  <component name=\"GitHubPullRequestSearchHistory\">{\r\n  &quot;lastFilter&quot;: {\r\n    &quot;state&quot;: &quot;OPEN&quot;,\r\n    &quot;assignee&quot;: &quot;Syera1123&quot;\r\n  }\r\n}</component>\r\n  <component name=\"GithubPullRequestsUISettings\">{\r\n  &quot;selectedUrlAndAccountId&quot;: {\r\n    &quot;url&quot;: &quot;https://github.com/Syera1123/Object-Oriented-Programming-435.git&quot;,\r\n    &quot;accountId&quot;: &quot;2c07c89b-8f34-470d-a656-212026ddbbfe&quot;\r\n  }\r\n}</component>\r\n  <component name=\"ProjectColorInfo\">{\r\n  &quot;associatedIndex&quot;: 5\r\n}</component>\r\n  <component name=\"ProjectId\" id=\"2zOthFe8zOAPRFg7sb3FffrwCZk\" />\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\">{\r\n  &quot;keyToString&quot;: {\r\n    &quot;Application.Checkout.executor&quot;: &quot;Run&quot;,\r\n    &quot;Application.LogInWindow.executor&quot;: &quot;Run&quot;,\r\n    &quot;Application.Price.executor&quot;: &quot;Run&quot;,\r\n    &quot;Application.WelcomePage.executor&quot;: &quot;Run&quot;,\r\n    &quot;Application.ZooTicketGUI.executor&quot;: &quot;Run&quot;,\r\n    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,\r\n    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,\r\n    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,\r\n    &quot;UI_DESIGNER_EDITOR_MODE.PaletteManager.WIDTH&quot;: &quot;109&quot;,\r\n    &quot;UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH&quot;: &quot;311&quot;,\r\n    &quot;git-widget-placeholder&quot;: &quot;main&quot;,\r\n    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,\r\n    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,\r\n    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,\r\n    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,\r\n    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,\r\n    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,\r\n    &quot;onboarding.tips.debug.path&quot;: &quot;C:/Users/User/IdeaProjects/Main/src/Main.java&quot;,\r\n    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,\r\n    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,\r\n    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,\r\n    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,\r\n    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,\r\n    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;\r\n  }\r\n}</component>\r\n  <component name=\"RecentsManager\">\r\n    <key name=\"MoveFile.RECENT_KEYS\">\r\n      <recent name=\"C:\\Users\\User\\IdeaProjects\\Object-Oriented-Programming-435\\src\" />\r\n      <recent name=\"C:\\Users\\User\\IdeaProjects\\Main\\src\" />\r\n      <recent name=\"C:\\Users\\User\\IdeaProjects\\Main\\src\\Zoo\" />\r\n      <recent name=\"C:\\Users\\User\\IdeaProjects\\Main\\out\\production\\Main\\com\\intellij\\uiDesigner\\core\" />\r\n    </key>\r\n  </component>\r\n  <component name=\"SharedIndexes\">\r\n    <attachedChunks>\r\n      <set>\r\n        <option value=\"bundled-jdk-9823dce3aa75-a94e463ab2e7-intellij.indexing.shared.core-IU-243.26574.91\" />\r\n        <option value=\"bundled-js-predefined-d6986cc7102b-1632447f56bf-JavaScript-IU-243.26574.91\" />\r\n      </set>\r\n    </attachedChunks>\r\n  </component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"93ec5c9a-3820-4625-8185-2e1f0d75d993\" name=\"Changes\" comment=\"\" />\r\n      <created>1751614066229</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1751614066229</updated>\r\n      <workItem from=\"1751614067427\" duration=\"416000\" />\r\n      <workItem from=\"1751614499668\" duration=\"12918000\" />\r\n      <workItem from=\"1751650769896\" duration=\"5418000\" />\r\n      <workItem from=\"1751656294199\" duration=\"10851000\" />\r\n      <workItem from=\"1751695545101\" duration=\"3238000\" />\r\n    </task>\r\n    <task id=\"LOCAL-00001\" summary=\"Add new feature to ZooSystem\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1751645418319</created>\r\n      <option name=\"number\" value=\"00001\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00001\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1751645418319</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00002\" summary=\"Add new feature to ZooSystem\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1751645667762</created>\r\n      <option name=\"number\" value=\"00002\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00002\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1751645667762</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00003\" summary=\"Merge branch 'Syera'&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1751650119652</created>\r\n      <option name=\"number\" value=\"00003\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00003\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1751650119652</updated>\r\n    </task>\r\n    <option name=\"localTasksCounter\" value=\"4\" />\r\n    <servers />\r\n  </component>\r\n  <component name=\"TypeScriptGeneratedFilesManager\">\r\n    <option name=\"version\" value=\"3\" />\r\n  </component>\r\n  <component name=\"Vcs.Log.Tabs.Properties\">\r\n    <option name=\"TAB_STATES\">\r\n      <map>\r\n        <entry key=\"MAIN\">\r\n          <value>\r\n            <State />\r\n          </value>\r\n        </entry>\r\n      </map>\r\n    </option>\r\n  </component>\r\n  <component name=\"VcsManagerConfiguration\">\r\n    <MESSAGE value=\"Add new feature to ZooSystem\" />\r\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"Add new feature to ZooSystem\" />\r\n  </component>\r\n  <component name=\"XDebuggerManager\">\r\n    <breakpoint-manager>\r\n      <breakpoints>\r\n        <line-breakpoint enabled=\"true\" type=\"java-line\">\r\n          <url>file://$PROJECT_DIR$/src/test.java</url>\r\n          <line>4</line>\r\n          <option name=\"timeStamp\" value=\"1\" />\r\n        </line-breakpoint>\r\n      </breakpoints>\r\n    </breakpoint-manager>\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision 71bb4cd43c06ef37e2d3a70d88ae200c5f1228b0)
++++ b/.idea/workspace.xml	(date 1751701774883)
+@@ -5,11 +5,10 @@
+   </component>
+   <component name="ChangeListManager">
+     <list default="true" id="93ec5c9a-3820-4625-8185-2e1f0d75d993" name="Changes" comment="Merge branch 'Syera'&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml">
++      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/receipt.txt" beforeDir="false" afterPath="$PROJECT_DIR$/receipt.txt" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/Checkout.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Checkout.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/Price.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Price.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/ReceiveData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ReceiveData.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/Zoo/SignUpWindow.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/Zoo/SignUpWindow.form" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/Zoo/SignUpWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Zoo/SignUpWindow.java" afterDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+@@ -64,34 +63,35 @@
+     <option name="hideEmptyMiddlePackages" value="true" />
+     <option name="showLibraryContents" value="true" />
+   </component>
+-  <component name="PropertiesComponent">{
+-  &quot;keyToString&quot;: {
+-    &quot;Application.Checkout.executor&quot;: &quot;Run&quot;,
+-    &quot;Application.LogInWindow.executor&quot;: &quot;Run&quot;,
+-    &quot;Application.Price.executor&quot;: &quot;Run&quot;,
+-    &quot;Application.WelcomePage.executor&quot;: &quot;Run&quot;,
+-    &quot;Application.ZooTicketGUI.executor&quot;: &quot;Run&quot;,
+-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+-    &quot;UI_DESIGNER_EDITOR_MODE.PaletteManager.WIDTH&quot;: &quot;109&quot;,
+-    &quot;UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH&quot;: &quot;311&quot;,
+-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+-    &quot;onboarding.tips.debug.path&quot;: &quot;C:/Users/User/IdeaProjects/Main/src/Main.java&quot;,
+-    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+-    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
+-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
++  <component name="PropertiesComponent"><![CDATA[{
++  "keyToString": {
++    "Application.Checkout.executor": "Run",
++    "Application.LogInWindow.executor": "Run",
++    "Application.Price.executor": "Run",
++    "Application.SignUpWindow.executor": "Run",
++    "Application.WelcomePage.executor": "Run",
++    "Application.ZooTicketGUI.executor": "Run",
++    "RunOnceActivity.ShowReadmeOnStart": "true",
++    "RunOnceActivity.git.unshallow": "true",
++    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
++    "UI_DESIGNER_EDITOR_MODE.PaletteManager.WIDTH": "109",
++    "UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH": "311",
++    "git-widget-placeholder": "main",
++    "kotlin-language-version-configured": "true",
++    "node.js.detected.package.eslint": "true",
++    "node.js.detected.package.tslint": "true",
++    "node.js.selected.package.eslint": "(autodetect)",
++    "node.js.selected.package.tslint": "(autodetect)",
++    "nodejs_package_manager_path": "npm",
++    "onboarding.tips.debug.path": "C:/Users/User/IdeaProjects/Main/src/Main.java",
++    "project.structure.last.edited": "Project",
++    "project.structure.proportion": "0.0",
++    "project.structure.side.proportion": "0.0",
++    "run.code.analysis.last.selected.profile": "pProject Default",
++    "settings.editor.selected.configurable": "preferences.pluginManager",
++    "vue.rearranger.settings.migration": "true"
+   }
+-}</component>
++}]]></component>
+   <component name="RecentsManager">
+     <key name="MoveFile.RECENT_KEYS">
+       <recent name="C:\Users\User\IdeaProjects\Object-Oriented-Programming-435\src" />
+Index: src/Zoo/SignUpWindow.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package Zoo;\r\n\r\nimport javax.swing.*;\r\nimport java.awt.*;\r\nimport java.awt.event.*;\r\n\r\npublic abstract class SignUpWindow extends JFrame implements ActionListener, MouseListener,FocusListener {\r\n    protected JFormattedTextField fName;\r\n    protected JFormattedTextField fEmail;\r\n    protected JPasswordField pPassword;\r\n    protected JPasswordField pReconfirmPass;\r\n    private JCheckBox cbRememberMe;\r\n    private JButton bSubmit;\r\n    private JPanel pnlSignUp;\r\n    private JLabel lblBack;\r\n    private JLabel lblSignUp;\r\n\r\n    public SignUpWindow(){\r\n        super.setTitle(\"Zoo Booking\"); // title\r\n        super.setSize(400,250);\r\n\r\n\r\n\r\n        pPassword.setEchoChar((char)0); // Make text visible initially\r\n        pPassword.setText(\"Password\");\r\n\r\n        //action listener\r\n        lblBack.addMouseListener(this);\r\n        bSubmit.addActionListener(this);\r\n        cbRememberMe.addActionListener(this);\r\n        fName.addFocusListener(this);\r\n        fName.addActionListener(this);\r\n        fEmail.addFocusListener(this);\r\n        fEmail.addActionListener(this);\r\n        pPassword.addMouseListener(this);\r\n        pPassword.addActionListener(this);\r\n\r\n        //add designed to Content Pane\r\n        Container cp = super.getContentPane();\r\n        cp.add(pnlSignUp);\r\n\r\n\r\n\r\n        ImageIcon image = new ImageIcon(\"Zoo.jfif\");\r\n        super.setIconImage(image.getImage());\r\n\r\n        super.setVisible(true);\r\n    }\r\n\r\n    public static void main(String[] args){\r\n        new SignUpWindow() {\r\n            @Override\r\n            public void focusGained(FocusEvent e) {\r\n                if(e.getSource()==fName&&fName.getText().equals(\"Name\")){\r\n                    fName.setText(\"\");\r\n                }\r\n                if(e.getSource()==fEmail&&fEmail.getText().equals(\"Email\")){\r\n                    fEmail.setText(\"\");\r\n                }\r\n\r\n                if (e.getSource() == pPassword) {\r\n                    // Convert char array to String for comparison\r\n                    String passwordText = new String(pPassword.getPassword());\r\n\r\n                    // Check if it's showing the placeholder\r\n                    if (passwordText.equals(\"Password\") && pPassword.getEchoChar() == 0) {\r\n                        pPassword.setText(\"\");  // Clear the placeholder\r\n                        pPassword.setEchoChar('•');  // Enable password masking\r\n                    }\r\n                }\r\n                }\r\n\r\n            @Override\r\n            public void focusLost(FocusEvent e) {\r\n\r\n                if(e.getSource()==fName&&fName.getText().equals(\"\")){\r\n                    fName.setText(\"Name\");\r\n                }\r\n                if(e.getSource()==fEmail&&fEmail.getText().equals(\"\")){\r\n                    fEmail.setText(\"Email\");\r\n                }\r\n\r\n            }\r\n\r\n            @Override\r\n            public void mouseClicked(MouseEvent e) {\r\n\r\n            }\r\n\r\n            @Override\r\n            public void mousePressed(MouseEvent e) {\r\n\r\n            }\r\n\r\n            @Override\r\n            public void mouseReleased(MouseEvent e) {\r\n\r\n            }\r\n\r\n            @Override\r\n            public void mouseEntered(MouseEvent e) {\r\n\r\n            }\r\n\r\n            @Override\r\n            public void mouseExited(MouseEvent e) {\r\n\r\n            }\r\n\r\n            @Override\r\n            public void actionPerformed(ActionEvent e) {\r\n\r\n            }\r\n        };\r\n    }\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/Zoo/SignUpWindow.java b/src/Zoo/SignUpWindow.java
+--- a/src/Zoo/SignUpWindow.java	(revision 71bb4cd43c06ef37e2d3a70d88ae200c5f1228b0)
++++ b/src/Zoo/SignUpWindow.java	(date 1751706655719)
+@@ -3,37 +3,40 @@
+ import javax.swing.*;
+ import java.awt.*;
+ import java.awt.event.*;
++import java.io.*;
++import java.util.Scanner;
+ 
+ public abstract class SignUpWindow extends JFrame implements ActionListener, MouseListener,FocusListener {
+     protected JFormattedTextField fName;
+     protected JFormattedTextField fEmail;
+     protected JPasswordField pPassword;
+     protected JPasswordField pReconfirmPass;
+-    private JCheckBox cbRememberMe;
+-    private JButton bSubmit;
+-    private JPanel pnlSignUp;
++    protected JButton bSubmit;
++    protected JPanel pnlSignUp;
+     private JLabel lblBack;
+     private JLabel lblSignUp;
+ 
+     public SignUpWindow(){
+-        super.setTitle("Zoo Booking"); // title
++        super.setTitle("Sign Up"); // title
+         super.setSize(400,250);
+ 
+-
+-
+         pPassword.setEchoChar((char)0); // Make text visible initially
+         pPassword.setText("Password");
+ 
++        pReconfirmPass.setEchoChar((char)0);
++        pReconfirmPass.setText("Reconfirm Password");
++
+         //action listener
+         lblBack.addMouseListener(this);
+         bSubmit.addActionListener(this);
+-        cbRememberMe.addActionListener(this);
+         fName.addFocusListener(this);
+         fName.addActionListener(this);
+         fEmail.addFocusListener(this);
+         fEmail.addActionListener(this);
+-        pPassword.addMouseListener(this);
++        pPassword.addFocusListener(this);
+         pPassword.addActionListener(this);
++        pReconfirmPass.addFocusListener(this);
++        pReconfirmPass.addActionListener(this);
+ 
+         //add designed to Content Pane
+         Container cp = super.getContentPane();
+@@ -51,66 +54,158 @@
+         new SignUpWindow() {
+             @Override
+             public void focusGained(FocusEvent e) {
+-                if(e.getSource()==fName&&fName.getText().equals("Name")){
++                if (e.getSource() == fName && fName.getText().equals("Name")) {
+                     fName.setText("");
+                 }
+-                if(e.getSource()==fEmail&&fEmail.getText().equals("Email")){
++                if (e.getSource() == fEmail && fEmail.getText().equals("Email")) {
+                     fEmail.setText("");
+                 }
+ 
+                 if (e.getSource() == pPassword) {
+-                    // Convert char array to String for comparison
+-                    String passwordText = new String(pPassword.getPassword());
++                    if (String.valueOf(pPassword.getPassword()).equals("Password") && pPassword.getEchoChar() == 0) {
++                        pPassword.setText("");
++                        pPassword.setEchoChar('•');
++                    }
++                }
+ 
+-                    // Check if it's showing the placeholder
+-                    if (passwordText.equals("Password") && pPassword.getEchoChar() == 0) {
+-                        pPassword.setText("");  // Clear the placeholder
+-                        pPassword.setEchoChar('•');  // Enable password masking
++                if (e.getSource() == pReconfirmPass) {
++                    if (String.valueOf(pReconfirmPass.getPassword()).equals("Reconfirm Password") && pReconfirmPass.getEchoChar() == 0) {
++                        pReconfirmPass.setText("");
++                        pReconfirmPass.setEchoChar('•');
+                     }
+                 }
+-                }
++
++
++            }
+ 
+             @Override
+             public void focusLost(FocusEvent e) {
+ 
+-                if(e.getSource()==fName&&fName.getText().equals("")){
++                if (e.getSource() == fName && fName.getText().equals("")) {
+                     fName.setText("Name");
+                 }
+-                if(e.getSource()==fEmail&&fEmail.getText().equals("")){
++                if (e.getSource() == fEmail && fEmail.getText().equals("")) {
+                     fEmail.setText("Email");
+                 }
++                if (e.getSource() == pPassword && String.valueOf(pPassword.getPassword()).isEmpty()) {
++                    pPassword.setText("Password");
++                    pPassword.setEchoChar((char) 0);
++                }
++                if (e.getSource() == pPassword && String.valueOf(pPassword.getPassword()).isEmpty()) {
++                    pPassword.setText("Password");
++                    pPassword.setEchoChar((char) 0);
++                }
++                if (e.getSource() == pReconfirmPass && String.valueOf(pReconfirmPass.getPassword()).isEmpty()) {
++                    pReconfirmPass.setText("Reconfirm Password");
++                    pReconfirmPass.setEchoChar((char) 0);
++                }
+ 
+             }
+ 
+             @Override
+             public void mouseClicked(MouseEvent e) {
+-
+             }
+ 
+             @Override
+             public void mousePressed(MouseEvent e) {
+-
+             }
+ 
+             @Override
+             public void mouseReleased(MouseEvent e) {
+-
+             }
+ 
+             @Override
+             public void mouseEntered(MouseEvent e) {
+-
+             }
+ 
+             @Override
+             public void mouseExited(MouseEvent e) {
+-
+             }
+ 
+             @Override
+             public void actionPerformed(ActionEvent e) {
++                if (e.getSource() == bSubmit) {
++                    //get text from password field n reconfirm field
++                    String password = String.valueOf(pPassword.getPassword());
++                    String confirmpass = String.valueOf(pReconfirmPass.getPassword());
++
++
++                    if (fName.getText().equals("Name")) {
++                        JOptionPane.showMessageDialog(this, "Please enter your name");
++                        return;
++                    } else if (fEmail.getText().equals("Email")) {
++                        JOptionPane.showMessageDialog(this, "Please enter your email");
++                        return;
++                    } else if (!fEmail.getText().matches("^[A-Za-z0-9._%+-]+@gmail\\.com$")) {
++                        JOptionPane.showMessageDialog(this, "Please enter a valid Gmail address (e.g., name@gmail.com)");
++                        return;
++                    } else if (password.equals("Password")) {
++                        JOptionPane.showMessageDialog(this, "Please enter your password");
++                        return;
++                    } else if (confirmpass.equals("Reconfirm Password")) {
++                        JOptionPane.showMessageDialog(this, "Please enter your reconfirm password");
++                        return;
++                    }
+ 
+-            }
+-        };
+-    }
+-}
++                    // Check if both passwords match
++                    else if (!password.equals(confirmpass)) {
++                        JOptionPane.showMessageDialog(this, "Passwords do not match. Please retype.");
++                        return;
++                    }
++                    else if(isEmailAlreadyUsed(fEmail.getText())){
++                        JOptionPane.showMessageDialog(this, "This email is already registered.");
++                        return;
++                    }
++
++
++                    if (e.getSource() == bSubmit) {
++                        // All good
++                        JOptionPane.showMessageDialog(this, "Sign-up successful!");
++                        // Proceed to next screen or save data
++                        try {
++                            FileWriter fw = new FileWriter("password.txt", true); // true = append
++                            BufferedWriter bw = new BufferedWriter(fw);
++                            bw.write("Email: " + fEmail.getText());
++                            bw.newLine();
++                            bw.write("Password: " + String.valueOf(pPassword.getPassword()));
++                            bw.newLine();
++                            bw.write("------------------------");
++                            bw.newLine();
++                            bw.close();
++                        } catch (IOException ex) {
++                            JOptionPane.showMessageDialog(this, "Error saving to file: " + ex.getMessage());
++                        }
++                    }
++
++
++                }
++
++
++            }
++
++            private boolean isEmailAlreadyUsed(String email) {
++                try {
++                    File file = new File("password.txt");
++                    if (!file.exists())
++                        return false;
++                    Scanner sc = new Scanner(file);
++                    while ((sc.hasNextLine())) {
++                        if (sc.nextLine().equals("Email: " + email)) {
++                            sc.close();
++                            return true;
++                        }
++                    }
++                    sc.close();
++                } catch (FileNotFoundException ex) {
++                    JOptionPane.showMessageDialog(this, "Error checking email: " + ex.getMessage());
++                }
++                return false;
++            }
++
++
++            };
++
++
++        };
++    }
++
