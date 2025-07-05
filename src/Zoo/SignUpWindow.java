@@ -6,211 +6,162 @@ import java.awt.event.*;
 import java.io.*;
 import java.util.Scanner;
 
-public abstract class SignUpWindow extends JFrame implements ActionListener, MouseListener,FocusListener {
-    protected JFormattedTextField fName;
-    protected JFormattedTextField fEmail;
-    protected JPasswordField pPassword;
-    protected JPasswordField pReconfirmPass;
-    protected JButton bSubmit;
-    protected JPanel pnlSignUp;
-    private JLabel lblBack;
-    private JLabel lblSignUp;
+public class SignUpWindow extends JFrame implements ActionListener, FocusListener, MouseListener {
+    private JPanel pnlSignUp;
+    private JFormattedTextField fName;
+    private JFormattedTextField fEmail;
+    private JPasswordField pPassword;
+    private JPasswordField pReconfirmPass;
+    private JButton bSubmit;
+    private JLabel lblTitle; // ✅ Title added
 
-    public SignUpWindow(){
-        super.setTitle("Sign Up"); // title
-        super.setSize(400,250);
+    public SignUpWindow() {
+        setTitle("Zoo Sign Up");
+        setSize(700, 500);
+        setLocationRelativeTo(null);
+        setDefaultCloseOperation(EXIT_ON_CLOSE);
+        setLayout(null);
 
-        pPassword.setEchoChar((char)0); // Make text visible initially
-        pPassword.setText("Password");
-
-        pReconfirmPass.setEchoChar((char)0);
-        pReconfirmPass.setText("Reconfirm Password");
-
-        //action listener
-        lblBack.addMouseListener(this);
-        bSubmit.addActionListener(this);
-        fName.addFocusListener(this);
-        fName.addActionListener(this);
-        fEmail.addFocusListener(this);
-        fEmail.addActionListener(this);
-        pPassword.addFocusListener(this);
-        pPassword.addActionListener(this);
-        pReconfirmPass.addFocusListener(this);
-        pReconfirmPass.addActionListener(this);
-
-        //add designed to Content Pane
-        Container cp = super.getContentPane();
-        cp.add(pnlSignUp);
-
-
-
-        ImageIcon image = new ImageIcon("Zoo.jfif");
-        super.setIconImage(image.getImage());
-
-        super.setVisible(true);
-    }
-
-    public static void main(String[] args){
-        new SignUpWindow() {
+        // === Background Panel ===
+        JPanel backgroundPanel = new JPanel(null) {
+            Image bg = new ImageIcon(getClass().getResource("/Untitled design.png")).getImage();
             @Override
-            public void focusGained(FocusEvent e) {
-                if (e.getSource() == fName && fName.getText().equals("Name")) {
-                    fName.setText("");
-                }
-                if (e.getSource() == fEmail && fEmail.getText().equals("Email")) {
-                    fEmail.setText("");
-                }
-
-                if (e.getSource() == pPassword) {
-                    if (String.valueOf(pPassword.getPassword()).equals("Password") && pPassword.getEchoChar() == 0) {
-                        pPassword.setText("");
-                        pPassword.setEchoChar('•');
-                    }
-                }
-
-                if (e.getSource() == pReconfirmPass) {
-                    if (String.valueOf(pReconfirmPass.getPassword()).equals("Reconfirm Password") && pReconfirmPass.getEchoChar() == 0) {
-                        pReconfirmPass.setText("");
-                        pReconfirmPass.setEchoChar('•');
-                    }
-                }
-
-
+            protected void paintComponent(Graphics g) {
+                super.paintComponent(g);
+                g.drawImage(bg, 0, 0, getWidth(), getHeight(), this);
             }
-
-            @Override
-            public void focusLost(FocusEvent e) {
-
-                if (e.getSource() == fName && fName.getText().equals("")) {
-                    fName.setText("Name");
-                }
-                if (e.getSource() == fEmail && fEmail.getText().equals("")) {
-                    fEmail.setText("Email");
-                }
-                if (e.getSource() == pPassword && String.valueOf(pPassword.getPassword()).isEmpty()) {
-                    pPassword.setText("Password");
-                    pPassword.setEchoChar((char) 0);
-                }
-                if (e.getSource() == pPassword && String.valueOf(pPassword.getPassword()).isEmpty()) {
-                    pPassword.setText("Password");
-                    pPassword.setEchoChar((char) 0);
-                }
-                if (e.getSource() == pReconfirmPass && String.valueOf(pReconfirmPass.getPassword()).isEmpty()) {
-                    pReconfirmPass.setText("Reconfirm Password");
-                    pReconfirmPass.setEchoChar((char) 0);
-                }
-
-            }
-
-            @Override
-            public void mouseClicked(MouseEvent e) {
-            }
-
-            @Override
-            public void mousePressed(MouseEvent e) {
-            }
-
-            @Override
-            public void mouseReleased(MouseEvent e) {
-            }
-
-            @Override
-            public void mouseEntered(MouseEvent e) {
-            }
-
-            @Override
-            public void mouseExited(MouseEvent e) {
-            }
-
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                if (e.getSource() == bSubmit) {
-                    //get text from password field n reconfirm field
-                    String password = String.valueOf(pPassword.getPassword());
-                    String confirmpass = String.valueOf(pReconfirmPass.getPassword());
-
-
-                    if (fName.getText().equals("Name")) {
-                        JOptionPane.showMessageDialog(this, "Please enter your name");
-                        return;
-                    } else if (fEmail.getText().equals("Email")) {
-                        JOptionPane.showMessageDialog(this, "Please enter your email");
-                        return;
-                    } else if (!fEmail.getText().matches("^[A-Za-z0-9._%+-]+@gmail\\.com$")) {
-                        JOptionPane.showMessageDialog(this, "Please enter a valid Gmail address (e.g., name@gmail.com)");
-                        return;
-                    } else if (password.equals("Password")) {
-                        JOptionPane.showMessageDialog(this, "Please enter your password");
-                        return;
-                    } else if (confirmpass.equals("Reconfirm Password")) {
-                        JOptionPane.showMessageDialog(this, "Please enter your reconfirm password");
-                        return;
-                    }
-
-                    // Check if both passwords match
-                    else if (!password.equals(confirmpass)) {
-                        JOptionPane.showMessageDialog(this, "Passwords do not match. Please retype.");
-                        return;
-                    }
-                    else if(isEmailAlreadyUsed(fEmail.getText())){
-                        JOptionPane.showMessageDialog(this, "This email is already registered.");
-                        return;
-                    }
-
-
-                    if (e.getSource() == bSubmit) {
-                        // All good
-                       new LogInWindow() {
-                           @Override
-                           public void actionPerformed(ActionEvent e) {
-
-                           }
-                       };
-                        // Proceed to next screen or save data
-                        try {
-                            FileWriter fw = new FileWriter("password.txt", true); // true = append
-                            BufferedWriter bw = new BufferedWriter(fw);
-                            bw.write("Email: " + fEmail.getText());
-                            bw.newLine();
-                            bw.write("Password: " + String.valueOf(pPassword.getPassword()));
-                            bw.newLine();
-                            bw.write("------------------------");
-                            bw.newLine();
-                            bw.close();
-                        } catch (IOException ex) {
-                            JOptionPane.showMessageDialog(this, "Error saving to file: " + ex.getMessage());
-                        }
-                    }
-
-
-                }
-
-
-            }
-
-            private boolean isEmailAlreadyUsed(String email) {
-                try {
-                    File file = new File("password.txt");
-                    if (!file.exists())
-                        return false;
-                    Scanner sc = new Scanner(file);
-                    while ((sc.hasNextLine())) {
-                        if (sc.nextLine().equals("Email: " + email)) {
-                            sc.close();
-                            return true;
-                        }
-                    }
-                    sc.close();
-                } catch (FileNotFoundException ex) {
-                    JOptionPane.showMessageDialog(this, "Error checking email: " + ex.getMessage());
-                }
-                return false;
-            }
-
-
-            };
-
-
         };
+        setContentPane(backgroundPanel);
+
+        // === SignUp Panel ===
+        pnlSignUp = new JPanel(null);
+        pnlSignUp.setOpaque(false);
+        pnlSignUp.setBounds(80, 40, 540, 400);
+        backgroundPanel.add(pnlSignUp);
+
+        // === Components ===
+        lblTitle = new JLabel("Sign Up"); // ✅ Title
+        lblTitle.setFont(new Font("Arial", Font.BOLD, 26));
+        lblTitle.setHorizontalAlignment(SwingConstants.CENTER);
+        lblTitle.setBounds(100, 0, 300, 40);
+
+        fName = new JFormattedTextField("Name");
+        fEmail = new JFormattedTextField("Email");
+        pPassword = new JPasswordField("Password");
+        pReconfirmPass = new JPasswordField("Reconfirm Password");
+        bSubmit = new JButton("Submit");
+
+        // === Layout ===
+        fName.setBounds(100, 50, 300, 30);
+        fEmail.setBounds(100, 90, 300, 30);
+        pPassword.setBounds(100, 130, 300, 30);
+        pReconfirmPass.setBounds(100, 170, 300, 30);
+        bSubmit.setBounds(100, 220, 300, 40);
+
+        // === Field styles ===
+        pPassword.setEchoChar((char) 0);
+        pReconfirmPass.setEchoChar((char) 0);
+
+        // === Add to Panel ===
+        pnlSignUp.add(lblTitle); // ✅ add title
+        pnlSignUp.add(fName);
+        pnlSignUp.add(fEmail);
+        pnlSignUp.add(pPassword);
+        pnlSignUp.add(pReconfirmPass);
+        pnlSignUp.add(bSubmit);
+
+        // === Listeners ===
+        fName.addFocusListener(this);
+        fEmail.addFocusListener(this);
+        pPassword.addFocusListener(this);
+        pReconfirmPass.addFocusListener(this);
+        bSubmit.addActionListener(this);
+
+        setVisible(true);
     }
+
+    // === Action on Submit ===
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        String name = fName.getText();
+        String email = fEmail.getText();
+        String pass = String.valueOf(pPassword.getPassword());
+        String confirm = String.valueOf(pReconfirmPass.getPassword());
+
+        if (name.isEmpty() || name.equals("Name")) {
+            JOptionPane.showMessageDialog(this, "Please enter your name");
+        } else if (email.isEmpty() || email.equals("Email")) {
+            JOptionPane.showMessageDialog(this, "Please enter your email");
+        } else if (!email.matches("^[A-Za-z0-9._%+-]+@gmail\\.com$")) {
+            JOptionPane.showMessageDialog(this, "Please enter a valid Gmail address");
+        } else if (pass.equals("Password")) {
+            JOptionPane.showMessageDialog(this, "Please enter your password");
+        } else if (confirm.equals("Reconfirm Password")) {
+            JOptionPane.showMessageDialog(this, "Please confirm your password");
+        } else if (!pass.equals(confirm)) {
+            JOptionPane.showMessageDialog(this, "Passwords do not match");
+        } else if (isEmailAlreadyUsed(email)) {
+            JOptionPane.showMessageDialog(this, "This email is already registered");
+        } else {
+            try (BufferedWriter bw = new BufferedWriter(new FileWriter("password.txt", true))) {
+                bw.write("Email: " + email);
+                bw.newLine();
+                bw.write("Password: " + pass);
+                bw.newLine();
+                bw.write("------------------------");
+                bw.newLine();
+                JOptionPane.showMessageDialog(this, "Account created! Redirecting to login.");
+                new LogInWindow();
+                dispose();
+            } catch (IOException ex) {
+                JOptionPane.showMessageDialog(this, "Error saving to file: " + ex.getMessage());
+            }
+        }
+    }
+
+    private boolean isEmailAlreadyUsed(String email) {
+        File file = new File("password.txt");
+        if (!file.exists()) return false;
+
+        try (Scanner sc = new Scanner(file)) {
+            while (sc.hasNextLine()) {
+                if (sc.nextLine().equals("Email: " + email)) return true;
+            }
+        } catch (IOException e) {
+            JOptionPane.showMessageDialog(this, "Error reading file");
+        }
+        return false;
+    }
+
+    // === Placeholder Behavior ===
+    @Override public void focusGained(FocusEvent e) {
+        if (e.getSource() == fName && fName.getText().equals("Name")) fName.setText("");
+        if (e.getSource() == fEmail && fEmail.getText().equals("Email")) fEmail.setText("");
+        if (e.getSource() == pPassword && String.valueOf(pPassword.getPassword()).equals("Password")) {
+            pPassword.setText(""); pPassword.setEchoChar('•');
+        }
+        if (e.getSource() == pReconfirmPass && String.valueOf(pReconfirmPass.getPassword()).equals("Reconfirm Password")) {
+            pReconfirmPass.setText(""); pReconfirmPass.setEchoChar('•');
+        }
+    }
+
+    @Override public void focusLost(FocusEvent e) {
+        if (e.getSource() == fName && fName.getText().isEmpty()) fName.setText("Name");
+        if (e.getSource() == fEmail && fEmail.getText().isEmpty()) fEmail.setText("Email");
+        if (e.getSource() == pPassword && String.valueOf(pPassword.getPassword()).isEmpty()) {
+            pPassword.setText("Password"); pPassword.setEchoChar((char) 0);
+        }
+        if (e.getSource() == pReconfirmPass && String.valueOf(pReconfirmPass.getPassword()).isEmpty()) {
+            pReconfirmPass.setText("Reconfirm Password"); pReconfirmPass.setEchoChar((char) 0);
+        }
+    }
+
+    // === Back Button Placeholder (optional) ===
+    @Override public void mouseClicked(MouseEvent e) {}
+
+    @Override public void mousePressed(MouseEvent e) {}
+    @Override public void mouseReleased(MouseEvent e) {}
+    @Override public void mouseEntered(MouseEvent e) {}
+    @Override public void mouseExited(MouseEvent e) {}
+}
 

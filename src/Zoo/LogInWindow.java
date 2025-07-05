@@ -5,50 +5,23 @@ import java.awt.*;
 import java.awt.event.*;
 import java.io.*;
 
-<<<<<<< HEAD
-public abstract class LogInWindow extends JFrame implements ActionListener {
-    protected JPanel panel1;               // from IntelliJ GUI Designer
-=======
-public abstract class LogInWindow extends JFrame implements ActionListener,MouseListener{
-    protected JPanel panel1;
->>>>>>> b1a0db0eae7e6173c4bff11504d70433ddb886c9
-    protected JFormattedTextField fEmail;
-    protected JPasswordField jPassword;
-    protected JCheckBox jcbRememberMe;
-    protected JButton btnSubmit;
-    protected JLabel lblLogIn;
-    protected JLabel lblPassword;
-    protected JLabel lblForgotPass;
-
+public class LogInWindow extends JFrame implements ActionListener, MouseListener {
+    private JPanel panel1;
+    private JFormattedTextField fEmail;
+    private JPasswordField jPassword;
+    private JCheckBox jcbRememberMe;
+    private JButton btnSubmit;
+    private JLabel lblTitle; // ✅ Log In phrase
     private JPanel fullpanel;
 
     public LogInWindow() {
-        super.setTitle("Zoo Booking");
-        super.setSize(700, 500);
-<<<<<<< HEAD
+        setTitle("Zoo Booking - Log In");
+        setSize(700, 500);
         setLocationRelativeTo(null);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
-=======
->>>>>>> b1a0db0eae7e6173c4bff11504d70433ddb886c9
+        setLayout(null);
 
-        // === Listener setup ===
-        btnSubmit.addActionListener(this);
-        fEmail.addActionListener(this);
-        jPassword.addActionListener(this);
-
-<<<<<<< HEAD
-        // === Background Image ===
-        JLabel backgroundLabel = new JLabel();
-        ImageIcon bgIcon = new ImageIcon(getClass().getResource("/Untitled design.png")); // Make sure path is correct
-        backgroundLabel.setIcon(new ImageIcon(bgIcon.getImage().getScaledInstance(700, 500, Image.SCALE_SMOOTH)));
-        backgroundLabel.setBounds(0, 0, 700, 500);
-=======
-
-        // Add GUI panel
-        Container cp = super.getContentPane();
-        cp.add(panel1);
->>>>>>> b1a0db0eae7e6173c4bff11504d70433ddb886c9
-
+        // === Background Panel ===
         fullpanel = new JPanel(null) {
             private final Image bgImage = new ImageIcon(getClass().getResource("/Untitled design.png")).getImage();
 
@@ -60,89 +33,120 @@ public abstract class LogInWindow extends JFrame implements ActionListener,Mouse
         };
         fullpanel.setOpaque(false);
         fullpanel.setBounds(0, 0, 700, 500);
+        setContentPane(fullpanel);
 
+        // === Login Form Panel ===
+        panel1 = new JPanel(null);
         panel1.setOpaque(false);
-        panel1.setBounds(80, 40, 540, 420);
+        panel1.setBounds(100, 60, 500, 300);
+
+        // ✅ Title Label
+        lblTitle = new JLabel("Log In");
+        lblTitle.setFont(new Font("Arial", Font.BOLD, 26));
+        lblTitle.setHorizontalAlignment(SwingConstants.CENTER);
+        lblTitle.setBounds(100, 0, 300, 40);
+
+        fEmail = new JFormattedTextField("Email");
+        fEmail.setBounds(100, 50, 300, 30);
+
+        jPassword = new JPasswordField("Password");
+        jPassword.setBounds(100, 90, 300, 30);
+        jPassword.setEchoChar((char) 0);
+
+        jcbRememberMe = new JCheckBox("Remember Me");
+        jcbRememberMe.setBounds(100, 130, 150, 20);
+        jcbRememberMe.setOpaque(false);
+
+        btnSubmit = new JButton("Log In");
+        btnSubmit.setBounds(100, 170, 300, 40);
+
+
+
+        // === Add Components ===
+        panel1.add(lblTitle); // ✅ add title
+        panel1.add(fEmail);
+        panel1.add(jPassword);
+        panel1.add(jcbRememberMe);
+        panel1.add(btnSubmit);
         fullpanel.add(panel1);
 
-// Layered Pane
-        JLayeredPane layeredPane = new JLayeredPane();
-        layeredPane.setPreferredSize(new Dimension(700, 500));
+        // === Listeners ===
+        btnSubmit.addActionListener(this);
 
-        layeredPane.add(fullpanel, Integer.valueOf(0)); // now fullpanel has background + form
-        setContentPane(layeredPane);
+        fEmail.addFocusListener(new FocusAdapter() {
+            @Override public void focusGained(FocusEvent e) {
+                if (fEmail.getText().equals("Email")) fEmail.setText("");
+            }
+            @Override public void focusLost(FocusEvent e) {
+                if (fEmail.getText().isEmpty()) fEmail.setText("Email");
+            }
+        });
 
-        setContentPane(layeredPane);
-        pack();
+        jPassword.addFocusListener(new FocusAdapter() {
+            @Override public void focusGained(FocusEvent e) {
+                if (String.valueOf(jPassword.getPassword()).equals("Password")) {
+                    jPassword.setText("");
+                    jPassword.setEchoChar('•');
+                }
+            }
+            @Override public void focusLost(FocusEvent e) {
+                if (String.valueOf(jPassword.getPassword()).isEmpty()) {
+                    jPassword.setText("Password");
+                    jPassword.setEchoChar((char) 0);
+                }
+            }
+        });
+
         setVisible(true);
     }
 
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        String email = fEmail.getText();
+        String password = String.valueOf(jPassword.getPassword());
+
+        if (email.isEmpty() || email.equals("Email")) {
+            JOptionPane.showMessageDialog(this, "Please enter your email");
+            return;
+        }
+
+        if (password.isEmpty() || password.equals("Password")) {
+            JOptionPane.showMessageDialog(this, "Please enter your password");
+            return;
+        }
+
+        if (isLoginValid(email, password)) {
+            new Price(); // your next window
+            dispose();
+        } else {
+            JOptionPane.showMessageDialog(this, "Invalid email or password");
+        }
+    }
+
+    private boolean isLoginValid(String email, String password) {
+        try (BufferedReader reader = new BufferedReader(new FileReader("password.txt"))) {
+            String line;
+            while ((line = reader.readLine()) != null) {
+                if (line.equals("Email: " + email)) {
+                    String nextLine = reader.readLine();
+                    return nextLine != null && nextLine.equals("Password: " + password);
+                }
+            }
+        } catch (IOException ex) {
+            JOptionPane.showMessageDialog(this, "Error reading file: " + ex.getMessage());
+        }
+        return false;
+    }
+
+    @Override public void mouseClicked(MouseEvent e) {
+    }
+
+    @Override public void mousePressed(MouseEvent e) {}
+    @Override public void mouseReleased(MouseEvent e) {}
+    @Override public void mouseEntered(MouseEvent e) {}
+    @Override public void mouseExited(MouseEvent e) {}
+
     public static void main(String[] args) {
-        LogInWindow log = new LogInWindow() {
-            @Override
-            public void mouseClicked(MouseEvent e) {
-
-            }
-
-            @Override
-            public void mousePressed(MouseEvent e) {
-
-            }
-
-            @Override
-            public void mouseReleased(MouseEvent e) {
-
-            }
-
-            @Override
-            public void mouseEntered(MouseEvent e) {
-
-            }
-
-            @Override
-            public void mouseExited(MouseEvent e) {
-
-            }
-
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                String email = fEmail.getText();
-                String password = String.valueOf(jPassword.getPassword());
-
-                if (email.isEmpty()) {
-                    JOptionPane.showMessageDialog(this, "Please enter your email");
-                    return;
-                }
-
-                if (password.isEmpty()) {
-                    JOptionPane.showMessageDialog(this, "Please enter your password");
-                    return;
-                }
-
-                if (isLoginValid(email, password)) {
-                    new Price(); // Move to Price window
-                    dispose();
-                } else {
-                    JOptionPane.showMessageDialog(this, "Invalid email or password");
-                }
-
-            }
-
-
-            private boolean isLoginValid(String email, String password) {
-                try (BufferedReader reader = new BufferedReader(new FileReader("password.txt"))) {
-                    String line;
-                    while ((line = reader.readLine()) != null) {
-                        if (line.equals("Email: " + email)) {
-                            String nextLine = reader.readLine(); // Password line
-                            return nextLine != null && nextLine.equals("Password: " + password);
-                        }
-                    }
-                } catch (IOException ex) {
-                    JOptionPane.showMessageDialog(this, "Error reading file: " + ex.getMessage());
-                }
-                return false;
-            }
-        };
+        SwingUtilities.invokeLater(LogInWindow::new);
     }
 }
