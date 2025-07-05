@@ -5,7 +5,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 
-public abstract class WelcomePage extends JFrame implements ActionListener,MouseListener {
+public abstract class WelcomePage extends JFrame implements ActionListener,MouseListener{
     public JPanel pnlMain;
     public JButton btnSignUp;
     public JLabel lblTitle;

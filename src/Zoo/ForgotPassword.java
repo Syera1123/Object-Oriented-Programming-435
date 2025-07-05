@@ -39,8 +39,6 @@ public abstract class ForgotPassword extends JFrame implements ActionListener, F
         super.setIconImage(image.getImage());
 
         super.setVisible(true);
-
-
     }
 
     public static void main(String[] args) {
@@ -48,21 +46,21 @@ public abstract class ForgotPassword extends JFrame implements ActionListener, F
             @Override
             public void actionPerformed(ActionEvent e) {
                 if (e.getSource() == submit) {
-                    if(isLoginValid(String.valueOf(email))) {
+                    // ✅ FIX: use getText() instead of String.valueOf(email)
+                    if (isLoginValid(email.getText())) {
                         if (!password.equals(reconfirm)) {
                             new LogInWindow() {
                                 @Override
                                 public void actionPerformed(ActionEvent e) {
+
                                 }
                             };
                             dispose();
                         }
+                    } else {
+                        JOptionPane.showMessageDialog(this, "Email not valid");
                     }
-                    else
-                        JOptionPane.showMessageDialog(this,"Email not valid");
-
                 }
-
             }
 
             @Override
@@ -82,7 +80,6 @@ public abstract class ForgotPassword extends JFrame implements ActionListener, F
                         reconfirm.setEchoChar('•');
                     }
                 }
-
             }
 
             @Override
@@ -91,10 +88,8 @@ public abstract class ForgotPassword extends JFrame implements ActionListener, F
                     email.setText("Email");
                 }
                 if (e.getSource() == password && String.valueOf(password.getPassword()).isEmpty()) {
-                    {
-                        password.setText("Password");
-                        password.setEchoChar((char) 0);
-                    }
+                    password.setText("Password");
+                    password.setEchoChar((char) 0);
                 }
                 if (e.getSource() == reconfirm && String.valueOf(reconfirm.getPassword()).isEmpty()) {
                     reconfirm.setText("Reconfirm Password");
@@ -102,7 +97,8 @@ public abstract class ForgotPassword extends JFrame implements ActionListener, F
                 }
             }
 
-            private boolean isLoginValid(String email) {
+            // ✅ FIXED METHOD HERE
+            private boolean isLoginValid(String inputEmail) {
                 try {
                     File file = new File("password.txt");
                     if (!file.exists())
@@ -110,33 +106,23 @@ public abstract class ForgotPassword extends JFrame implements ActionListener, F
 
                     BufferedReader reader = new BufferedReader(new FileReader(file));
                     String line;
-                    boolean emailFound = false;
 
                     while ((line = reader.readLine()) != null) {
-                        if (line.equals("Email: " + email)) {
-                            emailFound = true;
-                            String nextLine = reader.readLine(); // should be password
-
+                        if (line.equals("Email: " + inputEmail)) {
+                            reader.close();
+                            return true;
                         }
+                        reader.readLine(); // Skip password
+                        reader.readLine(); // Skip separator
                     }
 
                     reader.close();
-                } catch (FileNotFoundException e) {
-                    throw new RuntimeException(e);
                 } catch (IOException e) {
-                    throw new RuntimeException(e);
+                    throw new RuntimeException("File error: " + e.getMessage());
                 }
+
                 return false;
-
             }
-
-
-
-
         };
-
     }
 }
-
-
-

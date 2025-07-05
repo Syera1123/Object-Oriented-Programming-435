@@ -4,9 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="93ec5c9a-3820-4625-8185-2e1f0d75d993" name="Changes" comment="Merge remote-tracking branch 'origin/DINI' into DINI&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;password.txt&#10;#&#9;src/Zoo/ReceiveData.form">
+    <list default="true" id="93ec5c9a-3820-4625-8185-2e1f0d75d993" name="Changes" comment="Merge remote-tracking branch 'origin/main' into DINI&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Zoo/ForgotPassword.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/Zoo/ForgotPassword.form" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Zoo/ForgotPassword.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Zoo/ForgotPassword.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Zoo/WelcomePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Zoo/WelcomePage.java" afterDir="false" />
     </list>
@@ -62,7 +61,6 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "UI_DESIGNER_EDITOR_MODE.PaletteManager.SHOW": "true",
     "UI_DESIGNER_EDITOR_MODE.PaletteManager.WIDTH": "169",
     "UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH": "242",
     "git-widget-placeholder": "DINI",
@@ -130,9 +128,8 @@
       <list>
         <item itemvalue="Application.Checkout" />
         <item itemvalue="Application.WelcomePage" />
-        <item itemvalue="Application.Price" />
         <item itemvalue="Application.LogInWindow" />
-        <item itemvalue="Application.WelcomePage" />
+        <item itemvalue="Application.Price" />
       </list>
     </recent_temporary>
   </component>
@@ -163,7 +160,23 @@
       <option name="project" value="LOCAL" />
       <updated>1751730063265</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Merge remote-tracking branch 'origin/DINI' into DINI&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml">
+      <option name="closed" value="true" />
+      <created>1751735538431</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1751735538431</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Merge remote-tracking branch 'origin/main' into DINI&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml">
+      <option name="closed" value="true" />
+      <created>1751735695073</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1751735695073</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -183,6 +196,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Merge remote-tracking branch 'origin/main'&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml" />
     <MESSAGE value="Merge remote-tracking branch 'origin/DINI' into DINI&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;password.txt&#10;#&#9;src/Zoo/ReceiveData.form" />
-    <option name="LAST_COMMIT_MESSAGE" value="Merge remote-tracking branch 'origin/DINI' into DINI&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;password.txt&#10;#&#9;src/Zoo/ReceiveData.form" />
+    <MESSAGE value="Merge remote-tracking branch 'origin/DINI' into DINI&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml" />
+    <MESSAGE value="Merge remote-tracking branch 'origin/main' into DINI&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml" />
+    <option name="LAST_COMMIT_MESSAGE" value="Merge remote-tracking branch 'origin/main' into DINI&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml" />
   </component>
 </project>
