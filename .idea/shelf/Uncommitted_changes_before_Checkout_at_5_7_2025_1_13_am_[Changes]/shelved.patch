@@ -1,0 +1,43 @@
+Index: src/test.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>public class test {\r\n    public static void main(String[] args){\r\n<<<<<<< HEAD\r\n        System.out.println(\"Hello\");\r\n        System.out.println(\"HELLO INI MARYAM NAFISAHH BARUU\" );\r\n=======\r\n\r\n\r\n        System.out.println(\"Hello HII DINI HAH\");\r\n>>>>>>> 6c8d1e26718b8e6555a8ad6d4a55475c95282cda\r\n    }\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/test.java b/src/test.java
+--- a/src/test.java	(revision 77c9bb239e32f304e86ae06c7b9a89a4b7bc72e8)
++++ b/src/test.java	(date 1751649041446)
+@@ -1,12 +1,5 @@
+ public class test {
+-    public static void main(String[] args){
+-<<<<<<< HEAD
+-        System.out.println("Hello");
+-        System.out.println("HELLO INI MARYAM NAFISAHH BARUU" );
+-=======
++    public static void main(String[] args) {
+ 
+-
+-        System.out.println("Hello HII DINI HAH");
+->>>>>>> 6c8d1e26718b8e6555a8ad6d4a55475c95282cda
+     }
+ }
+Index: .idea/misc.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"ProjectRootManager\" version=\"2\" languageLevel=\"JDK_24\" default=\"true\" project-jdk-name=\"11\" project-jdk-type=\"JavaSDK\">\r\n    <output url=\"file://$PROJECT_DIR$/out\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/misc.xml b/.idea/misc.xml
+--- a/.idea/misc.xml	(revision 77c9bb239e32f304e86ae06c7b9a89a4b7bc72e8)
++++ b/.idea/misc.xml	(date 1751648999546)
+@@ -1,6 +1,6 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <project version="4">
+-  <component name="ProjectRootManager" version="2" languageLevel="JDK_24" default="true" project-jdk-name="11" project-jdk-type="JavaSDK">
++  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="11" project-jdk-type="JavaSDK">
+     <output url="file://$PROJECT_DIR$/out" />
+   </component>
+ </project>
+\ No newline at end of file
