@@ -44,6 +44,31 @@ public abstract class WelcomePage extends JFrame implements ActionListener,Mouse
                 if(e.getSource()==lblLogIn){
                     LogInWindow login = new LogInWindow() {
                         @Override
+                        public void mouseClicked(MouseEvent e) {
+
+                        }
+
+                        @Override
+                        public void mousePressed(MouseEvent e) {
+
+                        }
+
+                        @Override
+                        public void mouseReleased(MouseEvent e) {
+
+                        }
+
+                        @Override
+                        public void mouseEntered(MouseEvent e) {
+
+                        }
+
+                        @Override
+                        public void mouseExited(MouseEvent e) {
+
+                        }
+
+                        @Override
                         public void actionPerformed(ActionEvent e) {
 
                         }
