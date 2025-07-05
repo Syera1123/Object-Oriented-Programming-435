@@ -1,0 +1,10 @@
+Ticket Type: Weekday
+Kid x 1 = RM 10
+Adult x 1 = RM 12
+OKU x 1 = RM 7
+Safari Ride: No
+Photobooth: No
+Animal Food x 1 = RM 10
+Bird Show x 1 = RM 15
+TOTAL: RM 54
+Payment Method: Online Transfer
