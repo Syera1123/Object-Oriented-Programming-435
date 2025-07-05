@@ -1,0 +1,19 @@
+Index: src/Zoo/WelcomePage.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package Zoo;\r\n\r\n\r\nimport javax.swing.*;\r\nimport java.awt.*;\r\nimport java.awt.event.ActionEvent;\r\nimport java.awt.event.ActionListener;\r\nimport java.awt.event.MouseEvent;\r\nimport java.awt.event.MouseListener;\r\n\r\npublic abstract class WelcomePage extends JFrame implements ActionListener,MouseListener {\r\n    public JPanel pnlMain;\r\n    public JButton btnSignUp;\r\n    public JLabel lblTitle;\r\n    public JLabel lblaccount;\r\n    public JLabel lblLogIn;\r\n\r\n    public WelcomePage() {\r\n\r\n        super.setTitle(\"Zoo Booking\"); // title\r\n        super.setSize(400,300);\r\n        super.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);\r\n\r\n        //action Listener\r\n        btnSignUp.addActionListener(this);\r\n        lblLogIn.addMouseListener((MouseListener) this);\r\n\r\n        //add designed to Content Pane\r\n        Container cp = super.getContentPane();\r\n        cp.add(pnlMain);\r\n\r\n        ImageIcon image = new ImageIcon(\"Zoo.jfif\");\r\n        super.setIconImage(image.getImage());\r\n\r\n\r\n\r\n\r\n        super.setVisible(true);\r\n\r\n    }\r\n\r\n    public static void main(String[] args) {\r\n\r\n        new WelcomePage() {\r\n            @Override\r\n            public void mouseClicked(MouseEvent e) {\r\n                if(e.getSource()==lblLogIn){\r\n                    LogInWindow login = new LogInWindow() {\r\n                        @Override\r\n                        public void actionPerformed(ActionEvent e) {\r\n\r\n                        }\r\n                    };\r\n                    dispose();\r\n                }\r\n\r\n            }\r\n\r\n            @Override\r\n            public void mousePressed(MouseEvent e) {}\r\n\r\n            @Override\r\n            public void mouseReleased(MouseEvent e) {}\r\n\r\n            @Override\r\n            public void mouseEntered(MouseEvent e) {}\r\n\r\n            @Override\r\n            public void mouseExited(MouseEvent e) {}\r\n\r\n            @Override\r\n            public void actionPerformed(ActionEvent e) {\r\n                if(e.getSource()==btnSignUp){\r\n                    new SignUpWindow();\r\n                    dispose();\r\n                }\r\n\r\n            }\r\n        };\r\n    }\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/Zoo/WelcomePage.java b/src/Zoo/WelcomePage.java
+--- a/src/Zoo/WelcomePage.java	(revision c7e1614d7ddb1a6ab49f6b49f9660fcd11b22a05)
++++ b/src/Zoo/WelcomePage.java	(date 1751688707033)
+@@ -71,8 +71,6 @@
+             @Override
+             public void actionPerformed(ActionEvent e) {
+                 if(e.getSource()==btnSignUp){
+-                    new SignUpWindow();
+-                    dispose();
+                 }
+ 
+             }

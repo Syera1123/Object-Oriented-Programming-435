@@ -7,27 +7,30 @@ import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 
-public abstract class SignUpWindow extends JFrame implements ActionListener,MouseListener{
+public abstract class SignUpWindow extends JFrame implements ActionListener, MouseListener {
     private JFormattedTextField fName;
     private JFormattedTextField fEmail;
     private JPasswordField pPassword;
-    private JPasswordField pCPassword;
+    private JPasswordField pReconfirmPass;
     private JCheckBox cbRememberMe;
     private JButton bSubmit;
+    private JPanel pnlSignUp;
     private JLabel lblBack;
     private JLabel lblSignUp;
-    private JPanel pblSignUp;
 
     public SignUpWindow(){
-        super.setTitle("Sign Up Page"); // title
-        super.setSize(400,300);
+        super.setTitle("Zoo Booking"); // title
+        super.setSize(400,400);
 
+        //action listener
         lblBack.addMouseListener(this);
         bSubmit.addActionListener(this);
         cbRememberMe.addActionListener(this);
 
+
+        //add designed to Content Pane
         Container cp = super.getContentPane();
-        cp.add(pblSignUp);
+        cp.add(pnlSignUp);
 
         ImageIcon image = new ImageIcon("Zoo.jfif");
         super.setIconImage(image.getImage());
@@ -35,7 +38,7 @@ public abstract class SignUpWindow extends JFrame implements ActionListener,Mous
         super.setVisible(true);
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args){
         new SignUpWindow() {
             @Override
             public void mouseClicked(MouseEvent e) {
