@@ -3,10 +3,7 @@ package Zoo;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.awt.event.MouseEvent;
-import java.awt.event.MouseListener;
+import java.awt.event.*;
 
 public abstract class WelcomePage extends JFrame implements ActionListener,MouseListener {
     public JPanel pnlMain;
@@ -72,6 +69,16 @@ public abstract class WelcomePage extends JFrame implements ActionListener,Mouse
             public void actionPerformed(ActionEvent e) {
                 if(e.getSource()==btnSignUp){
                     new SignUpWindow() {
+                        @Override
+                        public void focusGained(FocusEvent e) {
+
+                        }
+
+                        @Override
+                        public void focusLost(FocusEvent e) {
+
+                        }
+
                         @Override
                         public void mouseClicked(MouseEvent e) {
 
