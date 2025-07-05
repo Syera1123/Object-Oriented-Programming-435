@@ -26,14 +26,14 @@ public class ReceiveData extends JFrame {
 
         // Set text pada semua JLabel
         lblTicketType.setText("Ticket Type: " + ticketType);
-        lblKid.setText("    - Kid    x " + kid + " = RM " + (kid * kidPrice));
-        lblAdult.setText("    - Adult x " + adult + " = RM " + (adult * adultPrice));
-        lblOKU.setText("    - OKU  x " + oku + " = RM " + (oku * okuPrice));
+        lblKid.setText("   - Kid    x " + kid + " = RM " + (kid * kidPrice));
+        lblAdult.setText("   - Adult x " + adult + " = RM " + (adult * adultPrice));
+        lblOKU.setText("   - OKU  x " + oku + " = RM " + (oku * okuPrice));
         lblSafari.setText("   - Safari Ride: " + (safari ? "Yes (RM30)" : "No"));
         lblPhotobooth.setText("   - Photobooth: " + (photobooth ? "Yes (RM30)" : "No"));
         lblAnimalFood.setText("   - Animal Food x " + animalFood + " = RM " + (animalFood * animalFoodPrice));
         lblBirdShow.setText("   - Bird Show     x " + birdShow + " = RM " + (birdShow * birdShowPrice));
-        lblTotal.setText("TOTAL: RM " + total);
+        lblTotal.setText("TOTAL : RM " + total);
 
         // Butang "Pay"
         btnPay.addActionListener(e -> {
