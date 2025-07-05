@@ -13,7 +13,6 @@ public abstract class SignUpWindow extends JFrame implements ActionListener, Mou
     protected JPasswordField pReconfirmPass;
     protected JButton bSubmit;
     protected JPanel pnlSignUp;
-    private JLabel lblBack;
     private JLabel lblSignUp;
 
     public SignUpWindow(){
@@ -27,7 +26,6 @@ public abstract class SignUpWindow extends JFrame implements ActionListener, Mou
         pReconfirmPass.setText("Reconfirm Password");
 
         //action listener
-        lblBack.addMouseListener(this);
         bSubmit.addActionListener(this);
         fName.addFocusListener(this);
         fName.addActionListener(this);
@@ -161,6 +159,31 @@ public abstract class SignUpWindow extends JFrame implements ActionListener, Mou
                     if (e.getSource() == bSubmit) {
                         // All good
                        new LogInWindow() {
+                           @Override
+                           public void mouseClicked(MouseEvent e) {
+
+                           }
+
+                           @Override
+                           public void mousePressed(MouseEvent e) {
+
+                           }
+
+                           @Override
+                           public void mouseReleased(MouseEvent e) {
+
+                           }
+
+                           @Override
+                           public void mouseEntered(MouseEvent e) {
+
+                           }
+
+                           @Override
+                           public void mouseExited(MouseEvent e) {
+
+                           }
+
                            @Override
                            public void actionPerformed(ActionEvent e) {
 
