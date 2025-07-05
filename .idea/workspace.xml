@@ -4,7 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="93ec5c9a-3820-4625-8185-2e1f0d75d993" name="Changes" comment="Add new feature to ZooSystem" />
+    <list default="true" id="93ec5c9a-3820-4625-8185-2e1f0d75d993" name="Changes" comment="Merge branch 'Syera'&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml">
+      <change afterPath="$PROJECT_DIR$/src/ReceiveData.form" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ReceiveData.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ZooTicketGUI.form" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ZooTicketGUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Checkout.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/Checkout.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Checkout.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Checkout.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -47,7 +55,7 @@
   <component name="GithubPullRequestsUISettings">{
   &quot;selectedUrlAndAccountId&quot;: {
     &quot;url&quot;: &quot;https://github.com/Syera1123/Object-Oriented-Programming-435.git&quot;,
-    &quot;accountId&quot;: &quot;8a2dd38c-b24a-4073-a898-89ec4490a0bf&quot;
+    &quot;accountId&quot;: &quot;2c07c89b-8f34-470d-a656-212026ddbbfe&quot;
   }
 }</component>
   <component name="ProjectColorInfo">{
@@ -64,12 +72,13 @@
     "Application.LogInWindow.executor": "Run",
     "Application.Price.executor": "Run",
     "Application.WelcomePage.executor": "Run",
+    "Application.ZooTicketGUI.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "UI_DESIGNER_EDITOR_MODE.PaletteManager.WIDTH": "4",
-    "UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH": "7",
-    "git-widget-placeholder": "Syera",
+    "UI_DESIGNER_EDITOR_MODE.PaletteManager.WIDTH": "109",
+    "UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH": "311",
+    "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -77,12 +86,17 @@
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
     "onboarding.tips.debug.path": "C:/Users/User/IdeaProjects/Main/src/Main.java",
-    "settings.editor.selected.configurable": "vcs.Git",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "run.code.analysis.last.selected.profile": "pProject Default",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\User\IdeaProjects\Object-Oriented-Programming-435\src" />
       <recent name="C:\Users\User\IdeaProjects\Main\src" />
       <recent name="C:\Users\User\IdeaProjects\Main\src\Zoo" />
       <recent name="C:\Users\User\IdeaProjects\Main\out\production\Main\com\intellij\uiDesigner\core" />
@@ -91,8 +105,8 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-jdk-9823dce3aa75-a94e463ab2e7-intellij.indexing.shared.core-IU-243.26053.27" />
-        <option value="bundled-js-predefined-d6986cc7102b-1632447f56bf-JavaScript-IU-243.26053.27" />
+        <option value="bundled-jdk-9823dce3aa75-a94e463ab2e7-intellij.indexing.shared.core-IU-243.26574.91" />
+        <option value="bundled-js-predefined-d6986cc7102b-1632447f56bf-JavaScript-IU-243.26574.91" />
       </set>
     </attachedChunks>
   </component>
@@ -106,6 +120,8 @@
       <updated>1751614066229</updated>
       <workItem from="1751614067427" duration="416000" />
       <workItem from="1751614499668" duration="12918000" />
+      <workItem from="1751650769896" duration="5418000" />
+      <workItem from="1751656294199" duration="10851000" />
     </task>
     <task id="LOCAL-00001" summary="Add new feature to ZooSystem">
       <option name="closed" value="true" />
@@ -123,7 +139,15 @@
       <option name="project" value="LOCAL" />
       <updated>1751645667762</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Merge branch 'Syera'&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml">
+      <option name="closed" value="true" />
+      <created>1751650119652</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1751650119652</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
