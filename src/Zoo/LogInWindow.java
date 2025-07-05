@@ -5,7 +5,7 @@ import java.awt.*;
 import java.awt.event.*;
 import java.io.*;
 
-public abstract class LogInWindow extends JFrame implements ActionListener,MouseListener{
+public abstract class LogInWindow extends JFrame implements ActionListener {
     protected JPanel panel1;
     protected JFormattedTextField fEmail;
     protected JPasswordField jPassword;
@@ -17,13 +17,12 @@ public abstract class LogInWindow extends JFrame implements ActionListener,Mouse
 
     public LogInWindow() {
         super.setTitle("Zoo Booking");
-        super.setSize(700, 500);
+        super.setSize(400, 300);
 
         // Listener
         btnSubmit.addActionListener(this);
         fEmail.addActionListener(this);
         jPassword.addActionListener(this);
-
 
         // Add GUI panel
         Container cp = super.getContentPane();
@@ -35,31 +34,6 @@ public abstract class LogInWindow extends JFrame implements ActionListener,Mouse
     public static void main(String[] args) {
         LogInWindow log = new LogInWindow()
         {
-            @Override
-            public void mouseClicked(MouseEvent e) {
-
-            }
-
-            @Override
-            public void mousePressed(MouseEvent e) {
-
-            }
-
-            @Override
-            public void mouseReleased(MouseEvent e) {
-
-            }
-
-            @Override
-            public void mouseEntered(MouseEvent e) {
-
-            }
-
-            @Override
-            public void mouseExited(MouseEvent e) {
-
-            }
-
             @Override
             public void actionPerformed(ActionEvent e) {
                 String email = fEmail.getText();
@@ -82,9 +56,7 @@ public abstract class LogInWindow extends JFrame implements ActionListener,Mouse
                 } else {
                     JOptionPane.showMessageDialog(this, "Invalid email or password");
                 }
-
             }
-
 
             private boolean isLoginValid(String email, String password) {
                 try {

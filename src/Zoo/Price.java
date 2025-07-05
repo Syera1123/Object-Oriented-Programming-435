@@ -15,7 +15,7 @@ public class Price extends JFrame implements ActionListener {
 
 
     public Price(){
-        super.setSize(500,250);
+        super.setSize(700,500);
         super.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
 
         //add action Listener
@@ -24,7 +24,27 @@ public class Price extends JFrame implements ActionListener {
         Container cp = super.getContentPane();
         cp.add(pnlPrice);
 
-        super.setVisible(true);
+        // === Background ===
+        JLabel backgroundLabel = new JLabel();
+        ImageIcon bgIcon = new ImageIcon(getClass().getResource("/Untitled design.png"));
+        backgroundLabel.setIcon(new ImageIcon(bgIcon.getImage().getScaledInstance(700, 500, Image.SCALE_SMOOTH)));
+        backgroundLabel.setBounds(0, 0, 700, 500);
+
+        pnlPrice.setOpaque(false);
+
+        // === Layering ===
+        JLayeredPane layeredPane = new JLayeredPane();
+        layeredPane.setPreferredSize(new Dimension(700, 500));
+
+        backgroundLabel.setBounds(0, 0, 700, 500);
+        pnlPrice.setBounds(0, 0, 700, 500);
+
+        layeredPane.add(backgroundLabel, Integer.valueOf(0));
+        layeredPane.add(pnlPrice, Integer.valueOf(1));
+
+        setContentPane(layeredPane);
+        pack();
+        setVisible(true);
 
     }
 

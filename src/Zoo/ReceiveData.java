@@ -82,7 +82,7 @@ public class ReceiveData extends JFrame {
         lblPhotobooth.setText("   - Photobooth: " + (photobooth ? "Yes (RM30)" : "No"));
         lblAnimalFood.setText("   - Animal Food x " + animalFood + " = RM " + (animalFood * animalFoodPrice));
         lblBirdShow.setText("   - Bird Show     x " + birdShow + " = RM " + (birdShow * birdShowPrice));
-        lblTotal.setText(" Total: RM " + total);
+        lblTotal.setText("      Total:RM " + total);
 
         // === Pay Button Action ===
         btnPay.addActionListener(e -> {

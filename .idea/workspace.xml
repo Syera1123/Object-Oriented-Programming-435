@@ -4,14 +4,22 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="93ec5c9a-3820-4625-8185-2e1f0d75d993" name="Changes" comment="Merge remote-tracking branch 'origin/main' into DINI&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml">
+    <list default="true" id="93ec5c9a-3820-4625-8185-2e1f0d75d993" name="Changes" comment="Merge remote-tracking branch 'origin/DINI' into DINI&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;password.txt&#10;#&#9;src/Zoo/ReceiveData.form">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Zoo/ForgotPassword.form" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Zoo/ForgotPassword.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/receipt.txt" beforeDir="false" afterPath="$PROJECT_DIR$/receipt.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Zoo/Checkout.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/Zoo/Checkout.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Zoo/Checkout.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Zoo/Checkout.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Zoo/LogInWindow.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/Zoo/LogInWindow.form" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Zoo/LogInWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Zoo/LogInWindow.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Zoo/Price.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/Zoo/Price.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Zoo/Price.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Zoo/Price.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Zoo/ReceiveData.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/Zoo/ReceiveData.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Zoo/ReceiveData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Zoo/ReceiveData.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Zoo/SignUpWindow.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/Zoo/SignUpWindow.form" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Zoo/SignUpWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Zoo/SignUpWindow.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Zoo/WelcomePage.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/Zoo/WelcomePage.form" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Zoo/WelcomePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Zoo/WelcomePage.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -33,6 +41,7 @@
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RESET_MODE" value="MIXED" />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
   &quot;lastFilter&quot;: {
@@ -57,7 +66,6 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "Application.Checkout.executor": "Run",
-    "Application.ForgotPassword.executor": "Run",
     "Application.LogInWindow.executor": "Run",
     "Application.Price.executor": "Run",
     "Application.SignUpWindow.executor": "Run",
@@ -66,10 +74,9 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "UI_DESIGNER_EDITOR_MODE.PaletteManager.SHOW": "false",
     "UI_DESIGNER_EDITOR_MODE.PaletteManager.WIDTH": "169",
     "UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH": "242",
-    "git-widget-placeholder": "DINI",
+    "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -77,7 +84,7 @@
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
     "onboarding.tips.debug.path": "C:/Users/User/IdeaProjects/Main/src/Main.java",
-    "settings.editor.selected.configurable": "vcs.Git",
+    "settings.editor.selected.configurable": "project.propCompiler",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -89,7 +96,7 @@
       <recent name="C:\Users\User\IdeaProjects\Main\out\production\Main\com\intellij\uiDesigner\core" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.Checkout">
     <configuration name="Checkout" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Checkout" />
       <module name="Main" />
@@ -132,11 +139,10 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Checkout" />
         <item itemvalue="Application.WelcomePage" />
-        <item itemvalue="Application.Price" />
         <item itemvalue="Application.LogInWindow" />
-        <item itemvalue="Application.Checkout" />
-        <item itemvalue="Application.Checkout" />
+        <item itemvalue="Application.Price" />
       </list>
     </recent_temporary>
   </component>
@@ -167,23 +173,15 @@
       <option name="project" value="LOCAL" />
       <updated>1751730063265</updated>
     </task>
-    <task id="LOCAL-00003" summary="Merge remote-tracking branch 'origin/DINI' into DINI&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml">
+    <task id="LOCAL-00003" summary="Merge remote-tracking branch 'origin/DINI' into DINI&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;password.txt&#10;#&#9;src/Zoo/ReceiveData.form">
       <option name="closed" value="true" />
-      <created>1751735538431</created>
+      <created>1751752863855</created>
       <option name="number" value="00003" />
       <option name="presentableId" value="LOCAL-00003" />
       <option name="project" value="LOCAL" />
-      <updated>1751735538431</updated>
+      <updated>1751752863856</updated>
     </task>
-    <task id="LOCAL-00004" summary="Merge remote-tracking branch 'origin/main' into DINI&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml">
-      <option name="closed" value="true" />
-      <created>1751735695073</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1751735695073</updated>
-    </task>
-    <option name="localTasksCounter" value="5" />
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -202,9 +200,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Merge remote-tracking branch 'origin/main'&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml" />
+    <MESSAGE value="Add new feature to ZooSystem" />
     <MESSAGE value="Merge remote-tracking branch 'origin/DINI' into DINI&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;password.txt&#10;#&#9;src/Zoo/ReceiveData.form" />
-    <MESSAGE value="Merge remote-tracking branch 'origin/DINI' into DINI&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml" />
-    <MESSAGE value="Merge remote-tracking branch 'origin/main' into DINI&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml" />
-    <option name="LAST_COMMIT_MESSAGE" value="Merge remote-tracking branch 'origin/main' into DINI&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml" />
+    <option name="LAST_COMMIT_MESSAGE" value="Merge remote-tracking branch 'origin/DINI' into DINI&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;password.txt&#10;#&#9;src/Zoo/ReceiveData.form" />
   </component>
 </project>
