@@ -5,7 +5,7 @@ import java.awt.*;
 import java.awt.event.*;
 import java.io.*;
 
-public abstract class LogInWindow extends JFrame implements ActionListener {
+public abstract class LogInWindow extends JFrame implements ActionListener,MouseListener{
     protected JPanel panel1;
     protected JFormattedTextField fEmail;
     protected JPasswordField jPassword;
@@ -24,6 +24,7 @@ public abstract class LogInWindow extends JFrame implements ActionListener {
         fEmail.addActionListener(this);
         jPassword.addActionListener(this);
 
+
         // Add GUI panel
         Container cp = super.getContentPane();
         cp.add(panel1);
@@ -34,6 +35,31 @@ public abstract class LogInWindow extends JFrame implements ActionListener {
     public static void main(String[] args) {
         LogInWindow log = new LogInWindow()
         {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+
+            }
+
+            @Override
+            public void mousePressed(MouseEvent e) {
+
+            }
+
+            @Override
+            public void mouseReleased(MouseEvent e) {
+
+            }
+
+            @Override
+            public void mouseEntered(MouseEvent e) {
+
+            }
+
+            @Override
+            public void mouseExited(MouseEvent e) {
+
+            }
+
             @Override
             public void actionPerformed(ActionEvent e) {
                 String email = fEmail.getText();
@@ -56,7 +82,9 @@ public abstract class LogInWindow extends JFrame implements ActionListener {
                 } else {
                     JOptionPane.showMessageDialog(this, "Invalid email or password");
                 }
+
             }
+
 
             private boolean isLoginValid(String email, String password) {
                 try {

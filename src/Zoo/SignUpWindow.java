@@ -13,12 +13,21 @@ public abstract class SignUpWindow extends JFrame implements ActionListener, Mou
     protected JPasswordField pReconfirmPass;
     protected JButton bSubmit;
     protected JPanel pnlSignUp;
-    private JLabel lblBack;
     private JLabel lblSignUp;
 
     public SignUpWindow(){
         super.setTitle("Sign Up"); // title
         super.setSize(700,500);
+        // === Background Image ===
+        setContentPane(new JLabel(new ImageIcon(
+                new ImageIcon(getClass().getResource("/Untitled design.png"))
+                        .getImage().getScaledInstance(700, 500, Image.SCALE_SMOOTH))));
+        setLayout(null); // Manual layout
+
+        pnlSignUp.setOpaque(false);
+        pnlSignUp.setBounds(0, 0, 700, 500);
+        add(pnlSignUp); // Add sign-up panel on top of background
+
 
         pPassword.setEchoChar((char)0); // Make text visible initially
         pPassword.setText("Password");
@@ -27,7 +36,6 @@ public abstract class SignUpWindow extends JFrame implements ActionListener, Mou
         pReconfirmPass.setText("Reconfirm Password");
 
         //action listener
-        lblBack.addMouseListener(this);
         bSubmit.addActionListener(this);
         fName.addFocusListener(this);
         fName.addActionListener(this);
@@ -37,11 +45,6 @@ public abstract class SignUpWindow extends JFrame implements ActionListener, Mou
         pPassword.addActionListener(this);
         pReconfirmPass.addFocusListener(this);
         pReconfirmPass.addActionListener(this);
-
-        //add designed to Content Pane
-        Container cp = super.getContentPane();
-        cp.add(pnlSignUp);
-
 
 
         ImageIcon image = new ImageIcon("Zoo.jfif");
@@ -161,6 +164,31 @@ public abstract class SignUpWindow extends JFrame implements ActionListener, Mou
                     if (e.getSource() == bSubmit) {
                         // All good
                        new LogInWindow() {
+                           @Override
+                           public void mouseClicked(MouseEvent e) {
+
+                           }
+
+                           @Override
+                           public void mousePressed(MouseEvent e) {
+
+                           }
+
+                           @Override
+                           public void mouseReleased(MouseEvent e) {
+
+                           }
+
+                           @Override
+                           public void mouseEntered(MouseEvent e) {
+
+                           }
+
+                           @Override
+                           public void mouseExited(MouseEvent e) {
+
+                           }
+
                            @Override
                            public void actionPerformed(ActionEvent e) {
 
