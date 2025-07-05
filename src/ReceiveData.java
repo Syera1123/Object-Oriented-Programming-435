@@ -1,4 +1,6 @@
 import javax.swing.*;
+import java.awt.*;
+import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.time.LocalDateTime;
@@ -71,27 +73,35 @@ public class ReceiveData extends JFrame {
 
             writer.write("\n");
             writer.write("======================================\n");
-            writer.write("           FINAL RECEIPT          \n");
+            writer.write("           FINAL RECEIPT              \n");
             writer.write("======================================\n");
             writer.write("Date & Time     : " + formattedDateTime + "\n");
             writer.write("Ticket Type     : " + ticketType + "\n");
-            writer.write("-------------------------------------\n");
+            writer.write("--------------------------------------\n");
             writer.write("Kid             x " + kid + " = RM " + (kid * kidPrice) + "\n");
             writer.write("Adult           x " + adult + " = RM " + (adult * adultPrice) + "\n");
             writer.write("OKU             x " + oku + " = RM " + (oku * okuPrice) + "\n");
-            writer.write("-------------------------------------\n");
+            writer.write("--------------------------------------\n");
             writer.write("Safari Ride     : " + (safari ? "Yes (RM30)" : "No") + "\n");
             writer.write("Photobooth      : " + (photobooth ? "Yes (RM30)" : "No") + "\n");
-            writer.write("-------------------------------------\n");
+            writer.write("--------------------------------------\n");
             writer.write("Animal Food     x " + animalFood + " = RM " + (animalFood * animalFoodPrice) + "\n");
             writer.write("Bird Show       x " + birdShow + " = RM " + (birdShow * birdShowPrice) + "\n");
             writer.write("======================================\n");
             writer.write("Payment Method  : " + method + "\n");
             writer.write("TOTAL           : RM " + total + "\n");
             writer.write("======================================\n");
+
+            // Auto open the receipt file
+            File file = new File("receipt.txt");
+            if (file.exists()) {
+                Desktop desktop = Desktop.getDesktop();
+                desktop.open(file);
+            }
+
         } catch (IOException ex) {
-            JOptionPane.showMessageDialog(this, "Failed to save receipt.");
+            JOptionPane.showMessageDialog(this, "Failed to save or open receipt.");
         }
     }
-}
 
+}
