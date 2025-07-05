@@ -1,0 +1,159 @@
+Index: src/Price.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>import javax.swing.*;\r\nimport java.awt.*;\r\nimport java.awt.event.ActionEvent;\r\nimport java.awt.event.ActionListener;\r\n\r\npublic class Price extends JFrame implements ActionListener {\r\n    private JPanel pnlPrice;\r\n    private JButton btnContinueOrder;\r\n    private JList list1;\r\n    private JList list2;\r\n    private JLabel lblWeekday;\r\n    private JLabel lblWeekend;\r\n\r\n\r\n    public Price(){\r\n        super.setSize(500,250);\r\n        super.setDefaultCloseOperation(DISPOSE_ON_CLOSE);\r\n\r\n        //add action Listener\r\n        btnContinueOrder.addActionListener(this);\r\n\r\n        Container cp = super.getContentPane();\r\n        cp.add(pnlPrice);\r\n\r\n        super.setVisible(true);\r\n\r\n    }\r\n\r\n\r\n    public static void main(String[] args){\r\n        new Price();\r\n    }\r\n\r\n\r\n    @Override\r\n    public void actionPerformed(ActionEvent e) {\r\n        if(e.getSource()==btnContinueOrder){\r\n            Checkout cp = new Checkout();\r\n            dispose();\r\n        }\r\n    }\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/Price.java b/src/Price.java
+--- a/src/Price.java	(revision 92abc7475221d2877613daa782a93470e25ba658)
++++ b/src/Price.java	(date 1751725475989)
+@@ -1,8 +1,10 @@
++
+ import javax.swing.*;
+ import java.awt.*;
+ import java.awt.event.ActionEvent;
+ import java.awt.event.ActionListener;
+ 
++
+ public class Price extends JFrame implements ActionListener {
+     private JPanel pnlPrice;
+     private JButton btnContinueOrder;
+Index: src/Zoo/LogInWindow.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package Zoo;\r\n\r\nimport javax.swing.*;\r\nimport java.awt.*;\r\nimport java.awt.event.ActionEvent;\r\nimport java.awt.event.ActionListener;\r\n\r\npublic abstract class LogInWindow extends JFrame implements ActionListener {\r\n    protected JPanel panel1;\r\n    protected JFormattedTextField fEmail;\r\n    protected JPasswordField jPassword;\r\n    protected JCheckBox jcbRememberMe;\r\n    protected JButton btnSubmit;\r\n    protected JLabel lblLogIn;\r\n    protected JLabel lblPassword;\r\n    protected JLabel lblForgotPass;\r\n\r\n    public LogInWindow(){\r\n        super.setTitle(\"Zoo Booking\"); // title\r\n        super.setSize(400,300);\r\n\r\n        //action listener\r\n        fEmail.addActionListener(this);\r\n        //add designed to Content Pane\r\n        Container cp = super.getContentPane();\r\n        cp.add(panel1);\r\n\r\n\r\n        super.setVisible(true);\r\n    }\r\n\r\n    public static void main(String[] args) {\r\n        new LogInWindow() {\r\n            @Override\r\n            public void actionPerformed(ActionEvent e) {\r\n\r\n\r\n            }\r\n        };\r\n    }\r\n\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/Zoo/LogInWindow.java b/src/Zoo/LogInWindow.java
+--- a/src/Zoo/LogInWindow.java	(revision 92abc7475221d2877613daa782a93470e25ba658)
++++ b/src/Zoo/LogInWindow.java	(date 1751725693303)
+@@ -1,9 +1,11 @@
+ package Zoo;
++import Price;
+ 
+ import javax.swing.*;
+ import java.awt.*;
+-import java.awt.event.ActionEvent;
+-import java.awt.event.ActionListener;
++import java.awt.event.*;
++import java.io.*;
++
+ 
+ public abstract class LogInWindow extends JFrame implements ActionListener {
+     protected JPanel panel1;
+@@ -15,28 +17,85 @@
+     protected JLabel lblPassword;
+     protected JLabel lblForgotPass;
+ 
+-    public LogInWindow(){
+-        super.setTitle("Zoo Booking"); // title
+-        super.setSize(400,300);
++    public LogInWindow() {
++        super.setTitle("Zoo Booking");
++        super.setSize(400, 300);
+ 
+-        //action listener
++        // Listener
++        btnSubmit.addActionListener(this);
+         fEmail.addActionListener(this);
+-        //add designed to Content Pane
++        jPassword.addActionListener(this);
++
++        // Add GUI panel
+         Container cp = super.getContentPane();
+         cp.add(panel1);
+ 
+-
+         super.setVisible(true);
+     }
+ 
+     public static void main(String[] args) {
+         new LogInWindow() {
++            @Override
++            protected void onLoginSuccess() {
++
++            }
++
+             @Override
+             public void actionPerformed(ActionEvent e) {
++                String email = fEmail.getText();
++                String password = String.valueOf(jPassword.getPassword());
++
++                if (email.isEmpty()) {
++                    JOptionPane.showMessageDialog(this, "Please enter your email");
++                    return;
++                }
+ 
++                if (password.isEmpty()) {
++                    JOptionPane.showMessageDialog(this, "Please enter your password");
++                    return;
++                }
+ 
++                // Check email-password match
++                if (isLoginValid(email, password)) {
++                    Price.Price myPriceWindow = new Price.Price();
++                    // TODO: Proceed to next screen (e.g., homepage / main menu)
++                } else {
++                    JOptionPane.showMessageDialog(this, "Invalid email or password");
++                }
++            }
++
++            private boolean isLoginValid(String email, String password) {
++                try {
++                    File file = new File("password.txt");
++                    if (!file.exists())
++                        return false;
++
++                    BufferedReader reader = new BufferedReader(new FileReader(file));
++                    String line;
++                    boolean emailFound = false;
++
++                    while ((line = reader.readLine()) != null) {
++                        if (line.equals("Email: " + email)) {
++                            emailFound = true;
++                            String nextLine = reader.readLine(); // should be password
++                            if (nextLine != null && nextLine.equals("Password: " + password)) {
++                                reader.close();
++                                return true; // Match found
++                            } else {
++                                reader.close();
++                                return false; // Password mismatch
++                            }
++                        }
++                    }
++
++                    reader.close();
++                } catch (IOException ex) {
++                    JOptionPane.showMessageDialog(this, "Error reading file: " + ex.getMessage());
++                }
++                return false;
+             }
+         };
+     }
+ 
++    protected abstract void onLoginSuccess();
+ }
+Index: src/Zoo/WelcomePage.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package Zoo;\r\n\r\n\r\nimport javax.swing.*;\r\nimport java.awt.*;\r\nimport java.awt.event.*;\r\n\r\npublic abstract class WelcomePage extends JFrame implements ActionListener,MouseListener {\r\n    public JPanel pnlMain;\r\n    public JButton btnSignUp;\r\n    public JLabel lblTitle;\r\n    public JLabel lblaccount;\r\n    public JLabel lblLogIn;\r\n\r\n    public WelcomePage() {\r\n\r\n        super.setTitle(\"Zoo Booking\"); // title\r\n        super.setSize(400,300);\r\n        super.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);\r\n\r\n        //action Listener\r\n        btnSignUp.addActionListener(this);\r\n        lblLogIn.addMouseListener((MouseListener) this);\r\n\r\n        //add designed to Content Pane\r\n        Container cp = super.getContentPane();\r\n        cp.add(pnlMain);\r\n\r\n        ImageIcon image = new ImageIcon(\"Zoo.jfif\");\r\n        super.setIconImage(image.getImage());\r\n\r\n\r\n\r\n\r\n        super.setVisible(true);\r\n\r\n    }\r\n\r\n    public static void main(String[] args) {\r\n\r\n        new WelcomePage() {\r\n            @Override\r\n            public void mouseClicked(MouseEvent e) {\r\n                if(e.getSource()==lblLogIn){\r\n                    LogInWindow login = new LogInWindow() {\r\n                        @Override\r\n                        public void actionPerformed(ActionEvent e) {\r\n\r\n                        }\r\n                    };\r\n                    dispose();\r\n                }\r\n\r\n            }\r\n\r\n            @Override\r\n            public void mousePressed(MouseEvent e) {}\r\n\r\n            @Override\r\n            public void mouseReleased(MouseEvent e) {}\r\n\r\n            @Override\r\n            public void mouseEntered(MouseEvent e) {}\r\n\r\n            @Override\r\n            public void mouseExited(MouseEvent e) {}\r\n\r\n            @Override\r\n            public void actionPerformed(ActionEvent e) {\r\n                if(e.getSource()==btnSignUp){\r\n                    new SignUpWindow() {\r\n                        @Override\r\n                        public void focusGained(FocusEvent e) {\r\n\r\n                        }\r\n\r\n                        @Override\r\n                        public void focusLost(FocusEvent e) {\r\n\r\n                        }\r\n\r\n                        @Override\r\n                        public void mouseClicked(MouseEvent e) {\r\n\r\n                        }\r\n\r\n                        @Override\r\n                        public void mousePressed(MouseEvent e) {\r\n\r\n                        }\r\n\r\n                        @Override\r\n                        public void mouseReleased(MouseEvent e) {\r\n\r\n                        }\r\n\r\n                        @Override\r\n                        public void mouseEntered(MouseEvent e) {\r\n\r\n                        }\r\n\r\n                        @Override\r\n                        public void mouseExited(MouseEvent e) {\r\n\r\n                        }\r\n\r\n                        @Override\r\n                        public void actionPerformed(ActionEvent e) {\r\n\r\n                        }\r\n                    };\r\n                    dispose();\r\n                }\r\n\r\n            }\r\n        };\r\n    }\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/Zoo/WelcomePage.java b/src/Zoo/WelcomePage.java
+--- a/src/Zoo/WelcomePage.java	(revision 92abc7475221d2877613daa782a93470e25ba658)
++++ b/src/Zoo/WelcomePage.java	(date 1751725047899)
+@@ -46,6 +46,11 @@
+                         @Override
+                         public void actionPerformed(ActionEvent e) {
+ 
++                        }
++
++                        @Override
++                        protected void onLoginSuccess() {
++
+                         }
+                     };
+                     dispose();
