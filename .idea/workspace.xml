@@ -5,9 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="93ec5c9a-3820-4625-8185-2e1f0d75d993" name="Changes" comment="Merge branch 'Syera'&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/receipt.txt" beforeDir="false" afterPath="$PROJECT_DIR$/receipt.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Checkout.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Checkout.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Price.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Price.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ReceiveData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ReceiveData.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -119,6 +120,7 @@
       <workItem from="1751614499668" duration="12918000" />
       <workItem from="1751650769896" duration="5418000" />
       <workItem from="1751656294199" duration="10851000" />
+      <workItem from="1751695545101" duration="3238000" />
     </task>
     <task id="LOCAL-00001" summary="Add new feature to ZooSystem">
       <option name="closed" value="true" />

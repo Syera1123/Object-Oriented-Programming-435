@@ -1,19 +1,19 @@
 import javax.swing.*;
-import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
+import java.awt.event.*;
 
-public class Checkout extends JFrame {
+public class Checkout extends JFrame implements ActionListener {
+    private JPanel pnlCheckout;
     private JRadioButton rbWeekday;
     private JRadioButton rbWeekend;
     private JSpinner spKid;
     private JSpinner spAdult;
     private JSpinner spOKU;
+    private JSpinner spAnimalFood;
+    private JSpinner spBirdShow;
     private JRadioButton rbSafariYes;
     private JRadioButton rbSafariNo;
     private JRadioButton rbPhotoboothYes;
     private JRadioButton rbPhotoboothNo;
-    private JSpinner spBirdShow;
     private JButton btnCheckout;
     private JLabel lblKid;
     private JLabel lblAdult;
@@ -22,85 +22,90 @@ public class Checkout extends JFrame {
     private JLabel lblPhotobooth;
     private JLabel lblAnimalFood;
     private JLabel lblBirdShow;
-    private JPanel pnlCheckout;
-    private JSpinner spAnimalFood;
 
-    private ButtonGroup bgWeek;
-    private ButtonGroup bgSafariRide;
-    private ButtonGroup bgPhotobooth;
+    private ButtonGroup bgWeek, bgSafariRide, bgPhotobooth;
 
     public Checkout() {
-        setTitle("Zoo Ticketing Checkout");
+        setTitle("Zoo Ticket System");
         setSize(700, 500);
-        setDefaultCloseOperation(DISPOSE_ON_CLOSE);
+        setContentPane(pnlCheckout);
+        setDefaultCloseOperation(EXIT_ON_CLOSE);
+        setVisible(true);
 
-        // Button groups
+        // Group radio buttons
         bgWeek = new ButtonGroup();
         bgWeek.add(rbWeekday);
         bgWeek.add(rbWeekend);
+
         bgSafariRide = new ButtonGroup();
         bgSafariRide.add(rbSafariYes);
         bgSafariRide.add(rbSafariNo);
+
         bgPhotobooth = new ButtonGroup();
         bgPhotobooth.add(rbPhotoboothYes);
         bgPhotobooth.add(rbPhotoboothNo);
 
-        // Spinner setup
+        // Spinner model
         spKid.setModel(new SpinnerNumberModel(0, 0, 1000, 1));
         spAdult.setModel(new SpinnerNumberModel(1, 1, 1000, 1));
         spOKU.setModel(new SpinnerNumberModel(0, 0, 1000, 1));
         spAnimalFood.setModel(new SpinnerNumberModel(0, 0, 1000, 1));
         spBirdShow.setModel(new SpinnerNumberModel(0, 0, 1000, 1));
 
-        // Button listener
-        btnCheckout.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                handleCheckout();
-            }
-        });
-
-        setContentPane(pnlCheckout);
-        setVisible(true);
+        // Button Action
+        btnCheckout.addActionListener(this);
     }
 
-    private void handleCheckout() {
-        int kid = (Integer) spKid.getValue();
-        int adult = (Integer) spAdult.getValue();
-        int oku = (Integer) spOKU.getValue();
-        int animalFood = (Integer) spAnimalFood.getValue();
-        int birdShow = (Integer) spBirdShow.getValue();
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        int noKid = (Integer) spKid.getValue();
+        int noAdult = (Integer) spAdult.getValue();
+        int noOKU = (Integer) spOKU.getValue();
+        int noAnimalFood = (Integer) spAnimalFood.getValue();
+        int noBirdShow = (Integer) spBirdShow.getValue();
 
-        boolean isWeekday = rbWeekday.isSelected();
         boolean safari = rbSafariYes.isSelected();
         boolean photobooth = rbPhotoboothYes.isSelected();
 
-        // Prices
-        int kidPrice = isWeekday ? 10 : 12;
-        int adultPrice = isWeekday ? 20 : 25;
-        int okuPrice = 5;
+        String ticketType;
+        int kidPrice, adultPrice, okuPrice;
+
+        if (rbWeekday.isSelected()) {
+            ticketType = "Weekday";
+            kidPrice = 10;
+            adultPrice = 12;
+            okuPrice = 7;
+        } else if (rbWeekend.isSelected()) {
+            ticketType = "Weekend";
+            kidPrice = 13;
+            adultPrice = 15;
+            okuPrice = 9;
+        } else {
+            JOptionPane.showMessageDialog(this, "Please select day (Weekday/Weekend).");
+            return;
+        }
+
+        // Validasi opsyen Safari dan Photobooth
+        if (!rbSafariYes.isSelected() && !rbSafariNo.isSelected()) {
+            JOptionPane.showMessageDialog(this, "Please select Safari Ride option.");
+            return;
+        }
+        if (!rbPhotoboothYes.isSelected() && !rbPhotoboothNo.isSelected()) {
+            JOptionPane.showMessageDialog(this, "Please select Photobooth option.");
+            return;
+        }
+
         int safariPrice = safari ? 30 : 0;
-        int photoboothPrice = photobooth ? 30 : 0;
+        int photoPrice = photobooth ? 30 : 0;
         int animalFoodPrice = 10;
         int birdShowPrice = 15;
 
-        // Total calculation
-        int total = (kid * kidPrice) + (adult * adultPrice) + (oku * okuPrice)
-                + safariPrice + photoboothPrice
-                + (animalFood * animalFoodPrice) + (birdShow * birdShowPrice);
+        int total = (noKid * kidPrice) + (noAdult * adultPrice) + (noOKU * okuPrice)
+                + safariPrice + photoPrice + (noAnimalFood * animalFoodPrice) + (noBirdShow * birdShowPrice);
 
-        // Send to new window
-        new ReceiveData(
-                isWeekday ? "Weekday" : "Weekend",
-                kid, kidPrice,
-                adult, adultPrice,
-                oku, okuPrice,
-                safari,
-                photobooth,
-                animalFood, animalFoodPrice,
-                birdShow, birdShowPrice,
-                total
-        );
+        // Papar resit guna ReceiveData (pass semua data)
+        new ReceiveData(ticketType, noKid, kidPrice, noAdult, adultPrice, noOKU, okuPrice,
+                safari, photobooth, noAnimalFood, animalFoodPrice, noBirdShow, birdShowPrice, total);
     }
 
     public static void main(String[] args) {

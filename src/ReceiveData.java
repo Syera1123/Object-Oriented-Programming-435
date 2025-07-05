@@ -4,7 +4,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 
 public class ReceiveData extends JFrame {
-    private JPanel mainReceive; // ↔ ini mesti bind dengan .form
+    private JPanel mainReceive;
     private JLabel lblTicketType;
     private JLabel lblKid;
     private JLabel lblAdult;
@@ -19,33 +19,37 @@ public class ReceiveData extends JFrame {
     public ReceiveData(String ticketType, int kid, int kidPrice, int adult, int adultPrice, int oku, int okuPrice,
                        boolean safari, boolean photobooth, int animalFood, int animalFoodPrice,
                        int birdShow, int birdShowPrice, int total) {
+
         setTitle("Zoo Ticket Summary");
         setSize(700, 500);
         setDefaultCloseOperation(DISPOSE_ON_CLOSE);
-        setContentPane(mainReceive); // Guna panel dari .form
+        setContentPane(mainReceive); // ← dari GUI form anda
+        setLocationRelativeTo(null);
 
-        // Set text pada semua JLabel
+        // Isi maklumat label
         lblTicketType.setText("Ticket Type: " + ticketType);
-        lblKid.setText("   - Kid    x " + kid + " = RM " + (kid * kidPrice));
+        lblKid.setText("   - Kid     x " + kid + " = RM " + (kid * kidPrice));
         lblAdult.setText("   - Adult x " + adult + " = RM " + (adult * adultPrice));
         lblOKU.setText("   - OKU  x " + oku + " = RM " + (oku * okuPrice));
         lblSafari.setText("   - Safari Ride: " + (safari ? "Yes (RM30)" : "No"));
         lblPhotobooth.setText("   - Photobooth: " + (photobooth ? "Yes (RM30)" : "No"));
         lblAnimalFood.setText("   - Animal Food x " + animalFood + " = RM " + (animalFood * animalFoodPrice));
         lblBirdShow.setText("   - Bird Show     x " + birdShow + " = RM " + (birdShow * birdShowPrice));
-        lblTotal.setText("TOTAL : RM " + total);
+        lblTotal.setText("TOTAL: RM " + total);
 
-        // Butang "Pay"
         btnPay.addActionListener(e -> {
-            int confirm = JOptionPane.showConfirmDialog(this, "Confirm to pay?", "Confirmation", JOptionPane.YES_NO_OPTION);
+            int confirm = JOptionPane.showConfirmDialog(this, "Confirm payment?", "Confirm", JOptionPane.YES_NO_OPTION);
             if (confirm == JOptionPane.YES_OPTION) {
-                Object[] options = {"Cash", "Card"};
-                int method = JOptionPane.showOptionDialog(this, "Choose payment method:", "Payment Method",
-                        JOptionPane.DEFAULT_OPTION, JOptionPane.QUESTION_MESSAGE, null, options, options[0]);
+                Object[] options = {"Cash", "Card", "Online Transfer"};
+                int method = JOptionPane.showOptionDialog(this, "Select payment method:", "Payment",
+                        JOptionPane.DEFAULT_OPTION, JOptionPane.INFORMATION_MESSAGE, null, options, options[0]);
+
                 if (method != JOptionPane.CLOSED_OPTION) {
-                    JOptionPane.showMessageDialog(this, "Payment successful via " + options[method] + "!");
                     saveReceiptToFile(ticketType, kid, kidPrice, adult, adultPrice, oku, okuPrice,
-                            safari, photobooth, animalFood, animalFoodPrice, birdShow, birdShowPrice, total, options[method].toString());
+                            safari, photobooth, animalFood, animalFoodPrice, birdShow, birdShowPrice, total,
+                            options[method].toString());
+
+                    JOptionPane.showMessageDialog(this, "Payment successful via " + options[method] + "!");
                 }
             }
         });
