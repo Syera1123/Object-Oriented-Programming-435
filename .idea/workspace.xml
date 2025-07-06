@@ -4,10 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="93ec5c9a-3820-4625-8185-2e1f0d75d993" name="Changes" comment="Merge branch 'DINI'&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml">
+    <list default="true" id="93ec5c9a-3820-4625-8185-2e1f0d75d993" name="Changes" comment="Merge remote-tracking branch 'origin/main'&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;password.txt&#10;#&#9;src/Zoo/LogInWindow.form&#10;#&#9;src/Zoo/LogInWindow.java&#10;#&#9;src/Zoo/SignUpWindow.java&#10;#&#9;src/Zoo/WelcomePage.java">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Zoo/LogInWindow.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/Zoo/LogInWindow.form" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Zoo/LogInWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Zoo/LogInWindow.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Zoo/SignUpWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Zoo/SignUpWindow.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Zoo/WelcomePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Zoo/WelcomePage.java" afterDir="false" />
     </list>
@@ -52,32 +50,32 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.Checkout.executor": "Run",
-    "Application.LogInWindow.executor": "Run",
-    "Application.Price.executor": "Run",
-    "Application.SignUpWindow.executor": "Run",
-    "Application.WelcomePage.executor": "Run",
-    "Application.Zoo.Checkout.executor": "Run",
-    "Application.ZooTicketGUI.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "UI_DESIGNER_EDITOR_MODE.PaletteManager.WIDTH": "186",
-    "UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH": "437",
-    "git-widget-placeholder": "main",
-    "kotlin-language-version-configured": "true",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "onboarding.tips.debug.path": "C:/Users/User/IdeaProjects/Main/src/Main.java",
-    "settings.editor.selected.configurable": "project.propCompiler",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.Checkout.executor&quot;: &quot;Run&quot;,
+    &quot;Application.LogInWindow.executor&quot;: &quot;Run&quot;,
+    &quot;Application.Price.executor&quot;: &quot;Run&quot;,
+    &quot;Application.SignUpWindow.executor&quot;: &quot;Run&quot;,
+    &quot;Application.WelcomePage.executor&quot;: &quot;Run&quot;,
+    &quot;Application.Zoo.Checkout.executor&quot;: &quot;Run&quot;,
+    &quot;Application.ZooTicketGUI.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;UI_DESIGNER_EDITOR_MODE.PaletteManager.WIDTH&quot;: &quot;186&quot;,
+    &quot;UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH&quot;: &quot;437&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;onboarding.tips.debug.path&quot;: &quot;C:/Users/User/IdeaProjects/Main/src/Main.java&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;project.propCompiler&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Acer\IdeaProjects\Object-Oriented-Programming-435\src\Zoo" />
@@ -86,7 +84,7 @@
       <recent name="C:\Users\User\IdeaProjects\Main\out\production\Main\com\intellij\uiDesigner\core" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.SignUpWindow">
+  <component name="RunManager">
     <configuration name="Price" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Price" />
       <module name="Main" />
@@ -177,7 +175,23 @@
       <option name="project" value="LOCAL" />
       <updated>1751752863856</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Add new feature to ZooSystem">
+      <option name="closed" value="true" />
+      <created>1751771475385</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1751771475385</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Merge remote-tracking branch 'origin/main'&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;password.txt&#10;#&#9;src/Zoo/LogInWindow.form&#10;#&#9;src/Zoo/LogInWindow.java&#10;#&#9;src/Zoo/SignUpWindow.java&#10;#&#9;src/Zoo/WelcomePage.java">
+      <option name="closed" value="true" />
+      <created>1751771617141</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1751771617141</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -196,10 +210,11 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Merge remote-tracking branch 'origin/main'&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml" />
-    <MESSAGE value="Add new feature to ZooSystem" />
     <MESSAGE value="Merge remote-tracking branch 'origin/DINI' into DINI&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;password.txt&#10;#&#9;src/Zoo/ReceiveData.form" />
     <MESSAGE value="Merge branch 'DINI'&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml" />
-    <option name="LAST_COMMIT_MESSAGE" value="Merge branch 'DINI'&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml" />
+    <MESSAGE value="Add new feature to ZooSystem" />
+    <MESSAGE value="Merge remote-tracking branch 'origin/main'&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;password.txt&#10;#&#9;src/Zoo/LogInWindow.form&#10;#&#9;src/Zoo/LogInWindow.java&#10;#&#9;src/Zoo/SignUpWindow.java&#10;#&#9;src/Zoo/WelcomePage.java" />
+    <option name="LAST_COMMIT_MESSAGE" value="Merge remote-tracking branch 'origin/main'&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;password.txt&#10;#&#9;src/Zoo/LogInWindow.form&#10;#&#9;src/Zoo/LogInWindow.java&#10;#&#9;src/Zoo/SignUpWindow.java&#10;#&#9;src/Zoo/WelcomePage.java" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
