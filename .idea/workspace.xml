@@ -51,32 +51,32 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.Checkout.executor": "Run",
-    "Application.LogInWindow.executor": "Run",
-    "Application.Price.executor": "Run",
-    "Application.SignUpWindow.executor": "Run",
-    "Application.WelcomePage.executor": "Run",
-    "Application.Zoo.Checkout.executor": "Run",
-    "Application.ZooTicketGUI.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "UI_DESIGNER_EDITOR_MODE.PaletteManager.WIDTH": "186",
-    "UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH": "257",
-    "git-widget-placeholder": "main",
-    "kotlin-language-version-configured": "true",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "onboarding.tips.debug.path": "C:/Users/User/IdeaProjects/Main/src/Main.java",
-    "settings.editor.selected.configurable": "project.propCompiler",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.Checkout.executor&quot;: &quot;Run&quot;,
+    &quot;Application.LogInWindow.executor&quot;: &quot;Run&quot;,
+    &quot;Application.Price.executor&quot;: &quot;Run&quot;,
+    &quot;Application.SignUpWindow.executor&quot;: &quot;Run&quot;,
+    &quot;Application.WelcomePage.executor&quot;: &quot;Run&quot;,
+    &quot;Application.Zoo.Checkout.executor&quot;: &quot;Run&quot;,
+    &quot;Application.ZooTicketGUI.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;UI_DESIGNER_EDITOR_MODE.PaletteManager.WIDTH&quot;: &quot;186&quot;,
+    &quot;UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH&quot;: &quot;257&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;onboarding.tips.debug.path&quot;: &quot;C:/Users/User/IdeaProjects/Main/src/Main.java&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;project.propCompiler&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Acer\IdeaProjects\Object-Oriented-Programming-435\src\Zoo" />
@@ -85,7 +85,7 @@
       <recent name="C:\Users\User\IdeaProjects\Main\out\production\Main\com\intellij\uiDesigner\core" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.Price">
     <configuration name="Price" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Price" />
       <module name="Main" />
@@ -134,10 +134,10 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Price" />
         <item itemvalue="Application.SignUpWindow" />
         <item itemvalue="Application.Zoo.Checkout" />
         <item itemvalue="Application.WelcomePage" />
-        <item itemvalue="Application.Price" />
       </list>
     </recent_temporary>
   </component>
