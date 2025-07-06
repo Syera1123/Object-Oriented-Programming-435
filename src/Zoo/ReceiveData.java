@@ -100,6 +100,10 @@ public class ReceiveData extends JFrame {
                     JOptionPane.showMessageDialog(this, "Payment successful via " + options[method] + "!");
                 }
             }
+            else{
+                new Price();
+                dispose();
+            }
         });
 
         // === Edit Button Action ===
