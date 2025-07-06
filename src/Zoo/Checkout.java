@@ -34,8 +34,6 @@ public class Checkout extends JFrame implements ActionListener {
         setContentPane(pnlCheckout);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
 
-
-        // === Background ===
         JLabel backgroundLabel = new JLabel();
         ImageIcon bgIcon = new ImageIcon(getClass().getResource("/World.png"));
         backgroundLabel.setIcon(new ImageIcon(bgIcon.getImage().getScaledInstance(700, 500, Image.SCALE_SMOOTH)));
@@ -43,7 +41,6 @@ public class Checkout extends JFrame implements ActionListener {
 
         pnlCheckout.setOpaque(false);
 
-        // === Layering ===
         JLayeredPane layeredPane = new JLayeredPane();
         layeredPane.setPreferredSize(new Dimension(700, 500));
 
@@ -58,7 +55,6 @@ public class Checkout extends JFrame implements ActionListener {
 
         setVisible(true);
 
-        // Group radio buttons
         bgWeek = new ButtonGroup();
         bgWeek.add(rbWeekday);
         bgWeek.add(rbWeekend);
@@ -71,38 +67,32 @@ public class Checkout extends JFrame implements ActionListener {
         bgPhotobooth.add(rbPhotoboothYes);
         bgPhotobooth.add(rbPhotoboothNo);
 
-        // Spinner model
         spKid.setModel(new SpinnerNumberModel(0, 0, 1000, 1));
         spAdult.setModel(new SpinnerNumberModel(1, 1, 1000, 1));
         spOKU.setModel(new SpinnerNumberModel(0, 0, 1000, 1));
         spAnimalFood.setModel(new SpinnerNumberModel(0, 0, 1000, 1));
         spBirdShow.setModel(new SpinnerNumberModel(0, 0, 1000, 1));
 
-        // Button Action
         btnCheckout.addActionListener(this);
     }
 
-    // New constructor to prefill data when coming back from ReceiveData
     public Checkout(String ticketType, int kid, int kidPrice, int adult, int adultPrice, int oku, int okuPrice,
                     boolean safari, boolean photobooth, int animalFood, int animalFoodPrice,
                     int birdShow, int birdShowPrice, int total) {
         this();
 
-        // Set ticket type
         if ("Weekday".equals(ticketType)) {
             rbWeekday.setSelected(true);
         } else if ("Weekend".equals(ticketType)) {
             rbWeekend.setSelected(true);
         }
 
-        // Set spinners
         spKid.setValue(kid);
         spAdult.setValue(adult);
         spOKU.setValue(oku);
         spAnimalFood.setValue(animalFood);
         spBirdShow.setValue(birdShow);
 
-        // Set Safari and Photobooth options
         if (safari) {
             rbSafariYes.setSelected(true);
         } else {
