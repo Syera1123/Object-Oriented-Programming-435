@@ -4,12 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="93ec5c9a-3820-4625-8185-2e1f0d75d993" name="Changes" comment="Merge remote-tracking branch 'origin/main'&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Zoo/LogInWindow.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/Zoo/LogInWindow.form" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Zoo/SignUpWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Zoo/SignUpWindow.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Zoo/WelcomePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Zoo/WelcomePage.java" afterDir="false" />
-    </list>
+    <list default="true" id="93ec5c9a-3820-4625-8185-2e1f0d75d993" name="Changes" comment="Merge remote-tracking branch 'origin/main'&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
