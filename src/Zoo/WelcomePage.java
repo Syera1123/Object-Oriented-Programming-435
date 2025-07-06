@@ -31,27 +31,34 @@ public class WelcomePage extends JFrame implements ActionListener, MouseListener
 
         pnlMain = new JPanel(null);
         pnlMain.setOpaque(false);
-        pnlMain.setBounds(150, 150, 400, 200);
+        pnlMain.setBounds(150, 130, 400, 250); // Centered panel
         welPanel.add(pnlMain);
 
-        // === UI Components ===
+        // === Title ===
         lblTitle = new JLabel("Welcome to Zoo Booking");
-        lblTitle.setFont(new Font("Arial", Font.BOLD, 20));
-        lblTitle.setBounds(70, 10, 300, 30);
+        lblTitle.setFont(new Font("Juice ITC", Font.BOLD, 40));
+        lblTitle.setHorizontalAlignment(SwingConstants.CENTER);
+        lblTitle.setBounds(0, 10, 400, 50); // Full width of pnlMain
         pnlMain.add(lblTitle);
 
+        // === Sign Up Button ===
         btnSignUp = new JButton("Sign Up");
-        btnSignUp.setBounds(100, 60, 200, 40);
+        btnSignUp.setBounds(100, 70, 200, 40); // Centered within pnlMain
         pnlMain.add(btnSignUp);
 
+        // === Account Text ===
         lblAccount = new JLabel("Already have an account?");
-        lblAccount.setBounds(100, 110, 200, 30);
+        lblAccount.setFont(new Font("Arial", Font.PLAIN, 14));
+        lblAccount.setHorizontalAlignment(SwingConstants.CENTER);
+        lblAccount.setBounds(0, 120, 400, 30); // Full width, centered
         pnlMain.add(lblAccount);
 
+        // === Log In Link ===
         lblLogIn = new JLabel("<HTML><U>Log In</U></HTML>");
         lblLogIn.setForeground(Color.BLUE);
         lblLogIn.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
-        lblLogIn.setBounds(150, 140, 100, 30);
+        lblLogIn.setHorizontalAlignment(SwingConstants.CENTER);
+        lblLogIn.setBounds(0, 150, 400, 30); // Full width, centered
         pnlMain.add(lblLogIn);
 
         // === Layered Pane for background and content ===
@@ -81,7 +88,7 @@ public class WelcomePage extends JFrame implements ActionListener, MouseListener
     @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == btnSignUp) {
-            new SignUpWindow();  // ✅ Just call without overriding
+            new SignUpWindow();  // No override
             dispose();
         }
     }
@@ -89,7 +96,7 @@ public class WelcomePage extends JFrame implements ActionListener, MouseListener
     @Override
     public void mouseClicked(MouseEvent e) {
         if (e.getSource() == lblLogIn) {
-            new LogInWindow();  // ✅ Also call directly
+            new LogInWindow();  // No override
             dispose();
         }
     }

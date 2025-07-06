@@ -41,7 +41,7 @@ public class SignUpWindow extends JFrame implements ActionListener, FocusListene
 
         // === Components ===
         lblTitle = new JLabel("Sign Up"); // ✅ Title
-        lblTitle.setFont(new Font("Arial", Font.BOLD, 26));
+        lblTitle.setFont(new Font("Juice ITC", Font.BOLD, 26));
         lblTitle.setHorizontalAlignment(SwingConstants.CENTER);
         lblTitle.setBounds(100, 0, 300, 40);
 
