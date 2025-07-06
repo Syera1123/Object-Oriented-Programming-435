@@ -2,7 +2,6 @@ package Zoo;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.*;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -120,25 +119,18 @@ public class ReceiveData extends JFrame {
 
         mainReceive.setOpaque(false);
 
-        btnPay.setBackground(new Color(156, 102, 61));
-        btnPay.setForeground(Color.WHITE);
-        btnPay.setFont(new Font("Arial", Font.BOLD, 16));
-
-        btnEdit.setBackground(new Color(126, 170, 255));
-        btnEdit.setForeground(Color.WHITE);
-        btnEdit.setFont(new Font("Arial", Font.BOLD, 16));
 
         lblTicketType.setText("Ticket Type: " + ticketType);
-        lblKid.setText("   - Kid     x " + kid + " = RM " + (kid * kidPrice));
-        lblAdult.setText("   - Adult x " + adult + " = RM " + (adult * adultPrice));
-        lblOKU.setText("   - OKU  x " + oku + " = RM " + (oku * okuPrice));
+        lblKid.setText("    - Kid       x " + kid + " = RM " + (kid * kidPrice));
+        lblAdult.setText("    - Adult   x " + adult + " = RM " + (adult * adultPrice));
+        lblOKU.setText("    - OKU    x " + oku + " = RM " + (oku * okuPrice));
 
-        lblSafari.setText("   - " + activities[0].getName() + ": " + activities[0].getDescription());
-        lblPhotobooth.setText("   - " + activities[1].getName() + ": " + activities[1].getDescription());
-        lblBirdShow.setText("   - " + activities[2].getName() + ": " + activities[2].getDescription());
+        lblSafari.setText("    - " + activities[0].getName() + ": " + activities[0].getDescription());
+        lblPhotobooth.setText("    -  " + activities[1].getName() + ": " + activities[1].getDescription());
+        lblBirdShow.setText("    - "   + activities[2].getName() +    " " + activities[2].getDescription());
 
-        lblAnimalFood.setText("   - Animal Food x " + animalFood + " = RM " + (animalFood * animalFoodPrice));
-        lblTotal.setText("      Total: RM " + total);
+        lblAnimalFood.setText("    - Animal Food   x " + animalFood + "  = RM " + (animalFood * animalFoodPrice));
+        lblTotal.setText(" Total: RM"  + total);
 
         btnPay.addActionListener(e -> handlePayment());
 
