@@ -68,14 +68,6 @@
               <text value="Remember Me"/>
             </properties>
           </component>
-          <component id="a0287" class="javax.swing.JLabel" binding="lblForgotPass">
-            <constraints>
-              <grid row="5" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="1" fill="1" indent="0" use-parent-layout="false"/>
-            </constraints>
-            <properties>
-              <text value="Forgot Your Password?"/>
-            </properties>
-          </component>
         </children>
       </grid>
       <component id="1d64b" class="javax.swing.JButton" binding="btnSubmit">

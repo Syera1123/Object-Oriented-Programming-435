@@ -13,7 +13,7 @@ public class LogInWindow extends JFrame implements ActionListener, MouseListener
     protected JButton btnSubmit;
     protected JLabel lblLogIn;
     protected JLabel lblPassword;
-    protected JLabel lblForgotPass;
+
 
     private JPanel fullpanel;
 
@@ -45,7 +45,7 @@ public class LogInWindow extends JFrame implements ActionListener, MouseListener
         btnSubmit.addActionListener(this);
         fEmail.addActionListener(this);
         jPassword.addActionListener(this);
-        lblForgotPass.addMouseListener(this);
+
 
         // === Layered Pane ===
         JLayeredPane layeredPane = new JLayeredPane();
