@@ -7,11 +7,16 @@ import java.awt.event.ActionListener;
 
 public class Price extends JFrame implements ActionListener {
     private JPanel pnlPrice;
+    private JLabel operationHourLabel;
+    private JPanel pnlprice1;
+    private JPanel pnlprice13;
+    private JPanel pnlprice11;
+    private JPanel pnlprice12;
+    private JPanel pnlprice121;
+    private JPanel pnlprice122;
+    private JPanel pnlprice14;
     private JButton btnContinueOrder;
-    private JList list1;
-    private JList list2;
-    private JLabel lblWeekday;
-    private JLabel lblWeekend;
+    public JLabel name;
 
 
     public Price(){
@@ -56,9 +61,11 @@ public class Price extends JFrame implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        if(e.getSource()==btnContinueOrder){
+        if(e.getSource()==btnContinueOrder) {
             Checkout cp = new Checkout();
             dispose();
         }
     }
+
+
 }
