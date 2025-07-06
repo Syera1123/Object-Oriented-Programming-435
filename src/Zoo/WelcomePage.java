@@ -4,19 +4,18 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 
-public class WelcomePage extends JFrame implements ActionListener, MouseListener {
-    private JButton btnSignUp;
-    private JLabel lblTitle;
-    private JLabel lblAccount;
-    private JLabel lblLogIn;
-    private JPanel pnlMain;
-    private JPanel welPanel;
+public abstract class WelcomePage extends JFrame implements ActionListener, MouseListener {
+    public JButton btnSignUp;
+    public JLabel lblTitle;
+    public JLabel lblaccount;
+    public JLabel lblLogIn;
+    public JPanel pnlMain; // guna panel utama dari .form (pastikan binding betul)
+    public JPanel welpanel;
 
     public WelcomePage() {
-        setTitle("Zoo Booking");
-        setSize(700, 500);
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setLayout(null);
+        super.setTitle("Zoo Booking");
+        super.setSize(700, 500);
+        super.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         // === Background Image ===
         JLabel backgroundLabel = new JLabel();
@@ -24,78 +23,80 @@ public class WelcomePage extends JFrame implements ActionListener, MouseListener
         backgroundLabel.setIcon(new ImageIcon(bgIcon.getImage().getScaledInstance(700, 500, Image.SCALE_SMOOTH)));
         backgroundLabel.setBounds(0, 0, 700, 500);
 
-        // === Foreground Panel ===
-        welPanel = new JPanel(null);
-        welPanel.setOpaque(false);
-        welPanel.setBounds(0, 0, 700, 500);
+        welpanel.setOpaque(false);
+        welpanel.setBounds(0, 0, 700, 500);
 
-        pnlMain = new JPanel(null);
-        pnlMain.setOpaque(false);
-        pnlMain.setBounds(150, 150, 400, 200);
-        welPanel.add(pnlMain);
-
-        // === UI Components ===
-        lblTitle = new JLabel("Welcome to Zoo Booking");
-        lblTitle.setFont(new Font("Arial", Font.BOLD, 20));
-        lblTitle.setBounds(70, 10, 300, 30);
-        pnlMain.add(lblTitle);
-
-        btnSignUp = new JButton("Sign Up");
-        btnSignUp.setBounds(100, 60, 200, 40);
-        pnlMain.add(btnSignUp);
-
-        lblAccount = new JLabel("Already have an account?");
-        lblAccount.setBounds(100, 110, 200, 30);
-        pnlMain.add(lblAccount);
-
-        lblLogIn = new JLabel("<HTML><U>Log In</U></HTML>");
-        lblLogIn.setForeground(Color.BLUE);
-        lblLogIn.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
-        lblLogIn.setBounds(150, 140, 100, 30);
-        pnlMain.add(lblLogIn);
-
-        // === Layered Pane for background and content ===
+        // === Layering ===
         JLayeredPane layeredPane = new JLayeredPane();
-        layeredPane.setLayout(null);
         layeredPane.setPreferredSize(new Dimension(700, 500));
+        layeredPane.setLayout(null);
+
         layeredPane.add(backgroundLabel, Integer.valueOf(0));
-        layeredPane.add(welPanel, Integer.valueOf(1));
+        layeredPane.add(welpanel, Integer.valueOf(1));
 
         setContentPane(layeredPane);
 
-        // === Listeners ===
+        // Action Listeners
         btnSignUp.addActionListener(this);
         lblLogIn.addMouseListener(this);
 
-        // === Window Icon ===
-        ImageIcon icon = new ImageIcon("Zoo.jfif");
-        setIconImage(icon.getImage());
+        // Set icon
+        ImageIcon image = new ImageIcon("Zoo.jfif");
+        super.setIconImage(image.getImage());
 
-        setVisible(true);
+        pack();
+        super.setVisible(true);
     }
 
     public static void main(String[] args) {
-        new WelcomePage();
-    }
+        new WelcomePage() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                if (e.getSource() == lblLogIn) {
+                    LogInWindow login = new LogInWindow() {
+                        @Override
+                        public void mouseClicked(MouseEvent e) {}
 
-    @Override
-    public void actionPerformed(ActionEvent e) {
-        if (e.getSource() == btnSignUp) {
-            new SignUpWindow();  // ✅ Just call without overriding
-            dispose();
-        }
-    }
+                        @Override
+                        public void mousePressed(MouseEvent e) {}
 
-    @Override
-    public void mouseClicked(MouseEvent e) {
-        if (e.getSource() == lblLogIn) {
-            new LogInWindow();  // ✅ Also call directly
-            dispose();
-        }
-    }
+                        @Override
+                        public void mouseReleased(MouseEvent e) {}
 
-    @Override public void mousePressed(MouseEvent e) {}
-    @Override public void mouseReleased(MouseEvent e) {}
-    @Override public void mouseEntered(MouseEvent e) {}
-    @Override public void mouseExited(MouseEvent e) {}
+                        @Override
+                        public void mouseEntered(MouseEvent e) {}
+
+                        @Override
+                        public void mouseExited(MouseEvent e) {}
+
+                        @Override
+                        public void actionPerformed(ActionEvent e) {}
+                    };
+                    dispose();
+                }
+            }
+
+            @Override public void mousePressed(MouseEvent e) {}
+            @Override public void mouseReleased(MouseEvent e) {}
+            @Override public void mouseEntered(MouseEvent e) {}
+            @Override public void mouseExited(MouseEvent e) {}
+
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                if (e.getSource() == btnSignUp) {
+                    new SignUpWindow() {
+                        @Override public void focusGained(FocusEvent e) {}
+                        @Override public void focusLost(FocusEvent e) {}
+                        @Override public void mouseClicked(MouseEvent e) {}
+                        @Override public void mousePressed(MouseEvent e) {}
+                        @Override public void mouseReleased(MouseEvent e) {}
+                        @Override public void mouseEntered(MouseEvent e) {}
+                        @Override public void mouseExited(MouseEvent e) {}
+                        @Override public void actionPerformed(ActionEvent e) {}
+                    };
+                    dispose();
+                }
+            }
+        };
+    }
 }

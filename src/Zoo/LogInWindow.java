@@ -6,22 +6,24 @@ import java.awt.event.*;
 import java.io.*;
 
 public class LogInWindow extends JFrame implements ActionListener, MouseListener {
-    private JPanel panel1;
-    private JFormattedTextField fEmail;
-    private JPasswordField jPassword;
-    private JCheckBox jcbRememberMe;
-    private JButton btnSubmit;
-    private JLabel lblTitle; // ✅ Log In phrase
+    protected JPanel panel1; // GUI form content panel (from IntelliJ GUI Designer)
+    protected JFormattedTextField fEmail;
+    protected JPasswordField jPassword;
+    protected JCheckBox jcbRememberMe;
+    protected JButton btnSubmit;
+    protected JLabel lblLogIn;
+    protected JLabel lblPassword;
+    protected JLabel lblForgotPass;
+
     private JPanel fullpanel;
 
     public LogInWindow() {
-        setTitle("Zoo Booking - Log In");
+        setTitle("Zoo Booking");
         setSize(700, 500);
         setLocationRelativeTo(null);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
-        setLayout(null);
 
-        // === Background Panel ===
+        // === Background panel ===
         fullpanel = new JPanel(null) {
             private final Image bgImage = new ImageIcon(getClass().getResource("/Untitled design.png")).getImage();
 
@@ -33,70 +35,26 @@ public class LogInWindow extends JFrame implements ActionListener, MouseListener
         };
         fullpanel.setOpaque(false);
         fullpanel.setBounds(0, 0, 700, 500);
-        setContentPane(fullpanel);
 
-        // === Login Form Panel ===
-        panel1 = new JPanel(null);
+        // === Login form panel from IntelliJ GUI Designer ===
         panel1.setOpaque(false);
-        panel1.setBounds(100, 60, 500, 300);
-
-        // ✅ Title Label
-        lblTitle = new JLabel("Log In");
-        lblTitle.setFont(new Font("Arial", Font.BOLD, 26));
-        lblTitle.setHorizontalAlignment(SwingConstants.CENTER);
-        lblTitle.setBounds(100, 0, 300, 40);
-
-        fEmail = new JFormattedTextField("Email");
-        fEmail.setBounds(100, 50, 300, 30);
-
-        jPassword = new JPasswordField("Password");
-        jPassword.setBounds(100, 90, 300, 30);
-        jPassword.setEchoChar((char) 0);
-
-        jcbRememberMe = new JCheckBox("Remember Me");
-        jcbRememberMe.setBounds(100, 130, 150, 20);
-        jcbRememberMe.setOpaque(false);
-
-        btnSubmit = new JButton("Log In");
-        btnSubmit.setBounds(100, 170, 300, 40);
-
-
-
-        // === Add Components ===
-        panel1.add(lblTitle); // ✅ add title
-        panel1.add(fEmail);
-        panel1.add(jPassword);
-        panel1.add(jcbRememberMe);
-        panel1.add(btnSubmit);
+        panel1.setBounds(80, 40, 540, 420); // Adjust position if needed
         fullpanel.add(panel1);
 
-        // === Listeners ===
+        // === Event listeners ===
         btnSubmit.addActionListener(this);
+        fEmail.addActionListener(this);
+        jPassword.addActionListener(this);
+        lblForgotPass.addMouseListener(this);
 
-        fEmail.addFocusListener(new FocusAdapter() {
-            @Override public void focusGained(FocusEvent e) {
-                if (fEmail.getText().equals("Email")) fEmail.setText("");
-            }
-            @Override public void focusLost(FocusEvent e) {
-                if (fEmail.getText().isEmpty()) fEmail.setText("Email");
-            }
-        });
+        // === Layered Pane ===
+        JLayeredPane layeredPane = new JLayeredPane();
+        layeredPane.setPreferredSize(new Dimension(700, 500));
+        layeredPane.setLayout(null);
 
-        jPassword.addFocusListener(new FocusAdapter() {
-            @Override public void focusGained(FocusEvent e) {
-                if (String.valueOf(jPassword.getPassword()).equals("Password")) {
-                    jPassword.setText("");
-                    jPassword.setEchoChar('•');
-                }
-            }
-            @Override public void focusLost(FocusEvent e) {
-                if (String.valueOf(jPassword.getPassword()).isEmpty()) {
-                    jPassword.setText("Password");
-                    jPassword.setEchoChar((char) 0);
-                }
-            }
-        });
-
+        layeredPane.add(fullpanel, Integer.valueOf(0));
+        setContentPane(layeredPane);
+        pack();
         setVisible(true);
     }
 
@@ -105,18 +63,18 @@ public class LogInWindow extends JFrame implements ActionListener, MouseListener
         String email = fEmail.getText();
         String password = String.valueOf(jPassword.getPassword());
 
-        if (email.isEmpty() || email.equals("Email")) {
+        if (email.isEmpty()) {
             JOptionPane.showMessageDialog(this, "Please enter your email");
             return;
         }
 
-        if (password.isEmpty() || password.equals("Password")) {
+        if (password.isEmpty()) {
             JOptionPane.showMessageDialog(this, "Please enter your password");
             return;
         }
 
         if (isLoginValid(email, password)) {
-            new Price(); // your next window
+            new Price(); // proceed to Price window
             dispose();
         } else {
             JOptionPane.showMessageDialog(this, "Invalid email or password");
@@ -138,15 +96,14 @@ public class LogInWindow extends JFrame implements ActionListener, MouseListener
         return false;
     }
 
-    @Override public void mouseClicked(MouseEvent e) {
-    }
-
+    // ===== MouseListener methods (required) =====
+    @Override public void mouseClicked(MouseEvent e) {}
     @Override public void mousePressed(MouseEvent e) {}
     @Override public void mouseReleased(MouseEvent e) {}
     @Override public void mouseEntered(MouseEvent e) {}
     @Override public void mouseExited(MouseEvent e) {}
 
     public static void main(String[] args) {
-        SwingUtilities.invokeLater(LogInWindow::new);
+        SwingUtilities.invokeLater(() -> new LogInWindow());
     }
 }
