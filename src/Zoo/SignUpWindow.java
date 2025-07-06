@@ -15,6 +15,7 @@ public class SignUpWindow extends JFrame implements ActionListener, FocusListene
     private JButton bSubmit;
     private JLabel lblTitle; // ✅ Title added
 
+
     public SignUpWindow() {
         setTitle("Zoo Sign Up");
         setSize(700, 500);
@@ -38,6 +39,16 @@ public class SignUpWindow extends JFrame implements ActionListener, FocusListene
         pnlSignUp.setOpaque(false);
         pnlSignUp.setBounds(80, 40, 540, 400);
         backgroundPanel.add(pnlSignUp);
+
+        // === Back Button (Top Left Corner) ===
+        JButton btnBack = new JButton("← Back");
+        btnBack.setBounds(10, 10, 80, 30);
+        btnBack.addActionListener(e -> {
+            new WelcomePage(); // Replace with your actual back target if needed
+            dispose();
+        });
+        backgroundPanel.add(btnBack);
+
 
         // === Components ===
         lblTitle = new JLabel("Sign Up"); // ✅ Title
@@ -70,6 +81,7 @@ public class SignUpWindow extends JFrame implements ActionListener, FocusListene
         pnlSignUp.add(pReconfirmPass);
         pnlSignUp.add(bSubmit);
 
+
         // === Listeners ===
         fName.addFocusListener(this);
         fEmail.addFocusListener(this);
@@ -77,47 +89,57 @@ public class SignUpWindow extends JFrame implements ActionListener, FocusListene
         pReconfirmPass.addFocusListener(this);
         bSubmit.addActionListener(this);
 
+
         setVisible(true);
     }
+
 
     // === Action on Submit ===
     @Override
     public void actionPerformed(ActionEvent e) {
-        String name = fName.getText();
-        String email = fEmail.getText();
-        String pass = String.valueOf(pPassword.getPassword());
-        String confirm = String.valueOf(pReconfirmPass.getPassword());
 
-        if (name.isEmpty() || name.equals("Name")) {
-            JOptionPane.showMessageDialog(this, "Please enter your name");
-        } else if (email.isEmpty() || email.equals("Email")) {
-            JOptionPane.showMessageDialog(this, "Please enter your email");
-        } else if (!email.matches("^[A-Za-z0-9._%+-]+@gmail\\.com$")) {
-            JOptionPane.showMessageDialog(this, "Please enter a valid Gmail address");
-        } else if (pass.equals("Password")) {
-            JOptionPane.showMessageDialog(this, "Please enter your password");
-        } else if (confirm.equals("Reconfirm Password")) {
-            JOptionPane.showMessageDialog(this, "Please confirm your password");
-        } else if (!pass.equals(confirm)) {
-            JOptionPane.showMessageDialog(this, "Passwords do not match");
-        } else if (isEmailAlreadyUsed(email)) {
-            JOptionPane.showMessageDialog(this, "This email is already registered");
-        } else {
-            try (BufferedWriter bw = new BufferedWriter(new FileWriter("password.txt", true))) {
-                bw.write("Email: " + email);
-                bw.newLine();
-                bw.write("Password: " + pass);
-                bw.newLine();
-                bw.write("------------------------");
-                bw.newLine();
-                JOptionPane.showMessageDialog(this, "Account created! Redirecting to login.");
-                new LogInWindow();
-                dispose();
-            } catch (IOException ex) {
-                JOptionPane.showMessageDialog(this, "Error saving to file: " + ex.getMessage());
+        if(e.getSource()==bSubmit) {
+
+            String name = fName.getText();
+            String email = fEmail.getText();
+            String pass = String.valueOf(pPassword.getPassword());
+            String confirm = String.valueOf(pReconfirmPass.getPassword());
+
+            if (name.isEmpty() || name.equals("Name")) {
+                JOptionPane.showMessageDialog(this, "Please enter your name");
+            } else if (email.isEmpty() || email.equals("Email")) {
+                JOptionPane.showMessageDialog(this, "Please enter your email");
+            } else if (!email.matches("^[A-Za-z0-9._%+-]+@gmail\\.com$")) {
+                JOptionPane.showMessageDialog(this, "Please enter a valid Gmail address");
+            } else if (pass.equals("Password")) {
+                JOptionPane.showMessageDialog(this, "Please enter your password");
+            } else if (confirm.equals("Reconfirm Password")) {
+                JOptionPane.showMessageDialog(this, "Please confirm your password");
+            } else if (!pass.equals(confirm)) {
+                JOptionPane.showMessageDialog(this, "Passwords do not match");
+            } else if (isEmailAlreadyUsed(email)) {
+                JOptionPane.showMessageDialog(this, "This email is already registered");
+            } else {
+                try (BufferedWriter bw = new BufferedWriter(new FileWriter("password.txt", true))) {
+                    bw.write("Email: " + email);
+                    bw.newLine();
+                    bw.write("Password: " + pass);
+                    bw.newLine();
+                    bw.write("------------------------");
+                    bw.newLine();
+                    JOptionPane.showMessageDialog(this, "Account created! Redirecting to login.");
+                    new LogInWindow();
+                    dispose();
+                } catch (IOException ex) {
+                    JOptionPane.showMessageDialog(this, "Error saving to file: " + ex.getMessage());
+                }
             }
         }
+
+
+
     }
+
 
     private boolean isEmailAlreadyUsed(String email) {
         File file = new File("password.txt");
