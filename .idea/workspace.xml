@@ -5,14 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="93ec5c9a-3820-4625-8185-2e1f0d75d993" name="Changes" comment="Merge branch 'DINI'&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/password.txt" beforeDir="false" afterPath="$PROJECT_DIR$/password.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Zoo/LogInWindow.form" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Zoo/LogInWindow.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/Zoo/LogInWindow.form" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Zoo/LogInWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Zoo/LogInWindow.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Zoo/SignUpWindow.form" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Zoo/SignUpWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Zoo/SignUpWindow.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Zoo/WelcomePage.form" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Zoo/WelcomePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Zoo/WelcomePage.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -30,7 +26,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="DINI" />
+        <entry key="$PROJECT_DIR$" value="main" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -68,9 +64,8 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "UI_DESIGNER_EDITOR_MODE.PaletteManager.SHOW": "false",
     "UI_DESIGNER_EDITOR_MODE.PaletteManager.WIDTH": "186",
-    "UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH": "105",
+    "UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH": "437",
     "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
     "node.js.detected.package.eslint": "true",
@@ -91,7 +86,7 @@
       <recent name="C:\Users\User\IdeaProjects\Main\out\production\Main\com\intellij\uiDesigner\core" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.SignUpWindow">
     <configuration name="Price" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Price" />
       <module name="Main" />
@@ -140,11 +135,10 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.SignUpWindow" />
         <item itemvalue="Application.Zoo.Checkout" />
         <item itemvalue="Application.WelcomePage" />
-        <item itemvalue="Application.SignUpWindow" />
         <item itemvalue="Application.Price" />
-        <item itemvalue="Application.SignUpWindow" />
       </list>
     </recent_temporary>
   </component>
@@ -206,5 +200,16 @@
     <MESSAGE value="Merge remote-tracking branch 'origin/DINI' into DINI&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;password.txt&#10;#&#9;src/Zoo/ReceiveData.form" />
     <MESSAGE value="Merge branch 'DINI'&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml" />
     <option name="LAST_COMMIT_MESSAGE" value="Merge branch 'DINI'&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/Zoo/LogInWindow.java</url>
+          <line>33</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
