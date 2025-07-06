@@ -15,6 +15,7 @@ public class SignUpWindow extends JFrame implements ActionListener, FocusListene
     private JButton bSubmit;
     private JLabel lblTitle; // ✅ Title added
 
+
     public SignUpWindow() {
         setTitle("Zoo Sign Up");
         setSize(700, 500);

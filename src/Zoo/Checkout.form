@@ -1,297 +1,393 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="Zoo.Checkout">
-  <grid id="27dc6" binding="pnlCheckout" layout-manager="GridLayoutManager" row-count="15" column-count="8" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
-    <margin top="0" left="0" bottom="0" right="0"/>
+  <grid id="27dc6" binding="pnlCheckout" layout-manager="GridLayoutManager" row-count="3" column-count="2" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+    <margin top="15" left="50" bottom="40" right="50"/>
     <constraints>
-      <xy x="20" y="20" width="670" height="563"/>
+      <xy x="20" y="20" width="591" height="563"/>
     </constraints>
     <properties/>
     <border type="none"/>
     <children>
-      <component id="42a40" class="javax.swing.JLabel">
+      <grid id="7969" layout-manager="GridLayoutManager" row-count="8" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+        <margin top="10" left="0" bottom="15" right="0"/>
         <constraints>
-          <grid row="0" column="3" row-span="1" col-span="3" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+          <grid row="1" column="0" row-span="1" col-span="2" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
-          <font name="Courier New" size="24" style="1"/>
-          <text value="CATEGORY"/>
+          <background color="-6704795"/>
         </properties>
-      </component>
-      <component id="dcd65" class="javax.swing.JSpinner" binding="spAdult">
-        <constraints>
-          <grid row="3" column="4" row-span="1" col-span="2" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
-        </constraints>
-        <properties/>
-      </component>
-      <component id="d898c" class="javax.swing.JSpinner" binding="spOKU">
-        <constraints>
-          <grid row="4" column="4" row-span="1" col-span="2" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
-        </constraints>
-        <properties/>
-      </component>
-      <component id="e5b6" class="javax.swing.JRadioButton" binding="rbSafariYes">
-        <constraints>
-          <grid row="5" column="4" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="4" fill="0" indent="0" use-parent-layout="false">
-            <preferred-size width="152" height="26"/>
+        <border type="bevel-raised" title-position="2">
+          <font/>
+        </border>
+        <children>
+          <grid id="cc126" layout-manager="GridLayoutManager" row-count="1" column-count="2" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+            <margin top="0" left="90" bottom="0" right="0"/>
+            <constraints>
+              <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <background color="-6704795"/>
+            </properties>
+            <border type="none"/>
+            <children>
+              <component id="647eb" class="javax.swing.JRadioButton" binding="rbWeekday">
+                <constraints>
+                  <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <background color="-6704795"/>
+                  <font name="Book Antiqua" size="20" style="1"/>
+                  <foreground color="-16777216"/>
+                  <text value="Weekday"/>
+                </properties>
+              </component>
+              <component id="f6c1b" class="javax.swing.JRadioButton" binding="rbWeekend">
+                <constraints>
+                  <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <background color="-6704795"/>
+                  <enabled value="true"/>
+                  <font name="Book Antiqua" size="20" style="1"/>
+                  <foreground color="-16777216"/>
+                  <text value="Weekend"/>
+                </properties>
+              </component>
+            </children>
           </grid>
-        </constraints>
-        <properties>
-          <opaque value="false"/>
-          <text value="Yes"/>
-        </properties>
-      </component>
-      <component id="3f990" class="javax.swing.JRadioButton" binding="rbPhotoboothYes">
-        <constraints>
-          <grid row="7" column="4" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="4" fill="0" indent="0" use-parent-layout="false">
-            <preferred-size width="152" height="26"/>
+          <grid id="77c75" layout-manager="GridLayoutManager" row-count="1" column-count="3" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+            <margin top="0" left="30" bottom="0" right="30"/>
+            <constraints>
+              <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <background color="-6704795"/>
+            </properties>
+            <border type="none"/>
+            <children>
+              <component id="70cf2" class="javax.swing.JLabel" binding="lblKid">
+                <constraints>
+                  <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <background color="-1"/>
+                  <font name="Book Antiqua" size="20" style="1"/>
+                  <foreground color="-16777216"/>
+                  <text value="Kid"/>
+                </properties>
+              </component>
+              <hspacer id="ea54">
+                <constraints>
+                  <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="1" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+                </constraints>
+              </hspacer>
+              <component id="90c68" class="javax.swing.JSpinner" binding="spKid">
+                <constraints>
+                  <grid row="0" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <background color="-6704795"/>
+                  <enabled value="true"/>
+                  <font/>
+                  <foreground color="-6704795"/>
+                </properties>
+              </component>
+            </children>
           </grid>
-        </constraints>
-        <properties>
-          <opaque value="false"/>
-          <text value="Yes"/>
-        </properties>
-      </component>
-      <component id="4b260" class="javax.swing.JRadioButton" binding="rbPhotoboothNo">
-        <constraints>
-          <grid row="7" column="5" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="4" fill="0" indent="0" use-parent-layout="false">
-            <preferred-size width="243" height="26"/>
+          <grid id="d6caf" layout-manager="GridLayoutManager" row-count="1" column-count="3" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+            <margin top="0" left="30" bottom="0" right="30"/>
+            <constraints>
+              <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <background color="-6704795"/>
+            </properties>
+            <border type="none"/>
+            <children>
+              <component id="f5dbf" class="javax.swing.JLabel" binding="lblAdult">
+                <constraints>
+                  <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <background color="-1"/>
+                  <font name="Book Antiqua" size="20" style="1"/>
+                  <foreground color="-16777216"/>
+                  <text value="Adult"/>
+                </properties>
+              </component>
+              <hspacer id="b6eb3">
+                <constraints>
+                  <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="1" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+                </constraints>
+              </hspacer>
+              <component id="6351e" class="javax.swing.JSpinner" binding="spAdult">
+                <constraints>
+                  <grid row="0" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <background color="-6704795"/>
+                  <enabled value="true"/>
+                  <font/>
+                  <foreground color="-6704795"/>
+                </properties>
+              </component>
+            </children>
           </grid>
-        </constraints>
-        <properties>
-          <opaque value="false"/>
-          <text value="No"/>
-        </properties>
-      </component>
-      <component id="d8f15" class="javax.swing.JRadioButton" binding="rbWeekend">
-        <constraints>
-          <grid row="1" column="5" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false">
-            <preferred-size width="243" height="26"/>
+          <grid id="a2d51" layout-manager="GridLayoutManager" row-count="1" column-count="3" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+            <margin top="0" left="30" bottom="0" right="30"/>
+            <constraints>
+              <grid row="3" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <background color="-6704795"/>
+            </properties>
+            <border type="none"/>
+            <children>
+              <component id="28912" class="javax.swing.JLabel" binding="lblOKU">
+                <constraints>
+                  <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <background color="-1"/>
+                  <font name="Book Antiqua" size="20" style="1"/>
+                  <foreground color="-16777216"/>
+                  <text value="OKU"/>
+                </properties>
+              </component>
+              <hspacer id="56a14">
+                <constraints>
+                  <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="1" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+                </constraints>
+              </hspacer>
+              <component id="ee6b6" class="javax.swing.JSpinner" binding="spOKU">
+                <constraints>
+                  <grid row="0" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <background color="-6704795"/>
+                  <enabled value="true"/>
+                  <font/>
+                  <foreground color="-6704795"/>
+                </properties>
+              </component>
+            </children>
           </grid>
-        </constraints>
-        <properties>
-          <opaque value="false"/>
-          <text value="Weekend"/>
-        </properties>
-      </component>
-      <component id="99fa9" class="javax.swing.JSpinner" binding="spBirdShow">
-        <constraints>
-          <grid row="11" column="4" row-span="1" col-span="2" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
-        </constraints>
-        <properties/>
-      </component>
-      <component id="8ca10" class="javax.swing.JRadioButton" binding="rbSafariNo">
-        <constraints>
-          <grid row="5" column="5" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="4" fill="0" indent="0" use-parent-layout="false">
-            <preferred-size width="243" height="26"/>
+          <grid id="44d65" layout-manager="GridLayoutManager" row-count="1" column-count="5" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+            <margin top="0" left="30" bottom="0" right="70"/>
+            <constraints>
+              <grid row="4" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <background color="-6704795"/>
+            </properties>
+            <border type="none"/>
+            <children>
+              <component id="26dbb" class="javax.swing.JLabel" binding="lblSafariRide">
+                <constraints>
+                  <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <background color="-1"/>
+                  <font name="Book Antiqua" size="20" style="1"/>
+                  <foreground color="-16777216"/>
+                  <text value="Safari Ride (RM 30)"/>
+                </properties>
+              </component>
+              <hspacer id="e437c">
+                <constraints>
+                  <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="1" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+                </constraints>
+              </hspacer>
+              <component id="c777f" class="javax.swing.JRadioButton" binding="rbSafariYes">
+                <constraints>
+                  <grid row="0" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <background color="-6704795"/>
+                  <enabled value="true"/>
+                  <font name="Book Antiqua" size="20" style="1"/>
+                  <foreground color="-16777216"/>
+                  <text value="Yes"/>
+                </properties>
+              </component>
+              <component id="b48ca" class="javax.swing.JRadioButton" binding="rbSafariNo">
+                <constraints>
+                  <grid row="0" column="4" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <background color="-6704795"/>
+                  <enabled value="true"/>
+                  <font name="Book Antiqua" size="20" style="1"/>
+                  <foreground color="-16777216"/>
+                  <text value="No"/>
+                </properties>
+              </component>
+              <hspacer id="47a90">
+                <constraints>
+                  <grid row="0" column="3" row-span="1" col-span="1" vsize-policy="1" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+                </constraints>
+              </hspacer>
+            </children>
           </grid>
-        </constraints>
-        <properties>
-          <opaque value="false"/>
-          <text value="No"/>
-        </properties>
-      </component>
-      <component id="22897" class="javax.swing.JSpinner" binding="spAnimalFood">
-        <constraints>
-          <grid row="9" column="4" row-span="1" col-span="2" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
-        </constraints>
-        <properties/>
-      </component>
-      <component id="86861" class="javax.swing.JSpinner" binding="spKid">
-        <constraints>
-          <grid row="2" column="4" row-span="1" col-span="2" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
-        </constraints>
-        <properties/>
-      </component>
-      <grid id="be6c6" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
-        <margin top="0" left="0" bottom="0" right="0"/>
-        <constraints>
-          <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
-        </constraints>
-        <properties/>
-        <border type="none"/>
-        <children/>
+          <grid id="f0b56" layout-manager="GridLayoutManager" row-count="1" column-count="5" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+            <margin top="0" left="30" bottom="0" right="70"/>
+            <constraints>
+              <grid row="5" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <background color="-6704795"/>
+            </properties>
+            <border type="none"/>
+            <children>
+              <component id="65092" class="javax.swing.JLabel" binding="lblPhotobooth">
+                <constraints>
+                  <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <background color="-1"/>
+                  <font name="Book Antiqua" size="20" style="1"/>
+                  <foreground color="-16777216"/>
+                  <text value="Photobooth (RM 30)"/>
+                </properties>
+              </component>
+              <hspacer id="3d0d2">
+                <constraints>
+                  <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="1" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+                </constraints>
+              </hspacer>
+              <component id="52ad6" class="javax.swing.JRadioButton" binding="rbPhotoboothYes">
+                <constraints>
+                  <grid row="0" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <background color="-6704795"/>
+                  <enabled value="true"/>
+                  <font name="Book Antiqua" size="20" style="1"/>
+                  <foreground color="-16777216"/>
+                  <text value="Yes"/>
+                </properties>
+              </component>
+              <component id="6f3e" class="javax.swing.JRadioButton" binding="rbPhotoboothNo">
+                <constraints>
+                  <grid row="0" column="4" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <background color="-6704795"/>
+                  <enabled value="true"/>
+                  <font name="Book Antiqua" size="20" style="1"/>
+                  <foreground color="-16777216"/>
+                  <text value="No"/>
+                </properties>
+              </component>
+              <hspacer id="64ee3">
+                <constraints>
+                  <grid row="0" column="3" row-span="1" col-span="1" vsize-policy="1" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+                </constraints>
+              </hspacer>
+            </children>
+          </grid>
+          <grid id="664" layout-manager="GridLayoutManager" row-count="1" column-count="2" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+            <margin top="0" left="30" bottom="0" right="50"/>
+            <constraints>
+              <grid row="6" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <background color="-6704795"/>
+            </properties>
+            <border type="none"/>
+            <children>
+              <component id="75250" class="javax.swing.JLabel" binding="lblAnimalFood">
+                <constraints>
+                  <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <background color="-1"/>
+                  <font name="Book Antiqua" size="20" style="1"/>
+                  <foreground color="-16777216"/>
+                  <text value="Animal Food (RM 10 / pack)"/>
+                </properties>
+              </component>
+              <component id="318cd" class="javax.swing.JSpinner" binding="spAnimalFood">
+                <constraints>
+                  <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <background color="-6704795"/>
+                  <enabled value="true"/>
+                  <font/>
+                  <foreground color="-6704795"/>
+                </properties>
+              </component>
+            </children>
+          </grid>
+          <grid id="21da6" layout-manager="GridLayoutManager" row-count="1" column-count="2" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+            <margin top="0" left="30" bottom="0" right="50"/>
+            <constraints>
+              <grid row="7" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <background color="-6704795"/>
+            </properties>
+            <border type="none"/>
+            <children>
+              <component id="dc375" class="javax.swing.JLabel" binding="lblBirdShow">
+                <constraints>
+                  <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <background color="-1"/>
+                  <font name="Book Antiqua" size="20" style="1"/>
+                  <foreground color="-16777216"/>
+                  <text value="Bird Show (RM 15 / person)"/>
+                </properties>
+              </component>
+              <component id="93ae7" class="javax.swing.JSpinner" binding="spBirdShow">
+                <constraints>
+                  <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <background color="-6704795"/>
+                  <enabled value="true"/>
+                  <font/>
+                  <foreground color="-6704795"/>
+                </properties>
+              </component>
+            </children>
+          </grid>
+        </children>
       </grid>
-      <grid id="17109" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
-        <margin top="0" left="0" bottom="0" right="0"/>
+      <component id="9127f" class="javax.swing.JLabel">
         <constraints>
-          <grid row="14" column="7" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
-        </constraints>
-        <properties/>
-        <border type="none"/>
-        <children/>
-      </grid>
-      <component id="9b08" class="javax.swing.JRadioButton" binding="rbWeekday">
-        <constraints>
-          <grid row="1" column="4" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="2" use-parent-layout="false"/>
+          <grid row="0" column="0" row-span="1" col-span="2" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
-          <opaque value="false"/>
-          <text value="Weekday"/>
+          <font name="Cascadia Code" size="37" style="1"/>
+          <text value="ZOO TICKET BOOKING"/>
         </properties>
       </component>
-      <component id="753cd" class="javax.swing.JButton" binding="btnCheckout">
+      <component id="ee861" class="javax.swing.JButton" binding="btnBack">
         <constraints>
-          <grid row="13" column="6" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+          <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
+          <font name="Consolas" size="18" style="1"/>
+          <text value="Back"/>
+        </properties>
+      </component>
+      <component id="d3f6b" class="javax.swing.JButton" binding="btnCheckout">
+        <constraints>
+          <grid row="2" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <background color="-5168891"/>
+          <enabled value="true"/>
+          <font name="Consolas" size="22" style="1"/>
+          <foreground color="-11734"/>
+          <hideActionText value="false"/>
+          <horizontalTextPosition value="0"/>
           <text value="CHECKOUT"/>
         </properties>
       </component>
-      <grid id="8b2df" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="5" vgap="1">
-        <margin top="0" left="0" bottom="0" right="0"/>
-        <constraints>
-          <grid row="2" column="2" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
-        </constraints>
-        <properties>
-          <background color="-5446266"/>
-          <opaque value="true"/>
-          <requestFocusEnabled value="false"/>
-        </properties>
-        <border type="none"/>
-        <children>
-          <component id="b56ec" class="javax.swing.JLabel" binding="lblKid">
-            <constraints>
-              <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="4" fill="2" indent="0" use-parent-layout="false">
-                <preferred-size width="80" height="20"/>
-              </grid>
-            </constraints>
-            <properties>
-              <alignmentY value="0.2"/>
-              <iconTextGap value="2"/>
-              <text value="Kid :"/>
-              <verticalAlignment value="1"/>
-              <verticalTextPosition value="1"/>
-              <visible value="true"/>
-            </properties>
-          </component>
-        </children>
-      </grid>
-      <component id="1e58a" class="javax.swing.JLabel" binding="lblOKU">
-        <constraints>
-          <grid row="4" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false">
-            <preferred-size width="129" height="20"/>
-          </grid>
-        </constraints>
-        <properties>
-          <text value="OKU :"/>
-        </properties>
-      </component>
-      <component id="ad1a6" class="javax.swing.JLabel" binding="lblSafariRide">
-        <constraints>
-          <grid row="5" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false">
-            <preferred-size width="129" height="20"/>
-          </grid>
-        </constraints>
-        <properties>
-          <text value="Safari Ride :"/>
-        </properties>
-      </component>
-      <component id="cd7f7" class="javax.swing.JLabel">
-        <constraints>
-          <grid row="6" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false">
-            <preferred-size width="129" height="20"/>
-          </grid>
-        </constraints>
-        <properties>
-          <text value="(RM30)"/>
-        </properties>
-      </component>
-      <component id="5a819" class="javax.swing.JLabel" binding="lblPhotobooth">
-        <constraints>
-          <grid row="7" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false">
-            <preferred-size width="129" height="20"/>
-          </grid>
-        </constraints>
-        <properties>
-          <text value="Photobooth :"/>
-        </properties>
-      </component>
-      <component id="702f3" class="javax.swing.JLabel">
-        <constraints>
-          <grid row="8" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false">
-            <preferred-size width="129" height="20"/>
-          </grid>
-        </constraints>
-        <properties>
-          <text value="(RM30)"/>
-        </properties>
-      </component>
-      <component id="886b4" class="javax.swing.JLabel" binding="lblAnimalFood">
-        <constraints>
-          <grid row="9" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false">
-            <preferred-size width="129" height="20"/>
-          </grid>
-        </constraints>
-        <properties>
-          <text value="Animal Food : "/>
-        </properties>
-      </component>
-      <component id="212a6" class="javax.swing.JLabel">
-        <constraints>
-          <grid row="10" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false">
-            <preferred-size width="129" height="20"/>
-          </grid>
-        </constraints>
-        <properties>
-          <text value="(RM10/pack)"/>
-        </properties>
-      </component>
-      <component id="a423c" class="javax.swing.JLabel" binding="lblBirdShow">
-        <constraints>
-          <grid row="11" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false">
-            <preferred-size width="129" height="20"/>
-          </grid>
-        </constraints>
-        <properties>
-          <text value="Bird Show :"/>
-        </properties>
-      </component>
-      <component id="18095" class="javax.swing.JLabel">
-        <constraints>
-          <grid row="12" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false">
-            <preferred-size width="129" height="20"/>
-          </grid>
-        </constraints>
-        <properties>
-          <text value="(RM15/person)"/>
-        </properties>
-      </component>
-      <grid id="5b66" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
-        <margin top="0" left="0" bottom="0" right="0"/>
-        <constraints>
-          <grid row="14" column="1" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
-        </constraints>
-        <properties/>
-        <border type="none"/>
-        <children/>
-      </grid>
-      <grid id="4913a" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
-        <margin top="0" left="0" bottom="0" right="0"/>
-        <constraints>
-          <grid row="3" column="2" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
-        </constraints>
-        <properties>
-          <background color="-5446266"/>
-        </properties>
-        <border type="none"/>
-        <children>
-          <component id="6c91a" class="javax.swing.JLabel" binding="lblAdult">
-            <constraints>
-              <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="5" fill="0" indent="0" use-parent-layout="false">
-                <preferred-size width="80" height="20"/>
-              </grid>
-            </constraints>
-            <properties>
-              <alignmentY value="0.2"/>
-              <background color="-5446266"/>
-              <iconTextGap value="2"/>
-              <text value="Adult :"/>
-              <verticalAlignment value="1"/>
-              <verticalTextPosition value="1"/>
-            </properties>
-          </component>
-        </children>
-      </grid>
     </children>
   </grid>
 </form>

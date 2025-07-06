@@ -19,6 +19,7 @@ public class Price extends JFrame implements ActionListener {
     public JLabel name;
 
 
+
     public Price(){
         super.setSize(700,500);
         super.setDefaultCloseOperation(DISPOSE_ON_CLOSE);

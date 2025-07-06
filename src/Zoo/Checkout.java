@@ -6,6 +6,8 @@ import java.awt.event.*;
 
 public class Checkout extends JFrame implements ActionListener {
     private JPanel pnlCheckout;
+    private JButton btnBack;
+    private JButton btnCheckout;
     private JRadioButton rbWeekday;
     private JRadioButton rbWeekend;
     private JSpinner spKid;
@@ -17,7 +19,6 @@ public class Checkout extends JFrame implements ActionListener {
     private JRadioButton rbSafariNo;
     private JRadioButton rbPhotoboothYes;
     private JRadioButton rbPhotoboothNo;
-    private JButton btnCheckout;
     private JLabel lblKid;
     private JLabel lblAdult;
     private JLabel lblOKU;
@@ -25,6 +26,8 @@ public class Checkout extends JFrame implements ActionListener {
     private JLabel lblPhotobooth;
     private JLabel lblAnimalFood;
     private JLabel lblBirdShow;
+    private Checkout checkoutPage;
+
 
     private ButtonGroup bgWeek, bgSafariRide, bgPhotobooth;
 
@@ -80,6 +83,14 @@ public class Checkout extends JFrame implements ActionListener {
 
         // Button Action
         btnCheckout.addActionListener(this);
+        btnBack.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                new Price();
+                dispose();
+
+            }
+        });
     }
 
     // New constructor to prefill data when coming back from ReceiveData
@@ -118,52 +129,63 @@ public class Checkout extends JFrame implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        int noKid = (Integer) spKid.getValue();
-        int noAdult = (Integer) spAdult.getValue();
-        int noOKU = (Integer) spOKU.getValue();
-        int noAnimalFood = (Integer) spAnimalFood.getValue();
-        int noBirdShow = (Integer) spBirdShow.getValue();
 
-        boolean safari = rbSafariYes.isSelected();
-        boolean photobooth = rbPhotoboothYes.isSelected();
+        if(e.getSource()==btnCheckout) {
 
-        String ticketType;
-        int kidPrice, adultPrice, okuPrice;
+            int noKid = (Integer) spKid.getValue();
+            int noAdult = (Integer) spAdult.getValue();
+            int noOKU = (Integer) spOKU.getValue();
+            int noAnimalFood = (Integer) spAnimalFood.getValue();
+            int noBirdShow = (Integer) spBirdShow.getValue();
 
-        if (rbWeekday.isSelected()) {
-            ticketType = "Weekday";
-            kidPrice = 10;
-            adultPrice = 12;
-            okuPrice = 7;
-        } else if (rbWeekend.isSelected()) {
-            ticketType = "Weekend";
-            kidPrice = 13;
-            adultPrice = 15;
-            okuPrice = 9;
-        } else {
-            JOptionPane.showMessageDialog(this, "Please select day (Weekday/Weekend).");
-            return;
+            boolean safari = rbSafariYes.isSelected();
+            boolean photobooth = rbPhotoboothYes.isSelected();
+
+            String ticketType;
+            int kidPrice, adultPrice, okuPrice;
+
+            if (rbWeekday.isSelected()) {
+                ticketType = "Weekday";
+                kidPrice = 10;
+                adultPrice = 12;
+                okuPrice = 7;
+            } else if (rbWeekend.isSelected()) {
+                ticketType = "Weekend";
+                kidPrice = 13;
+                adultPrice = 15;
+                okuPrice = 9;
+            } else {
+                JOptionPane.showMessageDialog(this, "Please select day (Weekday/Weekend).");
+                return;
+            }
+
+            if (!rbSafariYes.isSelected() && !rbSafariNo.isSelected()) {
+                JOptionPane.showMessageDialog(this, "Please select Safari Ride option.");
+                return;
+            }
+            if (!rbPhotoboothYes.isSelected() && !rbPhotoboothNo.isSelected()) {
+                JOptionPane.showMessageDialog(this, "Please select Photobooth option.");
+                return;
+            }
+
+            int safariPrice = safari ? 30 : 0;
+            int photoPrice = photobooth ? 30 : 0;
+            int animalFoodPrice = 10;
+            int birdShowPrice = 15;
+
+            int total = (noKid * kidPrice) + (noAdult * adultPrice) + (noOKU * okuPrice)
+                    + safariPrice + photoPrice + (noAnimalFood * animalFoodPrice) + (noBirdShow * birdShowPrice);
+
+            dispose(); //close current window
+
+            new ReceiveData(ticketType, noKid, kidPrice, noAdult, adultPrice, noOKU, okuPrice,
+                    safari, photobooth, noAnimalFood, animalFoodPrice, noBirdShow, birdShowPrice, total);
         }
 
-        if (!rbSafariYes.isSelected() && !rbSafariNo.isSelected()) {
-            JOptionPane.showMessageDialog(this, "Please select Safari Ride option.");
-            return;
-        }
-        if (!rbPhotoboothYes.isSelected() && !rbPhotoboothNo.isSelected()) {
-            JOptionPane.showMessageDialog(this, "Please select Photobooth option.");
-            return;
-        }
+            checkoutPage.setVisible(true);
+            this.setVisible(false); // Just hide, don't dispose
 
-        int safariPrice = safari ? 30 : 0;
-        int photoPrice = photobooth ? 30 : 0;
-        int animalFoodPrice = 10;
-        int birdShowPrice = 15;
 
-        int total = (noKid * kidPrice) + (noAdult * adultPrice) + (noOKU * okuPrice)
-                + safariPrice + photoPrice + (noAnimalFood * animalFoodPrice) + (noBirdShow * birdShowPrice);
-
-        new ReceiveData(ticketType, noKid, kidPrice, noAdult, adultPrice, noOKU, okuPrice,
-                safari, photobooth, noAnimalFood, animalFoodPrice, noBirdShow, birdShowPrice, total);
     }
 
     public static void main(String[] args) {

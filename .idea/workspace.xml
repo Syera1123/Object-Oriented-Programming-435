@@ -5,10 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="93ec5c9a-3820-4625-8185-2e1f0d75d993" name="Changes" comment="Merge remote-tracking branch 'origin/main'&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml">
+      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Zoo/LogInWindow.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/Zoo/LogInWindow.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Zoo/Checkout.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/Zoo/Checkout.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Zoo/Checkout.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Zoo/Checkout.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Zoo/Price.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Zoo/Price.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Zoo/SignUpWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Zoo/SignUpWindow.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Zoo/WelcomePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Zoo/WelcomePage.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,13 +61,15 @@
     "Application.SignUpWindow.executor": "Run",
     "Application.WelcomePage.executor": "Run",
     "Application.Zoo.Checkout.executor": "Run",
+    "Application.Zoo.Price.executor": "Run",
     "Application.ZooTicketGUI.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "UI_DESIGNER_EDITOR_MODE.PaletteManager.WIDTH": "186",
-    "UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH": "257",
-    "git-widget-placeholder": "main",
+    "UI_DESIGNER_EDITOR_MODE.PaletteManager.WIDTH": "280",
+    "UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.SHOW": "true",
+    "UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH": "278",
+    "git-widget-placeholder": "MARYAM",
     "kotlin-language-version-configured": "true",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -134,10 +138,10 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Price" />
         <item itemvalue="Application.SignUpWindow" />
         <item itemvalue="Application.Zoo.Checkout" />
         <item itemvalue="Application.WelcomePage" />
-        <item itemvalue="Application.Price" />
       </list>
     </recent_temporary>
   </component>
