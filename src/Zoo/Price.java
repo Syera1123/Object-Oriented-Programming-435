@@ -4,6 +4,11 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
+import java.io.IOException;
+
 
 public class Price extends JFrame implements ActionListener {
     private JPanel pnlPrice;
@@ -16,6 +21,7 @@ public class Price extends JFrame implements ActionListener {
     private JPanel pnlprice122;
     private JPanel pnlprice14;
     private JButton btnContinueOrder;
+    //bar
     private JMenuItem miAbout;
     private JMenu menuHelp;
     private JMenuBar menuBar;
@@ -23,11 +29,12 @@ public class Price extends JFrame implements ActionListener {
 
 
 
+
     public Price(){
         super.setSize(700,500);
         super.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
 
-
+        //bar
         menuHelp = new JMenu(" ☰  🌿 Zoo Wonderland");
         menuBar = new JMenuBar();
         miAbout = new JMenuItem("About");
@@ -72,14 +79,31 @@ public class Price extends JFrame implements ActionListener {
 
     }
 
+//latest user
+    private String getLatestUserEmail() {
+        File file = new File("latestUser.txt");
+        if (!file.exists()) return "Unknown";
+
+        try (BufferedReader reader = new BufferedReader(new FileReader(file))) {
+            String email = reader.readLine();
+            return (email != null && !email.isEmpty()) ? email : "Unknown";
+        } catch (IOException e) {
+            e.printStackTrace();
+            return "Unknown";
+        }
+    }
+
+
+
 
     public static void main(String[] args){
-        new Price();
+        Price price = new Price();
     }
 
 
     @Override
     public void actionPerformed(ActionEvent e) {
+
         if(e.getSource()==btnContinueOrder) {
             Checkout cp = new Checkout();
             dispose();
@@ -87,7 +111,7 @@ public class Price extends JFrame implements ActionListener {
         else if(e.getSource() == logout){
             int choice = JOptionPane.showConfirmDialog(
                     this,
-                    "Are you sure you want to log out?",
+                    "Are you sure you want to log out?" ,
                     "Confirm Logout",
                     JOptionPane.YES_NO_OPTION,
                     JOptionPane.QUESTION_MESSAGE
@@ -97,6 +121,19 @@ public class Price extends JFrame implements ActionListener {
                 dispose();
             }
         }
+        //LATEST
+        //bar
+        else if(e.getSource()==miAbout)
+        {
+            String email = getLatestUserEmail();
+            JOptionPane.showMessageDialog(this,
+                    "Logged in as: " + email,
+                    "About",
+                    JOptionPane.INFORMATION_MESSAGE
+            );
+        }
+
+
 
     }
 

@@ -4,6 +4,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 import java.io.*;
+import java.util.Scanner;
 
 public class LogInWindow extends JFrame implements ActionListener, MouseListener {
     protected JPanel panel1; // GUI form content panel (from IntelliJ GUI Designer)
@@ -58,6 +59,38 @@ public class LogInWindow extends JFrame implements ActionListener, MouseListener
         setVisible(true);
     }
 
+    //LATEST
+    private String getNameByEmail(String email) {
+        try (Scanner sc = new Scanner(new File("password.txt"))) {
+            while (sc.hasNextLine()) {
+                String nameLine = sc.nextLine(); // Name: ...
+                String emailLine = sc.nextLine(); // Email: ...
+                if (emailLine.equals("Email: " + email)) {
+                    return nameLine.substring(6); // remove "Name: "
+                }
+                sc.nextLine(); // skip Password
+                sc.nextLine(); // skip ------
+            }
+        } catch (IOException e) {
+            JOptionPane.showMessageDialog(this, "Error reading file: " + e.getMessage());
+        }
+        return "Unknown";
+    }
+    private void writeLatestUser(String name, String email) {
+        try (BufferedWriter bw = new BufferedWriter(new FileWriter("latestUser.txt"))) {
+            bw.write("Name: " + name);
+            bw.newLine();
+            bw.write("Email: " + email);
+            bw.newLine();
+        } catch (IOException e) {
+            JOptionPane.showMessageDialog(this, "Error writing latest user file.");
+        }
+    }
+
+
+
+
+
     @Override
     public void actionPerformed(ActionEvent e) {
         String email = fEmail.getText();
@@ -73,10 +106,20 @@ public class LogInWindow extends JFrame implements ActionListener, MouseListener
             return;
         }
 
-        if (isLoginValid(email, password)) {
+    /**    if (isLoginValid(email, password)) {
             new Price(); // proceed to Price window
             dispose();
-        } else {
+        }**/
+//LATEST
+        if (isLoginValid(email, password)) {
+            writeLatestEmail(email); // ✅ NEW
+            new Price(); // go to Price page
+            dispose();
+        }
+
+
+
+        else {
             JOptionPane.showMessageDialog(this, "Invalid email or password");
         }
     }
@@ -107,7 +150,13 @@ public class LogInWindow extends JFrame implements ActionListener, MouseListener
         SwingUtilities.invokeLater(() -> new LogInWindow());
     }
 
-
-
+//for latest user
+    private void writeLatestEmail(String email) {
+        try (BufferedWriter bw = new BufferedWriter(new FileWriter("latestUser.txt"))) {
+            bw.write(email);
+        } catch (IOException e) {
+            JOptionPane.showMessageDialog(this, "Error saving latest user email.");
+        }
+    }
 
 }

@@ -3,6 +3,10 @@ package Zoo;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
+import java.io.IOException;
 
 public class Checkout extends JFrame implements ActionListener {
     private JPanel pnlCheckout;
@@ -27,6 +31,12 @@ public class Checkout extends JFrame implements ActionListener {
     private JLabel lblAnimalFood;
     private JLabel lblBirdShow;
     private Checkout checkoutPage;
+    //bar
+    private JMenuItem miAbout;
+    private JMenu menuHelp;
+    private JMenuBar menuBar;
+    private JMenuItem logout;
+
 
 
     private ButtonGroup bgWeek, bgSafariRide, bgPhotobooth;
@@ -36,6 +46,20 @@ public class Checkout extends JFrame implements ActionListener {
         setSize(700, 500);
         setContentPane(pnlCheckout);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
+
+        //bar
+        menuHelp = new JMenu(" ☰  🌿 Zoo Wonderland");
+        menuBar = new JMenuBar();
+        miAbout = new JMenuItem("About");
+        miAbout.addActionListener(this);
+        logout = new JMenuItem("Log out");
+        logout.addActionListener(this);
+
+        //construct menu bar
+        menuBar.add(menuHelp);
+        menuHelp.add(miAbout);
+        menuHelp.add(logout);
+        super.setJMenuBar(menuBar);
 
         JLabel backgroundLabel = new JLabel();
         ImageIcon bgIcon = new ImageIcon(getClass().getResource("/World.png"));
@@ -87,6 +111,20 @@ public class Checkout extends JFrame implements ActionListener {
         });
     }
 
+    //latest user
+    private String getLatestUserEmail() {
+        File file = new File("latestUser.txt");
+        if (!file.exists()) return "Unknown";
+
+        try (BufferedReader reader = new BufferedReader(new FileReader(file))) {
+            String email = reader.readLine();
+            return (email != null && !email.isEmpty()) ? email : "Unknown";
+        } catch (IOException e) {
+            e.printStackTrace();
+            return "Unknown";
+        }
+    }
+
     public Checkout(String ticketType, int kid, int kidPrice, int adult, int adultPrice, int oku, int okuPrice,
                     boolean safari, boolean photobooth, int animalFood, int animalFoodPrice,
                     int birdShow, int birdShowPrice, int total) {
@@ -119,8 +157,33 @@ public class Checkout extends JFrame implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
+        //LATEST
+        //bar
+        if(e.getSource()==miAbout)
+        {
+            String email = getLatestUserEmail();
+            JOptionPane.showMessageDialog(this,
+                    "Logged in as: " + email,
+                    "About",
+                    JOptionPane.INFORMATION_MESSAGE
+            );
+        }
 
-        if(e.getSource()==btnCheckout) {
+        else if(e.getSource() == logout){
+            int choice = JOptionPane.showConfirmDialog(
+                    this,
+                    "Are you sure you want to log out?" ,
+                    "Confirm Logout",
+                    JOptionPane.YES_NO_OPTION,
+                    JOptionPane.QUESTION_MESSAGE
+            );
+            if (choice == JOptionPane.YES_OPTION) {
+                new WelcomePage();
+                dispose();
+            }
+        }
+
+        else if(e.getSource()==btnCheckout) {
 
             int noKid = (Integer) spKid.getValue();
             int noAdult = (Integer) spAdult.getValue();

@@ -121,15 +121,19 @@ public class SignUpWindow extends JFrame implements ActionListener, FocusListene
                 JOptionPane.showMessageDialog(this, "This email is already registered");
             } else {
                 try (BufferedWriter bw = new BufferedWriter(new FileWriter("password.txt", true))) {
+                    bw.write("Name: " + name);
+                    bw.newLine();
                     bw.write("Email: " + email);
                     bw.newLine();
                     bw.write("Password: " + pass);
                     bw.newLine();
                     bw.write("------------------------");
                     bw.newLine();
+
                     JOptionPane.showMessageDialog(this, "Account created! Redirecting to login.");
                     new LogInWindow();
                     dispose();
+
                 } catch (IOException ex) {
                     JOptionPane.showMessageDialog(this, "Error saving to file: " + ex.getMessage());
                 }
