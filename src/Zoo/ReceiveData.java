@@ -155,6 +155,7 @@ public class ReceiveData extends JFrame {
         setVisible(true);
     }
 
+    //latest
     private void handlePayment() {
         int confirm = JOptionPane.showConfirmDialog(this, "Confirm payment?", "Confirm", JOptionPane.YES_NO_OPTION);
         if (confirm == JOptionPane.YES_OPTION) {
@@ -165,9 +166,14 @@ public class ReceiveData extends JFrame {
             if (method != JOptionPane.CLOSED_OPTION) {
                 saveReceiptToFile(options[method].toString());
                 JOptionPane.showMessageDialog(this, "Payment successful via " + options[method] + "!");
+
+                // ✅ Redirect to Price page after successful payment
+                this.dispose();            // Close current receipt window
+                new Price();               // Open Price page again
             }
         }
     }
+
 
     private void saveReceiptToFile(String method) {
         try (FileWriter writer = new FileWriter("receipt.txt")) {
