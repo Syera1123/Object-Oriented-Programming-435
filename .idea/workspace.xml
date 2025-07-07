@@ -6,11 +6,12 @@
   <component name="ChangeListManager">
     <list default="true" id="93ec5c9a-3820-4625-8185-2e1f0d75d993" name="Changes" comment="Merge remote-tracking branch 'origin/main'&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml">
       <changelist_data name="marxx002" email="nafisahmaryam4@gmail.com" automatic="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/receipt.txt" beforeDir="false" afterPath="$PROJECT_DIR$/receipt.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Zoo/ReceiveData.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/Zoo/ReceiveData.form" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Zoo/ReceiveData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Zoo/ReceiveData.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Zoo/LogInWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Zoo/LogInWindow.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Zoo/Price.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/Zoo/Price.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Zoo/Price.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Zoo/Price.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,7 +48,7 @@
   <component name="GithubPullRequestsUISettings">{
   &quot;selectedUrlAndAccountId&quot;: {
     &quot;url&quot;: &quot;https://github.com/Syera1123/Object-Oriented-Programming-435.git&quot;,
-    &quot;accountId&quot;: &quot;2c07c89b-8f34-470d-a656-212026ddbbfe&quot;
+    &quot;accountId&quot;: &quot;8a2dd38c-b24a-4073-a898-89ec4490a0bf&quot;
   }
 }</component>
   <component name="ProjectColorInfo">{
@@ -93,7 +94,7 @@
       <recent name="C:\Users\User\IdeaProjects\Main\out\production\Main\com\intellij\uiDesigner\core" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Zoo.Checkout">
+  <component name="RunManager">
     <configuration name="Price" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Price" />
       <module name="Main" />
@@ -149,14 +150,6 @@
         <item itemvalue="Application.SignUpWindow" />
       </list>
     </recent_temporary>
-  </component>
-  <component name="SharedIndexes">
-    <attachedChunks>
-      <set>
-        <option value="bundled-jdk-9823dce3aa75-a94e463ab2e7-intellij.indexing.shared.core-IU-243.26574.91" />
-        <option value="bundled-js-predefined-d6986cc7102b-1632447f56bf-JavaScript-IU-243.26574.91" />
-      </set>
-    </attachedChunks>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">

@@ -16,7 +16,10 @@ public class Price extends JFrame implements ActionListener {
     private JPanel pnlprice122;
     private JPanel pnlprice14;
     private JButton btnContinueOrder;
-    public JLabel name;
+    private JMenuItem miAbout;
+    private JMenu menuHelp;
+    private JMenuBar menuBar;
+    private JMenuItem logout;
 
 
 
@@ -24,8 +27,23 @@ public class Price extends JFrame implements ActionListener {
         super.setSize(700,500);
         super.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
 
+
+        menuHelp = new JMenu(" ☰  🌿 Zoo Wonderland");
+        menuBar = new JMenuBar();
+        miAbout = new JMenuItem("About");
+        miAbout.addActionListener(this);
+        logout = new JMenuItem("Log out");
+        logout.addActionListener(this);
+
+        //construct menu bar
+        menuBar.add(menuHelp);
+        menuHelp.add(miAbout);
+        menuHelp.add(logout);
+        super.setJMenuBar(menuBar);
+
         //add action Listener
         btnContinueOrder.addActionListener(this);
+
 
         Container cp = super.getContentPane();
         cp.add(pnlPrice);
@@ -66,6 +84,20 @@ public class Price extends JFrame implements ActionListener {
             Checkout cp = new Checkout();
             dispose();
         }
+        else if(e.getSource() == logout){
+            int choice = JOptionPane.showConfirmDialog(
+                    this,
+                    "Are you sure you want to log out?",
+                    "Confirm Logout",
+                    JOptionPane.YES_NO_OPTION,
+                    JOptionPane.QUESTION_MESSAGE
+            );
+            if (choice == JOptionPane.YES_OPTION) {
+                new WelcomePage();
+                dispose();
+            }
+        }
+
     }
 
 
