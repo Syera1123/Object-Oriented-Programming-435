@@ -28,8 +28,6 @@ public class Price extends JFrame implements ActionListener {
     private JMenuItem logout;
 
 
-
-
     public Price(){
         super.setSize(700,500);
         super.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
