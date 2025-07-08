@@ -2,18 +2,18 @@
 ======================================
            FINAL RECEIPT              
 ======================================
-Date & Time     : 08/07/2025 00:44:03
-Ticket Type     : Weekend
+Date & Time     : 08/07/2025 09:59:26
+Ticket Type     : Weekday
 --------------------------------------
 Kid             x 0 = RM 0
-Adult           x 1 = RM 15
+Adult           x 1 = RM 12
 OKU             x 0 = RM 0
 --------------------------------------
- Safari Ride     : No
+ Safari Ride     : Yes (RM30)
 Photobooth     : Yes (RM30)
 Bird Show     : x 0 = RM 0
-Animal Food     x 0 = RM 0
+Animal Food     x 1 = RM 10
 ======================================
 Payment Method  : Card
-TOTAL           : RM 45
+TOTAL           : RM 82
 ======================================

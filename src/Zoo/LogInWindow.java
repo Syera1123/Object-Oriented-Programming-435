@@ -106,11 +106,8 @@ public class LogInWindow extends JFrame implements ActionListener, MouseListener
             return;
         }
 
-    /**    if (isLoginValid(email, password)) {
-            new Price(); // proceed to Price window
-            dispose();
-        }**/
-//LATEST
+
+//LATESTUSER
         if (isLoginValid(email, password)) {
             writeLatestEmail(email); // ✅ NEW
             new Price(); // go to Price page

@@ -44,6 +44,7 @@ public class Checkout extends JFrame implements ActionListener {
     public Checkout() {
         setTitle("Zoo Ticket System");
         setSize(700, 500);
+        setLocationRelativeTo(null);
         setContentPane(pnlCheckout);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
 

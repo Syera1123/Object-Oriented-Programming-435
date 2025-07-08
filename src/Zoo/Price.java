@@ -30,6 +30,7 @@ public class Price extends JFrame implements ActionListener {
 
     public Price(){
         super.setSize(700,500);
+        setLocationRelativeTo(null);
         super.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
 
         //bar

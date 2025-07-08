@@ -15,6 +15,7 @@ public class WelcomePage extends JFrame implements ActionListener, MouseListener
     public WelcomePage() {
         setTitle("Zoo Booking");
         setSize(700, 500);
+        setLocationRelativeTo(null);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLayout(null);
 
