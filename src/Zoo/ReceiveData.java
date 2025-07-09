@@ -190,8 +190,9 @@ public class ReceiveData extends JFrame {
             writer.write("Adult           x " + adult + " = RM " + (adult * adultPrice) + "\n");
             writer.write("OKU             x " + oku + " = RM " + (oku * okuPrice) + "\n");
             writer.write("--------------------------------------\n");
-            for (ExtraActivity activity : activities) {
-                writer.write(activity.getName() + "     : " + activity.getDescription() + "\n");
+            for (int i = 0; i < activities.length; i++) {
+                ExtraActivity activity = activities[i];
+                writer.write(String.format("%-15s %s\n", activity.getName().trim(), activity.getDescription()));
             }
             writer.write("Animal Food     x " + animalFood + " = RM " + (animalFood * animalFoodPrice) + "\n");
             writer.write("======================================\n");

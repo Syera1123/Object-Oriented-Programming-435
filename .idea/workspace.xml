@@ -5,10 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="93ec5c9a-3820-4625-8185-2e1f0d75d993" name="Changes" comment="Merge remote-tracking branch 'origin/main'&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <changelist_data name="marxx002" email="nafisahmaryam4@gmail.com" automatic="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/receipt.txt" beforeDir="false" afterPath="$PROJECT_DIR$/receipt.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Zoo/LogInWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Zoo/LogInWindow.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Zoo/ReceiveData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Zoo/ReceiveData.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,7 +45,7 @@
   <component name="GithubPullRequestsUISettings">{
   &quot;selectedUrlAndAccountId&quot;: {
     &quot;url&quot;: &quot;https://github.com/Syera1123/Object-Oriented-Programming-435.git&quot;,
-    &quot;accountId&quot;: &quot;8a2dd38c-b24a-4073-a898-89ec4490a0bf&quot;
+    &quot;accountId&quot;: &quot;2c07c89b-8f34-470d-a656-212026ddbbfe&quot;
   }
 }</component>
   <component name="ProjectColorInfo">{
@@ -79,10 +79,7 @@
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
     &quot;onboarding.tips.debug.path&quot;: &quot;C:/Users/User/IdeaProjects/Main/src/Main.java&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;configurable.group.language&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;project.propCompiler&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
@@ -94,7 +91,7 @@
       <recent name="C:\Users\User\IdeaProjects\Main\out\production\Main\com\intellij\uiDesigner\core" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.WelcomePage">
+  <component name="RunManager">
     <configuration name="Price" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Price" />
       <module name="Main" />
@@ -141,28 +138,23 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Zoo.Price" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Zoo.Price" />
-      <module name="Main" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="Zoo.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.WelcomePage" />
         <item itemvalue="Application.Zoo.Checkout" />
-        <item itemvalue="Application.Zoo.Price" />
-        <item itemvalue="Application.SignUpWindow" />
+        <item itemvalue="Application.WelcomePage" />
         <item itemvalue="Application.Price" />
+        <item itemvalue="Application.SignUpWindow" />
+        <item itemvalue="Application.SignUpWindow" />
       </list>
     </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9823dce3aa75-a94e463ab2e7-intellij.indexing.shared.core-IU-243.26574.91" />
+        <option value="bundled-js-predefined-d6986cc7102b-1632447f56bf-JavaScript-IU-243.26574.91" />
+      </set>
+    </attachedChunks>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -241,23 +233,7 @@
       <option name="project" value="LOCAL" />
       <updated>1751795033031</updated>
     </task>
-    <task id="LOCAL-00009" summary="Merge remote-tracking branch 'origin/main'&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml">
-      <option name="closed" value="true" />
-      <created>1751906375008</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1751906375008</updated>
-    </task>
-    <task id="LOCAL-00010" summary="Merge remote-tracking branch 'origin/main'&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml">
-      <option name="closed" value="true" />
-      <created>1751906946861</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1751906946861</updated>
-    </task>
-    <option name="localTasksCounter" value="11" />
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -282,5 +258,16 @@
     <MESSAGE value="Add new feature to ZooSystem" />
     <MESSAGE value="Merge remote-tracking branch 'origin/main'&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml" />
     <option name="LAST_COMMIT_MESSAGE" value="Merge remote-tracking branch 'origin/main'&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/Zoo/LogInWindow.java</url>
+          <line>34</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
